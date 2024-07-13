@@ -108,6 +108,7 @@
  		eye_accessory={ "normal_eyes" 0 "normal_eyes" 0 }
  		teeth_accessory={ "normal_teeth" 0 "normal_teeth" 0 }
  		eyelashes_accessory={ "normal_eyelashes" 94 "normal_eyelashes" 94 }
+		beards={ "no_beard" 10 "no_beard" 0 }
 		}
 	}
 }
