@@ -1,10 +1,9 @@
-﻿100848 = {
-	name = "dynn_Tikanariyen"
-	culture = "maghrebi"
+﻿5001000 = {
+	name = "dynn_Atkin"
+	culture = "full_elvish"
 }
 
-# Keeping Prydain to dodge a stubborn error.
-1029001 = {
-	name = "dynn_Prydain"
-	culture = "welsh"
+5001001 = {
+	name = "dynn_Sharp"
+	culture = "half_elvish"
 }

@@ -50,10 +50,6 @@
             castle_04
             windmills_04
         }   
-            
-        duchy_capital_building = {
-            royal_garden_03
-        }
     }
 }
 

@@ -1,22 +1,19 @@
 9969420 = {
     name = "Ben 'BigDick' Atkin"
-
-    dna = 9969420_biggus_dickus_dna
-
-    faith = elvish_faith
+    #dynasty = 5001000
+    religion = elvish_faith
     culture = full_elvish
-
     martial = 100
     prowess = 100
     diplomacy = 100
     intrigue = 100
     stewardship = 100
     learning = 100
-
     sexuality = homosexual
 
     790.1.1 = {
 		birth = yes
-	}
-	
+	  }	
+  dna = 9969420_biggus_dickus_dna
+  hair = { 0 255 0 }
 }
