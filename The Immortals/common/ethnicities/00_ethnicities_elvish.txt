@@ -42,11 +42,11 @@ elvish = {
 	}
 	eye_color = {
 		# Blue
-		10 = { 0.0 0.05 0.33 0.6 }
+		50 = { 0.0 0.05 0.33 0.6 }
 		# Green
-		10 = { 0.33 0.05 0.67 0.6 }
+		45 = { 0.33 0.05 0.67 0.6 }
 		# Brown
-		10 = { 0.67 0.1 0.9 0.8 }
+		5 = { 0.67 0.1 0.9 0.8 }
 	}
 	hair_color = {
 		# Blonde
@@ -407,7 +407,7 @@ elvish = {
 # 	}
 	
  	beards = {
- 		100 = { name = no_beard             range = { 0.0 1.0 } }
+ 		1 = { name = no_beard             range = { 0.0 0.0 } }
  	}
 	
 	eyelashes_accessory = {

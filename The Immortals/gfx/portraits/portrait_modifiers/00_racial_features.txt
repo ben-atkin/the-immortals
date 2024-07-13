@@ -1,0 +1,13 @@
+﻿racial_features = {
+	
+	elvish_no_beard = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = beards
+				template = no_beard
+				value = 0
+			}
+		}
+	}
+}

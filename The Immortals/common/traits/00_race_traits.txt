@@ -1,10 +1,16 @@
 race_trait_elvish = {
-
   category = health
-
   inherit_chance = 100
 	birth = 0
 
   health = 100
+  learning = 2
+}
 
+race_trait_half_elvish = {
+  category = health
+  inherit_chance = 100
+	birth = 0
+
+  intrigue = 1
 }

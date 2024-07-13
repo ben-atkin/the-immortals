@@ -102,13 +102,13 @@
  		gene_age={ "old_4" 228 "old_4" 228 }
  		gene_eyebrows_shape={ "close_spacing_avg_thickness" 203 "close_spacing_avg_thickness" 203 }
  		gene_eyebrows_fullness={ "layer_2_low_thickness" 166 "layer_2_low_thickness" 166 }
- 		gene_body_hair={ "body_hair_sparse" 127 "body_hair_sparse" 127 }
+ 		gene_body_hair={ "body_hair_sparse" 0 "body_hair_sparse" 0 }
  		gene_hair_type={ "hair_straight" 127 "hair_straight" 127 }
  		gene_baldness={ "no_baldness" 127 "no_baldness" 127 }
  		eye_accessory={ "normal_eyes" 0 "normal_eyes" 0 }
  		teeth_accessory={ "normal_teeth" 0 "normal_teeth" 0 }
  		eyelashes_accessory={ "normal_eyelashes" 94 "normal_eyelashes" 94 }
-		beards={ "no_beard" 10 "no_beard" 10 }
+		beards={ "indian_beards_curly" 0 "no_beard" 0 }
 		}
 	}
 }
