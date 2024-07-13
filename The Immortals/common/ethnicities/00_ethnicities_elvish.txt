@@ -407,7 +407,7 @@ elvish = {
 # 	}
 	
  	beards = {
- 		10 = { name = no_beard             range = { 0.0 0.0 } }
+ 		100 = { name = no_beard             range = { 0.0 1.0 } }
  	}
 	
 	eyelashes_accessory = {
