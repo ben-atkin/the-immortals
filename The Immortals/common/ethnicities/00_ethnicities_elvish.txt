@@ -1,23 +1,23 @@
 elvish = {
     visible = no
 
-	@neg1_min = 0.0
-	@neg1_max = 0.0
+	@neg1_min = 0.1
+	@neg1_max = 0.1
 
-	@neg2_min = 0.0
-	@neg2_max = 0.0
+	@neg2_min = 0.1
+	@neg2_max = 0.1
 
-	@neg3_min = 0.0
-	@neg3_max = 0.0
+	@neg3_min = 0.1
+	@neg3_max = 0.1
 
-	@pos1_min = 0.0
-	@pos1_max = 0.0
+	@pos1_min = 0.1
+	@pos1_max = 0.1
 
-	@pos2_min = 0.0
-	@pos2_max = 0.0
+	@pos2_min = 0.1
+	@pos2_max = 0.1
 
-	@pos3_min = 0.0
-	@pos3_max = 0.0
+	@pos3_min = 0.1
+	@pos3_max = 0.1
 
 	@beauty1min = 0.0
 	@beauty1max = 0.0
@@ -38,7 +38,7 @@ elvish = {
 	@blend3max = 0.0
 
     skin_color = {
-		10 = { 0.0 0.0 0.95 0.95 }
+		10 = { 0.9 1.0 0.0 0.1 }
 	}
 	eye_color = {
 		# Blue
