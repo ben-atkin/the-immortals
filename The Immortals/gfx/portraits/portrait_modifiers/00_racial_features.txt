@@ -12,10 +12,6 @@
 
 		weight = {
       base = 10
-			modifier = {
-				add = 500
-				culture = { has_cultural_pillar = heritage_latin }
-			}
 		}
 	}
 }
