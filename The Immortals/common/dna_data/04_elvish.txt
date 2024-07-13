@@ -4,7 +4,7 @@
 			skin_color_hue={ "vanilla_skin_hue" 181 "vanilla_skin_hue" 127 }
 			skin_color_saturation={ "vanilla_skin_saturation" 127 "vanilla_skin_saturation" 127 }
 			hair_color_hue={ "vanilla_hair_hue" 127 "vanilla_hair_hue" 127 }
-			hair_color={ 0 25 0 25 }
+			hair_color={ 5 25 5 25 }
 			skin_color={ 40 64 40 64 }
 			eye_color={ 84 84 84 84 }
 			gene_chin_forward={ "chin_forward_neg" 127 "chin_forward_neg" 127 }
