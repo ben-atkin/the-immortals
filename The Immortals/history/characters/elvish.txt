@@ -1,7 +1,7 @@
 9969420 = {
     name = "Ben 'BigDick' Atkin"
 
-    dna = biggus_dickus_dna_entry
+    dna = 9969420_biggus_dickus_dna
 
     faith = elvish_faith
     culture = full_elvish
