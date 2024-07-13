@@ -1,5 +1,6 @@
 9969420 = {
     name = "Ben 'BigDick' Atkin"
+    dna = 9969420_biggus_dickus_dna
     #dynasty = 5001000
     religion = elvish_faith
     culture = full_elvish
@@ -14,6 +15,5 @@
     790.1.1 = {
 		birth = yes
 	  }	
-  dna = 9969420_biggus_dickus_dna
   hair = { 0 255 0 }
 }
