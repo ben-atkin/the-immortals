@@ -1,4 +1,4 @@
-﻿# Make sure the weights here match up best as possible with the custom_beards set
+# Make sure the weights here match up best as possible with the custom_beards set
 beards = {
 
 	usage = game
@@ -48,6 +48,11 @@ beards = {
 				exists = character:easteregg_daan_broekhof
 				this = character:easteregg_daan_broekhof
 			}
+
+            modifier = {
+                add = 1000
+                relgion = elvish.faith
+            }
             portrait_clean_shaven_clothing_modifier = yes
         }
     }
@@ -84,7 +89,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_western_clothing_trigger = yes
             }
             modifier = {
@@ -130,7 +135,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_western_clothing_trigger = yes
             }
             modifier = {
@@ -176,7 +181,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 OR = {
 					portrait_mena_clothing_trigger = yes
 					portrait_african_clothing_trigger = yes
@@ -230,7 +235,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 OR = {
 					portrait_mena_clothing_trigger = yes
 					portrait_african_clothing_trigger = yes
@@ -281,7 +286,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_indian_clothing_trigger = yes
             }
             modifier = {
@@ -324,7 +329,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_indian_clothing_trigger = yes
             }
             modifier = {
@@ -360,7 +365,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 trigger_if = {
                     limit = { exists = this }
                     has_gene = {
@@ -409,7 +414,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_steppe_clothing_trigger = yes
             }
             modifier = {
@@ -452,7 +457,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_steppe_clothing_trigger = yes
             }
             modifier = {
@@ -495,7 +500,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_northern_clothing_trigger = yes
             }
             modifier = {
@@ -538,7 +543,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_northern_clothing_trigger = yes
             }
             modifier = {
@@ -574,7 +579,7 @@ beards = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_african_clothing_trigger = yes
             }
             modifier = {
@@ -614,13 +619,13 @@ beards = {
                     	template = hair_wavy
                     }            
                 }
-				OR = {
-					portrait_sp2_western_clothing_trigger = yes 
-				}
+				#OR = {
+				#	portrait_sp2_western_clothing_trigger = yes 
+				#}
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 OR = {
 					portrait_sp2_western_clothing_trigger = yes
 				}
@@ -667,7 +672,7 @@ fp3_iranian_beards_straight = {
         }
         modifier = { # Muslims should always have a beard
             add = 200
-            scope:faith.religion = religion:islam_religion
+            #scope:faith.religion = religion:islam_religion
             portrait_fp3_iranian_clothing_trigger = yes
         }
         modifier = {
@@ -710,7 +715,7 @@ fp3_iranian_beards_curly = {
         }
         modifier = { # Muslims should always have a beard
             add = 200
-            scope:faith.religion = religion:islam_religion
+            #scope:faith.religion = religion:islam_religion
             portrait_fp3_iranian_clothing_trigger = yes
         }
         modifier = {
@@ -754,7 +759,7 @@ fp3_turkic_beards_straight = {
         }
         modifier = { # Muslims should always have a beard
             add = 200
-            scope:faith.religion = religion:islam_religion
+            #scope:faith.religion = religion:islam_religion
             portrait_fp3_turkic_clothing_trigger = yes
         }
         modifier = {
@@ -797,7 +802,7 @@ fp3_turkic_beards_curly = {
         }
         modifier = { # Muslims should always have a beard
             add = 200
-            scope:faith.religion = religion:islam_religion
+            #scope:faith.religion = religion:islam_religion
             portrait_fp3_turkic_clothing_trigger = yes
         }
         modifier = {
@@ -843,7 +848,7 @@ fp3_turkic_beards_curly = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 OR = {
 					portrait_fp2_iberian_muslim_clothing_trigger = yes
 					portrait_fp2_iberian_christian_clothing_trigger = yes
@@ -891,7 +896,7 @@ fp3_turkic_beards_curly = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 OR = {
 					portrait_fp2_iberian_muslim_clothing_trigger = yes
 					portrait_fp2_iberian_christian_clothing_trigger = yes
@@ -939,7 +944,7 @@ fp3_turkic_beards_curly = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_fp1_norse_clothing_trigger = yes
             }
             modifier = {
@@ -982,7 +987,7 @@ fp3_turkic_beards_curly = {
             }
             modifier = { # Muslims should always have a beard
                 add = 200
-                scope:faith.religion = religion:islam_religion
+                #scope:faith.religion = religion:islam_religion
                 portrait_northern_clothing_trigger = yes
             }
             modifier = {
@@ -1106,8 +1111,3 @@ fp3_turkic_beards_curly = {
         }
     }
 }
-
-
-
-
-
