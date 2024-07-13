@@ -1,6 +1,8 @@
 9969420 = {
     name = "Ben 'BigDick' Atkin"
 
+    dna = biggus_dickus_dna_entry
+
     faith = elvish_faith
     culture = full_elvish
 
@@ -13,7 +15,7 @@
 
     sexuality = homosexual
 
-    800.1.1 = {
+    790.1.1 = {
 		birth = yes
 	}
 	
