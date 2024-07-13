@@ -1,0 +1,61 @@
+k_Elvish_Kingdom = {
+    100.1.1 = {
+    change_development_level = 10 
+    }
+    800.1.1 = {
+        holder = 9969420
+    }
+}
+
+d_Elvish_Duchy_North = {
+    de_jure_liege = k_Elvish_Kingdom
+
+    800.1.1 = {
+        holder = 9969420
+    }
+}
+
+c_county_tier4 = {
+    800.1.1 = {
+        holder = 9969420
+    }
+
+    de_jure_liege = d_Elvish_Duchy_North
+}
+
+c_county_tier5 = {
+
+    de_jure_liege = d_Elvish_Duchy_North
+}
+
+d_Elvish_Duchy_South = {
+
+    de_jure_liege = k_Elvish_Kingdom
+}
+
+c_county_tier6 = {
+    
+
+    de_jure_liege = d_Elvish_Duchy_South
+
+}
+
+c_county_tier7 = {
+    
+
+    de_jure_liege = d_Elvish_Duchy_North
+
+}
+
+c_county_tier8 = {
+    
+    de_jure_liege = d_Elvish_Duchy_South
+
+}
+
+c_county_tier9 = {
+    
+
+    de_jure_liege = d_Elvish_Duchy_South
+
+}

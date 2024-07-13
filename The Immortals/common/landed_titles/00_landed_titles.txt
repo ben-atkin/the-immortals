@@ -1,0 +1,195 @@
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+
+e_Onakaam_Empire = {
+     color = { 0 0 0 }
+     color2 = { 255 255 255 }
+     capital = c_county_tier
+ 
+     k_Human_Kingdom = {
+         color = { 0 0 0 }
+         color2 = { 255 255 255 }
+         capital = c_county_tier
+ 
+         d_Human_Duchy = {
+             color = { 0 0 0 }
+             color2 = { 255 255 255 }
+             capital = c_county_tier
+             
+             c_county_tier = {
+                 color = { 227 115 149 }
+                 color2 = { 255 255 255 }
+ 
+                 b_test1 = {
+                     province = 1
+                 }
+                 b_test2 = {
+                     province = 7
+                 }
+                 b_test3 = {
+                     province = 3
+                 }
+             }
+
+             c_county_tier2 = {
+                 color = { 200 200 20 }
+                 color2 = { 255 255 255 }
+
+                b_test4 = {
+                     province = 4
+                }
+                b_test5 = {
+                     province = 5
+                }
+                b_test6 = {
+                     province = 8
+                }
+             }
+
+              c_county_tier3 = {
+                 color = { 200 120 20 }
+                 color2 = { 255 255 255 }
+
+                b_test7 = {
+                     province = 6
+                }
+                b_test8 = {
+                     province = 10
+                }
+                b_test9 = {
+                     province = 9
+                }
+             }
+         }
+     }
+     k_Elvish_Kingdom = {
+         color = { 30 130 30 }
+         color2 = { 30 130 30 }
+         capital = c_county_tier4
+ 
+         d_Elvish_Duchy_North = {
+             color = { 30 50 30 }
+             color2 = { 30 50 30 }
+             capital = c_county_tier4
+             
+             c_county_tier4 = {
+                 color = { 0 50 0 }
+                 color2 = { 0 50 0 }
+ 
+                 b_test10 = {
+                     province = 17
+                 }
+                 b_test11 = {
+                     province = 15
+                 }
+                 b_test12 = {
+                     province = 16
+                 }
+                 b_test13 = {
+                     province = 18
+                 }
+                 b_test14 = {
+                     province = 19
+                 }
+                 b_test15 = {
+                     province = 20
+                 }
+             }
+             c_county_tier5 = {
+                 color = { 0 55 0 }
+                 color2 = { 0 55 0 }
+ 
+                 b_test16 = {
+                     province = 13
+                 }
+                 b_test17 = {
+                     province = 12
+                 }
+                 b_test18 = {
+                     province = 11
+                 }
+                 b_test19 = {
+                     province = 14
+                 }
+             }
+             c_county_tier6 = {
+                 color = { 0 60 0 }
+                 color2 = { 0 60 0 }
+
+                b_test20 = {
+                     province = 22
+                }
+                b_test21 = {
+                     province = 21
+                }
+                b_test22 = {
+                     province = 26
+                }
+             }
+         }
+
+         d_Elvish_Duchy_South = {
+             color = { 30 180 30 }
+             color2 = { 30 180 30 }
+             capital = c_county_tier8
+             
+             c_county_tier7 = {
+                 color = { 0 70 0 }
+                 color2 = { 0 70 0 }
+
+                b_test23 = {
+                     province = 24
+                }
+                b_test24 = {
+                     province = 25
+                }
+                b_test25 = {
+                     province = 23
+                }
+             }
+             c_county_tier8 = {
+                 color = { 0 75 0 }
+                 color2 = { 0 75 0 }
+
+                b_test26 = {
+                     province = 29
+                }
+                b_test27 = {
+                     province = 27
+                }
+                b_test28 = {
+                     province = 28
+                }
+                b_test29 = {
+                     province = 30
+                }
+                b_test30 = {
+                     province = 32
+                }
+             }
+             c_county_tier9 = {
+                 color = { 0 80 0 }
+                 color2 = { 0 80 0 }
+
+                b_test31 = {
+                     province = 34
+                }
+                b_test32 = {
+                     province = 31
+                }
+                b_test33 = {
+                     province = 35
+                }
+                b_test34 = {
+                     province = 33
+                }
+             }
+         }
+     }
+ }
+
+# These titles cut hundreds of errors from logs. 
+e_hre = { landless = yes }
+e_byzantium = { landless = yes }
+e_roman_empire = { landless = yes }

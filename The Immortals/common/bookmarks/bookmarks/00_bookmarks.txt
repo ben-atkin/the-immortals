@@ -1,0 +1,17 @@
+﻿bm_458_onokaam = {
+	start_date = 458.4.12
+	is_playable = yes
+	group = bm_group_458
+
+	weight = { value = 100 }
+
+}
+
+bm_812_onokaam = {
+	start_date = 812.9.11
+	is_playable = yes
+	group = bm_group_812
+
+	weight = { value = 100 }
+
+}

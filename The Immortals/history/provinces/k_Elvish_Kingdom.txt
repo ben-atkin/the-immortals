@@ -1,0 +1,180 @@
+11 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = city_holding
+    }
+
+12 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = church_holding
+    }
+
+13 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = castle_holding
+    }
+    
+14 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    }
+
+15 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = church_holding
+    }
+
+16 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = city_holding
+    }
+
+17 = { # Elvish Captial
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = castle_holding
+
+    800.1.1 = {
+        buildings = {
+            castle_04
+            windmills_04
+        }   
+            
+        duchy_capital_building = {
+            royal_garden_03
+        }
+    }
+}
+
+18 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = city_holding
+}
+
+19 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = castle_holding
+    
+    }
+
+20 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    }
+
+21 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = city_holding
+    }
+
+22 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = castle_holding
+    }
+
+23 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = church_holding
+    }
+
+24 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = castle_holding
+    }
+
+25 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    holding = city_holding
+    }
+
+26 = {
+    faith = elvish_faith
+    culture = full_elvish
+
+    }
+
+27 = {
+    faith = elvish_faith
+    culture = half_elvish
+
+    }
+
+28 = {
+    faith = elvish_faith
+    culture = half_elvish
+
+    holding = city_holding
+    }
+
+29 = {
+    faith = elvish_faith
+    culture = half_elvish
+
+    holding = castle_holding
+    }
+
+30 = {
+    faith = elvish_faith
+    culture = half_elvish
+
+    holding = church_holding
+    }
+
+31 = {
+    faith = elvish_faith
+    culture = wood_elvish
+
+    holding = city_holding
+    }
+
+32 = {
+    faith = elvish_faith
+    culture = half_elvish
+    }
+
+33 = {
+    faith = elvish_faith
+    culture = wood_elvish
+
+    holding = castle_holding
+    }
+
+34 = {
+    faith = elvish_faith
+    culture = wood_elvish
+
+    holding = castle_holding
+    }
+
+35 = {
+    faith = elvish_faith
+    culture = wood_elvish
+
+    holding = castle_holding
+    }

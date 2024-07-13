@@ -1,0 +1,20 @@
+9969420 = {
+    name = "Ben 'BigDick' Atkin"
+
+    faith = elvish_faith
+    culture = full_elvish
+
+    martial = 100
+    prowess = 100
+    diplomacy = 100
+    intrigue = 100
+    stewardship = 100
+    learning = 100
+
+    sexuality = homosexual
+
+    800.1.1 = {
+		birth = yes
+	}
+	
+}
