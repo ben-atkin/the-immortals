@@ -21,7 +21,7 @@ full_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = mediterranean
+		10 = elvish
 	}
 }
 
@@ -48,7 +48,7 @@ half_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = mediterranean
+		10 = elvish
 	}
 }
 
@@ -75,7 +75,7 @@ wood_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = mediterranean
+		10 = elvish
 	}
 }
 
@@ -102,6 +102,6 @@ dark_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = mediterranean
+		10 = elvish
 	}
 }
