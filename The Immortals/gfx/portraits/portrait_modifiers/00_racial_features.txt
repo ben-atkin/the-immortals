@@ -2,11 +2,19 @@
 	
 	elvish_no_beard = {
 		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = beards
-				template = no_beard
-				value = 0
+      accessory = {
+        mode = add
+        gene = beards
+        template = no_beard
+        range = { 0 1 } # For the randomness to work correctly
+      }
+    } 
+
+		weight = {
+      base = 10
+			modifier = {
+				add = 500
+				culture = { has_cultural_pillar = heritage_latin }
 			}
 		}
 	}

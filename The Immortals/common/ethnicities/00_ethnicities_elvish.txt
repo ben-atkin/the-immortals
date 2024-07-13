@@ -1,4 +1,7 @@
 elvish = {
+    template = "ethnicity_template"
+	using = "full_elvish"
+
     visible = no
 
 	@neg1_min = 0.5
@@ -52,6 +55,15 @@ elvish = {
 		# Blonde
 		100 = { 0.0 0.1 0.0 0.1 }
 	}
+
+    #beards = {
+ 	#	100 = { name = no_beard             range = { @neg3_min @neg3_max }	}
+ 	#}
+
+    racial_features = {
+        1 = { name = elvish_no_beard    range = { 0.5 0.5 } }
+    }
+		
 
     gene_chin_forward = {
         1 = { name = chin_forward_neg    range = { @neg3_min @neg3_max }    }
@@ -356,30 +368,6 @@ elvish = {
 
     }
 
-
-    gene_eyebrows_shape = {
-        10 = {  name = avg_spacing_avg_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = avg_spacing_high_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = avg_spacing_low_thickness             range = { 0.5 1.0 }    }
-
-        10 = {  name = far_spacing_avg_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = far_spacing_high_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = far_spacing_low_thickness             range = { 0.5 1.0 }    }
-
-        10 = {  name = close_spacing_avg_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = close_spacing_high_thickness             range = { 0.5 1.0 }     }
-        5 = {  name = close_spacing_low_thickness             range = { 0.5 1.0 }    }
-    }
-
-    gene_eyebrows_fullness = {
-        10 = {  name = layer_2_avg_thickness             range = { 0.25 0.5 }     }
-        15 = {  name = layer_2_avg_thickness             range = { 0.5 0.75 }     }
-        5 = {  name = layer_2_high_thickness             range = { 0.25 0.5 }     }
-        5 = {  name = layer_2_high_thickness             range = { 0.5 0.75 }     }
-        10 = {  name = layer_2_low_thickness             range = { 0.25 0.5 }     }
-        15 = {  name = layer_2_low_thickness             range = { 0.5 0.75 }     }
-    }
-
 	complexion = {
 		10 = {	name = complexion_1				range = { 0.0 1.0 }		}
         10 = {  name = complexion_2             range = { 0.0 1.0 }     }
@@ -400,20 +388,21 @@ elvish = {
 
     gene_bs_bust = {
         20 = { name = bust_default    range = { 0.5 0.5 }    }
+    }
+
+    gene_body_hair = {
+        1 = { name = body_hair_sparse_low_stubble   range = { 0.4 0.8 } }
+    }
+
+    gene_hair_type = {
+        1 = {  name = hair_straight_thin_beard         range = { 0.35 0.75 }     }
     }	
 
 # 	"height" = {
 # 		100 = { name = "generic_height"		range = { 0.9 1.0 }		}
 # 	}
 	
- 	beards = {
- 		1 = { name = no_beard             range = { 0.0 0.0 } }
- 	}
-	
-	eyelashes_accessory = {
-		10 = { name = normal_eyelashes 			range = { 0.0 1.0 } }
-	}	
-	
+
     gene_age = {
         10 = { name = old_1      range = { 0.0 1.0 } }
         10 = { name = old_2      range = { 0.0 1.0 } }
