@@ -91,11 +91,11 @@ elvish = {
 	}
 
 	gene_bs_ear_angle = {
-		10 = { name = ear_angle_neg		range = { 1.0 1.0 } 	}
+		10 = { name = ear_angle_neg		range = { 1.0 1.0 } }
 	}
 
 	gene_bs_ear_bend = {
-		10 = { name = ear_upper_bend_pos		range = { 0.45 0.55 } 	}
+		10 = { name = ear_upper_bend_pos		range = { 0.45 0.55 } }
 	}
 
 	gene_bs_ear_size = { #fingers crossed this works.
@@ -108,7 +108,7 @@ elvish = {
         1 = { name = nose_profile_pos       range = { 0.0 0.0} }
     }
     
-    gene_bs_nose_size = {
+  gene_bs_nose_size = {
 		1 = { name = nose_size_pos			range = { 0.5 0.6 } }
 	}
 
@@ -116,11 +116,11 @@ elvish = {
 		1 = { name = nose_forward_pos     range = { 0.9 1.0 } } 
 	}
 
-    gene_bs_nose_ridge_angle = {
+  gene_bs_nose_ridge_angle = {
     1= { name = nose_ridge_angle_pos      range ={ 0.0 0.0 } }
     }
 
-    gene_bs_nose_ridge_width = {
+  gene_bs_nose_ridge_width = {
     1= { name = nose_ridge_width_neg      range ={ 1.0 1.0 } }
     }
 
@@ -230,15 +230,15 @@ elvish = {
 	}
 
 	gene_bs_body_type = {
-		10 = { name = body_average   range = { 0.5 0.5 }      }
+		10 = { name = body_average   range = { 0.5 0.5 } }
 	}
 
 	gene_bs_body_shape = {
-		10 = { name = body_shape_rectangle_full    range = { 0.0 0.1 }      }
+		10 = { name = body_shape_rectangle_full    range = { 0.0 0.1 } }
 	}
 
 	gene_bs_bust = {
-		1 = { name = bust_clothes    range = { 0.3 0.5 }    }
+		1 = { name = bust_clothes    range = { 0.3 0.5 } }
 	}
 
   gene_height = {
