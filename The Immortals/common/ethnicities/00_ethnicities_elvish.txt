@@ -55,9 +55,9 @@ elvish = {
 		80 = { 0.06 0.0 0.068 0.0 }
 	}
 
-  hairstyles = {
-    1 = { name = fp1_hairstyles_straight      range = { 0.0 0.8 } }
-  }
+    hairstyles = {
+        1 = { name = fp1_hairstyles_straight      range = { 0.0 0.8 } }
+    }
 
 	eye_color_saturation = {
 		10 = { name = eye_color_saturation		range = { 0.0 0.7 } }
@@ -102,13 +102,13 @@ elvish = {
 		10 = { name = ear_size_pos		range = { 1.0 1.0 } }
 	}
 
-  ### NOSE
+    ### NOSE
 
 	gene_bs_nose_profile = {
         1 = { name = nose_profile_pos       range = { 0.0 0.0} }
     }
     
-  gene_bs_nose_size = {
+    gene_bs_nose_size = {
 		1 = { name = nose_size_pos			range = { 0.5 0.6 } }
 	}
 
@@ -116,12 +116,12 @@ elvish = {
 		1 = { name = nose_forward_pos     range = { 0.9 1.0 } } 
 	}
 
-  gene_bs_nose_ridge_angle = {
-    1= { name = nose_ridge_angle_pos      range ={ 0.0 0.0 } }
+    gene_bs_nose_ridge_angle = {
+        1= { name = nose_ridge_angle_pos      range ={ 0.0 0.0 } }
     }
 
-  gene_bs_nose_ridge_width = {
-    1= { name = nose_ridge_width_neg      range ={ 1.0 1.0 } }
+    gene_bs_nose_ridge_width = {
+        1= { name = nose_ridge_width_neg      range ={ 1.0 1.0 } }
     }
 
 	gene_bs_nose_tip_angle = {
@@ -132,65 +132,65 @@ elvish = {
 		1 = { name = nose_height_neg			range = { 0.4 0.45 } }
 	}
 
-  gene_bs_nose_tip_width = {
-    1 = { name = nose_tip_width_neg     range = { 1.0 1.0 } }
-  }
+    gene_bs_nose_tip_width = {
+        1 = { name = nose_tip_width_neg     range = { 1.0 1.0 } }
+    }
 
-  gene_bs_nose_tip_forward = {
-    1 = { name = nose_tip_forward_pos       range = { 1.0 1.0 } }
-  }
+    gene_bs_nose_tip_forward = {
+        1 = { name = nose_tip_forward_pos       range = { 1.0 1.0 } }
+    }
 
-  gene_bs_nose_nostril_width = {
-    1 = { name = nose_nostril_width_neg      range = { 1.0 1.0 } }
-  }
+    gene_bs_nose_nostril_width = {
+        1 = { name = nose_nostril_width_neg      range = { 1.0 1.0 } }
+    }
 
-  gene_bs_nose_nostril_height = {
-    1 = { name = nose_nostril_height_neg      range = { 1.0 1.0 } }
-  }
+    gene_bs_nose_nostril_height = {
+        1 = { name = nose_nostril_height_neg      range = { 1.0 1.0 } }
+    }
 
 	face_detail_nasolabial = {
 		1 = { name = nasolabial_04		range = { 0.0 0.0 } } 
 	}	
 
-  face_detail_cheek_def = {
-    1 = { name = cheek_def_02    range = { 0.9 1.0 } }
-  }
+    face_detail_cheek_def = {
+        1 = { name = cheek_def_02    range = { 0.9 1.0 } }
+    }
 
-  face_detail_cheek_fat = {
-    1 = { name = cheek_fat_01_neg    range = { 0.3 0.5 } }
-  }
+    face_detail_cheek_fat = {
+        1 = { name = cheek_fat_01_neg    range = { 0.3 0.5 } }
+    }
 
-  face_detail_eye_lower_lid_def = {
-    1 = { name = eye_lower_lid_def      range = { 0.0 0.0 } }
-  }
+    face_detail_eye_lower_lid_def = {
+        1 = { name = eye_lower_lid_def      range = { 0.0 0.0 } }
+    }
 
-  face_detail_eye_socket = {
-    1 = { name = eye_socket_01      range = { 0.0 0.0 } }
-  }
+    face_detail_eye_socket = {
+        1 = { name = eye_socket_01      range = { 0.0 0.0 } }
+    }
 
-  face_detail_nose_ridge_def = {
-    1 = { name = nose_ridge_def_neg     range = { 0.0 0.5 } }
-  }
+    face_detail_nose_ridge_def = {
+        1 = { name = nose_ridge_def_neg     range = { 0.0 0.5 } }
+    }
 
-  face_detail_temple_def = {
-    1 = { name = temple_def     range = { 0.5 0.8 } }
-  }
+    face_detail_temple_def = {
+        1 = { name = temple_def     range = { 0.5 0.8 } }
+    }
 
-  expression_other = {
-    1= { name = nose_wrinkles_01      range = { 0.0 0.0 } }
-  }
+    expression_other = {
+        1= { name = nose_wrinkles_01      range = { 0.0 0.0 } }
+    }
 
-#	expression_brow_wrinkles = {
-#		1 = { name = brow_wrinkles_01		range = { 0.0 0.0 } } 
-#	}	
+	expression_brow_wrinkles = {
+		1 = { name = brow_wrinkles_01		range = { 0.0 0.0 } } 
+	}	
 
-#	expression_eye_wrinkles = {
-#		1 = { name = eye_wrinkles_03		range = { 0.0 0.0 } } 
-#	}	
+	expression_eye_wrinkles = {
+		1 = { name = eye_wrinkles_03		range = { 0.0 0.0 } } 
+	}	
 
-#	expression_forehead_wrinkles = {
-#		1 = { name = forehead_wrinkles_01		range = { 0.0 0.0 } } 
-#	}
+	expression_forehead_wrinkles = {
+		1 = { name = forehead_wrinkles_01		range = { 0.0 0.0 } } 
+	}
 
 	gene_mouth_upper_lip_size = {
 		1 = { name = mouth_upper_lip_size_neg		range = { 0.0 1.0 } } 
@@ -241,20 +241,20 @@ elvish = {
 		1 = { name = bust_clothes    range = { 0.3 0.5 } }
 	}
 
-  gene_height = {
-    1 = { name = full_height      range = { 0.8 1.0 } }
-  }
+    gene_height = {
+        1 = { name = full_height      range = { 0.8 1.0 } }
+    }
 
-  gene_body_hair = {
-    1 = { name = body_hair_sparse_low_stubble     range = { 0.0 0.0 } }
-  }
+    gene_body_hair = {
+        1 = { name = body_hair_sparse_low_stubble     range = { 0.0 0.0 } }
+    }
 
 	gene_age = {
 		1 = { name = no_aging     range = { 0.0 1.0 } }
 	}
-}
 
-  clothes = {
-    50 = { name = byzantine_high_nobility_clothes      range = { 0.0 1.0 } }
-    50 = { name = byzantine_low_nobility_clothes      range = { 0.0 1.0 } }
-  }
+    clothes = {
+        50 = { name = byzantine_high_nobility_clothes      range = { 0.0 1.0 } }
+        50 = { name = byzantine_low_nobility_clothes      range = { 0.0 1.0 } }
+    }
+}
