@@ -4,6 +4,7 @@ race_trait_elvish = {
 	birth = 0
 
   health = 100
+  life_expectancy = 100
   learning = 2
 }
 
