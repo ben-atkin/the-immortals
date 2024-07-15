@@ -1,4 +1,4 @@
-﻿@maleMin = -0.5
+@maleMin = -0.5
 @maleMax = 0.499
 @femaleMin = -0.4
 @femaleMax = 0.4
