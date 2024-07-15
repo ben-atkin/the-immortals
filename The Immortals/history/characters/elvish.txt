@@ -15,10 +15,4 @@
     790.1.1 = {
 		birth = yes
 	  }
-
-    portrait_override = {	# Will override the character's appearance
-		  portrait_modifier_overrides={
-			  racial_features=elvish_no_beard
-		  }
-    }
 }

@@ -42,12 +42,6 @@ beards = {
                     has_character_flag = has_scripted_appearance
                 }
             }
-			modifier = {
-				add = 666
-				exists = this
-				exists = character:easteregg_daan_broekhof
-				this = character:easteregg_daan_broekhof
-			}
 
             modifier = { # Elves will never have beards.
                 add = 1000

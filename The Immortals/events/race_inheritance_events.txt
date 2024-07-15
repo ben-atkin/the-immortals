@@ -1,0 +1,26 @@
+namespace = TI_race
+
+# Directs every starting character to race inheritance.
+TI_race.0002 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_living_character = {
+			trigger_event = { id = TI_race.0003 }
+		}
+	}
+}
+
+
+# Directs newborns to race inheritance.
+TI_race.0003 = {
+	hidden = yes
+
+	immediate = {
+		hidden_effect = {
+			race_inheritance_traits = yes
+		}
+	}
+}
+

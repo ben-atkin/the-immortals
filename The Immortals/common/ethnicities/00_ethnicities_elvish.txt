@@ -274,7 +274,7 @@ elvish = {
     }
 
 	gene_age = {
-		1 = { name = no_aging     range = { 0.0 1.0 } }
+		1 = { name = old_elvish     range = { 0.0 1.0 } }
 	}
 
     clothes = {

@@ -1,17 +1,26 @@
-race_trait_elvish = {
+race_trait_full_elvish = {
   category = health
-  inherit_chance = 100
 	birth = 0
 
-  health = 100
+  health = 1
   life_expectancy = 100
   learning = 2
 }
 
 race_trait_half_elvish = {
   category = health
-  inherit_chance = 100
 	birth = 0
 
-  intrigue = 1
+  health = 1
+  life_expectancy = 50
+  stewardship = 1
+}
+
+race_trait_wood_elvish = {
+  category = health
+	birth = 0
+
+  health = 1
+  life_expectancy = 80
+  diplomacy = 1
 }
