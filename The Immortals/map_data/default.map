@@ -17,7 +17,7 @@ seasons = "seasons.txt"
 #############
 
 #North European Seas
-sea_zones = LIST { 2 } #French & Iberian atlantic coasts
+sea_zones = LIST { 1 }
 
 ###############
 # MAJOR RIVERS
