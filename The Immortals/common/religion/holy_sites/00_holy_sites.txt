@@ -1,1 +1,6 @@
 ﻿## Add this later
+
+elvish_captial = {
+  county = c_county_tier4
+  barony = b_test10
+}

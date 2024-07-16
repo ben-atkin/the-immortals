@@ -131,19 +131,19 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 		NOR = {
 			government_has_flag = government_is_republic
 			government_has_flag = government_is_theocracy
-			government_has_flag = government_is_landed_order
+			#government_has_flag = government_is_landed_order - causing error
 			### EK EDIT: Matilda Canossa does not exist
 			# AND = {
 			# exists = character:7757
 			# this = character:7757 #Matilda Canossa, her bookmark start is about overcoming the issue of no heir
 			# }
 		}
-		NOR = {
-			this = character:toddus_howardus
-			this = character:hearthon_1000
-			this = character:dawnguard_1000
-			this = character:merula_cavor
-		}
+		#NOR = {
+		#	this = character:toddus_howardus
+		#	this = character:hearthon_1000
+		#	this = character:dawnguard_1000
+		#	this = character:merula_cavor
+		#}
 	}
 
 

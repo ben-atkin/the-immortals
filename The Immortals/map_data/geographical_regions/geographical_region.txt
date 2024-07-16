@@ -74,9 +74,6 @@ world_india_deccan = {}
 world_india_bengal = {}
 world_india_rajastan = {}
 world_africa_north_west = {
-	duchies = {
-		d_canarias
-	}
 }
 world_africa_north_east = {}
 world_africa_sahara = {}
@@ -426,20 +423,7 @@ ghw_region_north_eastern_india = {}
 ### END GHW Regions
 islamic_heartlands = {}
 
-dlc_fp1_region_core_north_sea = {
-	duchies = {
-		#k_norway
-		d_viken d_agder d_vestlandi d_trandalog
-		#k_england
-		d_york d_norfolk d_bedford d_canterbury
-		#k_denmark
-		d_sjaelland d_slesvig d_jylland
-	}
-	counties = {
-		#k_england
-		c_huntingdonshire c_northamptonshire c_leicestershire c_nottinghamshire
-	}
-}
+dlc_fp1_region_core_north_sea = {}
 
 #####################
 # FP1 Regions
@@ -520,9 +504,7 @@ dlc_ep1_southwest_silk_road_trade_region = {}
 ### END RC Regions
 
 divergence_island_regions = {
-	duchies = {
-		d_canarias
-	}
+
 }
 
 ### SEAZONES ###

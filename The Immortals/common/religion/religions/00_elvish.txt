@@ -209,6 +209,8 @@
 			icon = akanism
 			reformed_icon = akanism_reformed
 
+			holy_site = elvish_captial
+
 			doctrine = unreformed_faith_doctrine
 
 			doctrine = tenet_adorcism

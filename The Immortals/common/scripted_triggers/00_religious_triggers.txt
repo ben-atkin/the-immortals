@@ -1266,7 +1266,7 @@ can_create_head_of_faith_title_trigger = {
 			# We shouldn't hit this point, but if we do use the following as error messages.
 			has_doctrine_parameter = spiritual_head_of_faith
 			has_doctrine_parameter = temporal_head_of_faith
-			has_doctrine = doctrine_mystical_birthright_head
+			#has_doctrine = doctrine_mystical_birthright_head
 		}
 	}
 	can_afford_create_head_of_faith_title_cost_trigger = yes

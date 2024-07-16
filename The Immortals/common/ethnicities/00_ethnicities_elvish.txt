@@ -39,6 +39,7 @@ elvish = {
 	@blend3min = 0.5
 	@blend3max = 0.8
 
+	
 	### COLORS
 
 	skin_color = {
@@ -55,13 +56,13 @@ elvish = {
 		80 = { 0.06 0.0 0.068 0.0 }
 	}
 
-	eye_color_saturation = {
-		10 = { name = eye_color_saturation		range = { 0.0 0.7 } }
-	}
+	#eye_color_saturation = {
+	#	10 = { name = eye_color_saturation		range = { 0.0 0.7 } }
+	#}
 
-    hairstyles = {
-        1 = { name = fp1_hairstyles_straight      range = { 0.0 0.8 } }
-    }
+	hairstyles = {
+			1 = { name = fp1_hairstyles_straight      range = { 0.0 0.8 } }
+	}
 
 	### EYES
 
@@ -78,28 +79,28 @@ elvish = {
 	#	4 = { name = eye_size_neg			range = {0.0 0.1 } }
 	}
 
-	gene_eye_size = {
-		10 = { name = eye_size		range = { 0.2 0.35 } }
-	}
+	#gene_eye_size = {
+	#	10 = { name = eye_size		range = { 0.2 0.35 } }
+	#}
 
 	gene_eye_shut = {
 		20 = { name = eye_shut_neg	range = { 0.4 0.6 }	}
 	}
 
-    face_detail_eye_lower_lid_def = {
-        1 = { name = eye_lower_lid_def      range = { 0.0 0.0 } }
-    }
-
-    face_detail_eye_socket = {
-        1 = { name = eye_socket_01      range = { 0.0 0.0 } }
-    }
-
-    expression_eye_wrinkles = {
-		1 = { name = eye_wrinkles_03		range = { 0.0 0.0 } } 
+	face_detail_eye_lower_lid_def = {
+			1 = { name = eye_lower_lid_def      range = { 0.0 0.0 } }
 	}
 
-    expression_brow_wrinkles = {
-		1 = { name = brow_wrinkles_01		range = { 0.0 0.0 } } 
+	face_detail_eye_socket = {
+			1 = { name = eye_socket_01      range = { 0.0 0.0 } }
+	}
+
+	expression_eye_wrinkles = {
+	1 = { name = eye_wrinkles_03		range = { 0.0 0.0 } } 
+	}
+
+	expression_brow_wrinkles = {
+	1 = { name = brow_wrinkles_01		range = { 0.0 0.0 } } 
 	}	
 
 	expression_forehead_wrinkles = {
@@ -130,9 +131,9 @@ elvish = {
 
 	gene_bs_nose_profile = {
         1 = { name = nose_profile_pos       range = { 0.0 0.0} }
-    }
+  }
     
-    gene_bs_nose_size = {
+  gene_bs_nose_size = {
 		1 = { name = nose_size_pos			range = { 0.5 0.6 } }
 	}
 
@@ -140,13 +141,13 @@ elvish = {
 		1 = { name = nose_forward_pos     range = { 0.9 1.0 } } 
 	}
 
-    gene_bs_nose_ridge_angle = {
-        1= { name = nose_ridge_angle_pos      range ={ 0.0 0.0 } }
-    }
+	gene_bs_nose_ridge_angle = {
+			1= { name = nose_ridge_angle_pos      range ={ 0.0 0.0 } }
+	}
 
-    gene_bs_nose_ridge_width = {
-        1= { name = nose_ridge_width_neg      range ={ 1.0 1.0 } }
-    }
+	gene_bs_nose_ridge_width = {
+			1= { name = nose_ridge_width_neg      range ={ 1.0 1.0 } }
+	}
 
 	gene_bs_nose_tip_angle = {
 		1 = { name = nose_tip_angle_neg     range = { 0.1 0.3 } } 
@@ -156,33 +157,33 @@ elvish = {
 		1 = { name = nose_height_neg			range = { 0.4 0.45 } }
 	}
 
-    gene_bs_nose_tip_width = {
-        1 = { name = nose_tip_width_neg     range = { 1.0 1.0 } }
-    }
+	gene_bs_nose_tip_width = {
+			1 = { name = nose_tip_width_neg     range = { 1.0 1.0 } }
+	}
 
-    gene_bs_nose_tip_forward = {
-        1 = { name = nose_tip_forward_pos       range = { 1.0 1.0 } }
-    }
+	gene_bs_nose_tip_forward = {
+			1 = { name = nose_tip_forward_pos       range = { 1.0 1.0 } }
+	}
 
-    gene_bs_nose_nostril_width = {
-        1 = { name = nose_nostril_width_neg      range = { 1.0 1.0 } }
-    }
+	gene_bs_nose_nostril_width = {
+			1 = { name = nose_nostril_width_neg      range = { 1.0 1.0 } }
+	}
 
-    gene_bs_nose_nostril_height = {
-        1 = { name = nose_nostril_height_neg      range = { 1.0 1.0 } }
-    }
+	gene_bs_nose_nostril_height = {
+			1 = { name = nose_nostril_height_neg      range = { 1.0 1.0 } }
+	}
 
 	face_detail_nasolabial = {
 		1 = { name = nasolabial_04		range = { 0.0 0.0 } } 
 	}
 
-    face_detail_nose_ridge_def = {
-        1 = { name = nose_ridge_def_neg     range = { 0.0 0.5 } }
-    }
+	face_detail_nose_ridge_def = {
+			1 = { name = nose_ridge_def_neg     range = { 0.0 0.5 } }
+	}
 
-    expression_other = {
-        1= { name = nose_wrinkles_01      range = { 0.0 0.0 } }
-    }
+	expression_other = {
+			1= { name = nose_wrinkles_01      range = { 0.0 0.0 } }
+	}
 
     
     ### CHIN/JAW
@@ -199,32 +200,32 @@ elvish = {
 		1 = { name = chin_width_neg        range = { 0.3 0.4 } }
 	}
 
-    face_detail_chin_def = {
-        1 = { name = chin_def_neg       range = { 0.2 0.6 } }
-    }
+	face_detail_chin_def = {
+			1 = { name = chin_def_neg       range = { 0.2 0.6 } }
+	}
 
-    face_detail_chin_cleft = {
-        1 = { name = chin_cleft       range = { 0.0 0.0 } }
-    }
+	face_detail_chin_cleft = {
+			1 = { name = chin_cleft       range = { 0.0 0.0 } }
+	}
 
-    gene_jaw_angle = {
-        1 = { name = jaw_angle_neg      range = { 0.3 0.3} }
-    }
+	gene_jaw_angle = {
+			1 = { name = jaw_angle_neg      range = { 0.3 0.3} }
+	}
 
     
-    ### HEAD_MISC
+	### HEAD_MISC
 
-    face_detail_cheek_def = {
-        1 = { name = cheek_def_02    range = { 0.9 1.0 } }
-    }
+	face_detail_cheek_def = {
+			1 = { name = cheek_def_02    range = { 0.9 1.0 } }
+	}
 
-    face_detail_cheek_fat = {
-        1 = { name = cheek_fat_01_neg    range = { 0.3 0.5 } }
-    }
+	face_detail_cheek_fat = {
+			1 = { name = cheek_fat_01_neg    range = { 0.3 0.5 } }
+	}
 
-    face_detail_temple_def = {
-        1 = { name = temple_def     range = { 0.5 0.8 } }
-    }
+	face_detail_temple_def = {
+			1 = { name = temple_def     range = { 0.5 0.8 } }
+	}
 
 	gene_mouth_upper_lip_size = {
 		1 = { name = mouth_upper_lip_size_neg		range = { 0.0 1.0 } } 
@@ -242,9 +243,9 @@ elvish = {
 		1 = { name = neck_length_pos		range = { 1.0 1.0 }	}
 	}
 
-    gene_neck_width = {
-        1 = { name = neck_width_neg         range = { 0.1 0.3 } }
-    }
+	gene_neck_width = {
+			1 = { name = neck_width_neg         range = { 0.1 0.3 } }
+	}
 
 
 	### BODY
@@ -265,20 +266,20 @@ elvish = {
 		1 = { name = bust_clothes    range = { 0.3 0.5 } }
 	}
 
-    gene_height = {
-        1 = { name = full_height      range = { 0.45 0.75 } }
-    }
+	gene_height = {
+			1 = { name = full_height      range = { 0.45 0.75 } }
+	}
 
-    gene_body_hair = {
-        1 = { name = body_hair_sparse_low_stubble     range = { 0.0 0.0 } }
-    }
+	gene_body_hair = {
+			1 = { name = body_hair_sparse_low_stubble     range = { 0.0 0.0 } }
+	}
 
 	gene_age = {
 		1 = { name = old_elvish     range = { 0.0 1.0 } }
 	}
 
-    clothes = {
-        50 = { name = byzantine_high_nobility_clothes      range = { 0.0 1.0 } }
-        50 = { name = byzantine_low_nobility_clothes      range = { 0.0 1.0 } }
-    }
+	clothes = {
+			50 = { name = byzantine_high_nobility_clothes      range = { 0.0 1.0 } }
+			50 = { name = byzantine_low_nobility_clothes      range = { 0.0 1.0 } }
+	}
 }

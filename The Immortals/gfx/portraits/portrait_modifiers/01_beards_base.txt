@@ -45,7 +45,7 @@ beards = {
 
             modifier = { # Elves will never have beards.
                 add = 1000
-                religion = elvish.faith
+                religion = religion:elvish_religion
             }
 
             portrait_clean_shaven_clothing_modifier = yes
