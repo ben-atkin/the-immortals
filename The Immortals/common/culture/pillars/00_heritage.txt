@@ -1,0 +1,17 @@
+﻿## Elvish
+heritage_elvish = {
+	type = heritage
+	
+	parameters = {
+		species_elvish = yes
+	}
+}
+
+## Orcish
+heritage_orcish = {
+	type = heritage
+	
+	parameters = {
+		species_orcish = yes
+	}
+}

@@ -6,7 +6,6 @@ TI_race.0002 = {
 	hidden = yes
 
 	immediate = {
-		debug_log = "Race Inheritence 0002 Event: TRUE"
 
 		every_living_character = {
 			trigger_event = { id = TI_race.0003 }
@@ -21,7 +20,7 @@ TI_race.0003 = {
 
 	immediate = {
 		hidden_effect = {
-			race_inheritance_traits = yes
+			race_heritage_effect = yes
 		}
 	}
 }

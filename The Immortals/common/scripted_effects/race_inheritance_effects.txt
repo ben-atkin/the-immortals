@@ -1,20 +1,201 @@
-race_inheritance_traits = {
-  if = {
+race_heritage_effect = { # set heritage flags
+	if = {
 		limit = { 
-				has_culture = culture:full_elvish
+			culture = { has_cultural_pillar = heritage_elvish }
+		}
+		add_character_flag = elvish_heritage_flag
+	}
+
+	else_if = { 
+		limit = { 
+			culture = { has_cultural_pillar = heritage_orcish }
+		}
+		add_character_flag = orcish_heritage_flag
+	}		
+	race_inheritance_effect = yes
+}
+
+
+race_inheritance_effect = { #set race flags - this still needs alot of adjusting. I've found it works quite well for the first few hundred years, then quickly spirils into chaotic logic.
+
+	if = { # if parents exist:
+		limit = {
+			OR = {
+				has_mother = yes # these two lines of code stumpted me for about 5 hours.
+				has_father = yes #
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = half_elvish_race_flag }
+					scope:real_father = { has_character_flag = half_elvish_race_flag }
+				}
+			}
+			add_character_flag = half_elvish_race_flag
+		} else_if = {
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = wood_elvish_race_flag }
+					scope:real_father = { has_character_flag = wood_elvish_race_flag }
+				}
+			}
+			add_character_flag = wood_elvish_race_flag
+		} else_if = {
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = dark_elvish_race_flag }
+					scope:real_father = { has_character_flag = dark_elvish_race_flag }
+				}
+			}
+			add_character_flag = dark_elvish_race_flag
+		} else_if = {
+			limit = {
+				OR = {
+					scope:mother = { has_character_flag = full_elvish_race_flag }
+					scope:real_father = { has_character_flag = full_elvish_race_flag }
+				}
+			}
+			add_character_flag = full_elvish_race_flag
+		}
+		
+		else_if = { ##orcish
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = full_orcish_race_flag }
+					scope:real_father = { has_character_flag = full_orcish_race_flag }
+				}
+			}
+			add_character_flag = full_orcish_race_flag
+		} else_if = {
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = merino_orcish_race_flag }
+					scope:real_father = { has_character_flag = merino_orcish_race_flag }
+				}
+			}
+			add_character_flag = moreno_orcish_race_flag
+		} else_if = {
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = half_orcish_race_flag }
+					scope:real_father = { has_character_flag = half_orcish_race_flag }
+				}
+			}
+			add_character_flag = half_orcish_race_flag
+		}
+	} else = { # if orphan:
+
+			if = {
+				limit = { 
+					has_culture = culture:full_elvish
+				}
+				add_character_flag = full_elvish_race_flag
+				
+			} else_if = {
+				limit = { 
+					has_culture = culture:half_elvish
+				}
+				add_character_flag = half_elvish_race_flag
+				
+			} else_if = {
+				limit = { 
+					has_culture = culture:wood_elvish
+				}
+				add_character_flag = wood_elvish_race_flag
+				
+			} else_if = {
+				limit = { 
+					has_culture = culture:dark_elvish
+				}
+				add_character_flag = dark_elvish_race_flag
+				
+			} 
+			else_if = { ##orcish
+				limit = { 
+					has_culture = culture:full_orcish
+				}
+				add_character_flag = full_orcish_race_flag
+				
+			} else_if = {
+				limit = { 
+					has_culture = culture:moreno_orcish
+				}
+				add_character_flag = moreno_orcish_race_flag
+				
+			} else_if = {
+				limit = { 
+					has_culture = culture:half_orcish
+				}
+				add_character_flag = half_orcish_race_flag
+				
+			}
+	}
+	race_trait_effects = yes
+}
+
+race_trait_effects = { #adding all the traits per character flags and heritage.
+
+
+	if = {
+		limit = {
+			AND = {
+				has_character_flag = full_elvish_race_flag
+				has_character_flag = elvish_heritage_flag
+			}
 		}
 		add_trait = race_trait_full_elvish
-	} 
-	else_if = {
-		limit = { 
-			has_culture = culture:half_elvish 
+		
+	} else_if = {
+		limit = {
+			AND = {
+				has_character_flag = half_elvish_race_flag
+				has_character_flag = elvish_heritage_flag
+			}
 		}
 		add_trait = race_trait_half_elvish
-	}
-	else_if = {
-		limit = { 
-			has_culture = culture:wood_elvish
+		
+	} else_if = {
+		limit = {
+			AND = {
+				has_character_flag = wood_elvish_race_flag
+				has_character_flag = elvish_heritage_flag
+			}
 		}
 		add_trait = race_trait_wood_elvish
+		
+	} else_if = {
+		limit = {
+			AND = {
+				has_character_flag = dark_elvish_race_flag
+				has_character_flag = elvish_heritage_flag
+			}
+		}
+		add_trait = race_trait_dark_elvish
+		
+	} else_if = { # this may straight up not work. Testing required.
+		limit = {
+			AND = {
+				OR = {
+					has_character_flag = full_orcish_race_flag
+					has_character_flag = moreno_orcish_race_flag
+				}
+				has_character_flag = orcish_heritage_flag
+			}
+		}
+		add_trait = race_trait_full_orcish
+		
+	} else_if = {
+		limit = {
+			AND = {
+				has_character_flag = half_orcish_race_flag
+				has_character_flag = orcish_heritage_flag
+			}
+		}
+		add_trait = race_trait_half_orcish
 	}
 }
+
+
+		
+		

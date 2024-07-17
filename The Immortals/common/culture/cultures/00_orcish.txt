@@ -1,10 +1,10 @@
-full_elvish = {
-	color = { 0 150 0 }
+full_orcish = {
+  color = { 0 150 0 }
 
 	created = 100.1.1
 	
 	ethos = ethos_spiritual
-	heritage = heritage_elvish
+	heritage = heritage_orcish
 	language = language_italian
 	martial_custom = martial_custom_male_only
 	traditions = {
@@ -13,7 +13,7 @@ full_elvish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_elvish
+	name_list = name_list_turkish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -21,17 +21,17 @@ full_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = elvish
+		10 = caucasian
 	}
 }
 
-half_elvish = {
-	color = { 0 150 0 }
+moreno_orcish = {
+  color = { 0 150 0 }
 
 	created = 100.1.1
 	
 	ethos = ethos_spiritual
-	heritage = heritage_elvish
+	heritage = heritage_orcish
 	language = language_italian
 	martial_custom = martial_custom_male_only
 	traditions = {
@@ -40,7 +40,7 @@ half_elvish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_elvish
+	name_list = name_list_turkish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -48,17 +48,17 @@ half_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = elvish
+		10 = caucasian
 	}
 }
 
-wood_elvish = {
-	color = { 0 150 0 }
+half_orcish = {
+  color = { 0 150 0 }
 
 	created = 100.1.1
 	
 	ethos = ethos_spiritual
-	heritage = heritage_elvish
+	heritage = heritage_orcish
 	language = language_italian
 	martial_custom = martial_custom_male_only
 	traditions = {
@@ -67,7 +67,7 @@ wood_elvish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_elvish
+	name_list = name_list_turkish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -75,33 +75,6 @@ wood_elvish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = elvish
-	}
-}
-
-dark_elvish = {
-	color = { 0 150 150 }
-
-	created = 100.1.1
-	
-	ethos = ethos_spiritual
-	heritage = heritage_elvish
-	language = language_italian
-	martial_custom = martial_custom_male_only
-	traditions = {
-		tradition_formation_fighting
-		tradition_republican_legacy
-		tradition_poetry
-	}
-	
-	name_list = name_list_elvish
-	
-	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
-	building_gfx = { mediterranean_building_gfx }
-	clothing_gfx = { western_clothing_gfx }
-	unit_gfx = { western_unit_gfx }
-	
-	ethnicities = {
-		10 = elvish
+		10 = caucasian
 	}
 }

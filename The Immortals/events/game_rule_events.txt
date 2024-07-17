@@ -169,8 +169,11 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 			 	game_rule_create_spouse_and_children = { CHARACTER = scope:childless_heir }
 			}
 		}
-		trigger_event = TI_race.0002 # Directs starting characters to race inheritance.
+
+		trigger_event = TI_race.0002
+
 	}
+
 }
 
 ########################
