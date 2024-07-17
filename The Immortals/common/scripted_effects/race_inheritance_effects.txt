@@ -12,24 +12,46 @@ race_heritage_effect = { # set heritage flags
 		}
 		add_character_flag = orcish_heritage_flag
 	}		
-	race_inheritance_effect = yes
+	race_flag_effect = yes
 }
 
 
-race_inheritance_effect = { #set race flags - this still needs alot of adjusting. I've found it works quite well for the first few hundred years, then quickly spirils into chaotic logic.
+# Checks if target character has a legitimate father
+has_married_parents = { if = { limit = { scope:real_father = scope:father } } }
 
-	if = { # if parents exist:
+# Checks if target character does not have a legitimate father
+is_bastard = { if = { limit = { NOT = { scope:real_father = scope:father } } } }
+
+race_flag_effect = { 
+	if = { # if parents exist and are married:
 		limit = {
-			OR = {
+			AND = {
 				has_mother = yes # these two lines of code stumpted me for about 5 hours.
 				has_father = yes #
+				has_married_parents = yes
 			}
 		}
+		race_inheritance_effect = yes
+		} else_if = {
+			limit = {
+				AND = {
+					has_mother = yes
+					has_father = yes 
+					is_bastard = yes
+				}
+			}
+			race_inheritance_effect = yes
+		} else = {
+		race_no_parents_effect = yes 
+	}
+}
+
+race_inheritance_effect = { #set race flags - this still needs alot of adjusting. I've found it works quite well for the first few hundred years, then quickly spirils into chaotic logic.
 		if = {
 			limit = { 
 				OR = {
 					scope:mother = { has_character_flag = half_elvish_race_flag }
-					scope:real_father = { has_character_flag = half_elvish_race_flag }
+					scope:real_father = { has_character_flag = half_elvish_race_flag } # removed real_father
 				}
 			}
 			add_character_flag = half_elvish_race_flag
@@ -83,56 +105,66 @@ race_inheritance_effect = { #set race flags - this still needs alot of adjusting
 				}
 			}
 			add_character_flag = half_orcish_race_flag
-		}
-	} else = { # if orphan:
-
-			if = {
-				limit = { 
-					has_culture = culture:full_elvish
-				}
-				add_character_flag = full_elvish_race_flag
-				
-			} else_if = {
-				limit = { 
-					has_culture = culture:half_elvish
-				}
-				add_character_flag = half_elvish_race_flag
-				
-			} else_if = {
-				limit = { 
-					has_culture = culture:wood_elvish
-				}
-				add_character_flag = wood_elvish_race_flag
-				
-			} else_if = {
-				limit = { 
-					has_culture = culture:dark_elvish
-				}
-				add_character_flag = dark_elvish_race_flag
-				
-			} 
-			else_if = { ##orcish
-				limit = { 
-					has_culture = culture:full_orcish
-				}
-				add_character_flag = full_orcish_race_flag
-				
-			} else_if = {
-				limit = { 
-					has_culture = culture:moreno_orcish
-				}
-				add_character_flag = moreno_orcish_race_flag
-				
-			} else_if = {
-				limit = { 
-					has_culture = culture:half_orcish
-				}
-				add_character_flag = half_orcish_race_flag
-				
-			}
-	}
+		}	
 	race_trait_effects = yes
+} 
+
+
+
+race_no_parents_effect = {
+	if = {
+		limit = { 
+			has_culture = culture:full_elvish
+		}
+		add_character_flag = full_elvish_race_flag	
+		add_trait = race_trait_full_elvish
+
+	} else_if = {
+		limit = { 
+			has_culture = culture:half_elvish
+		}
+		add_character_flag = half_elvish_race_flag
+		add_trait = race_trait_half_elvish
+
+	} else_if = {
+		limit = { 
+			has_culture = culture:wood_elvish
+		}
+		add_character_flag = wood_elvish_race_flag
+		add_trait = race_trait_wood_elvish
+		
+	} else_if = {
+		limit = { 
+			has_culture = culture:dark_elvish
+		}
+		add_character_flag = dark_elvish_race_flag
+		add_trait = race_trait_dark_elvish
+		
+	} 
+	else_if = { ##orcish
+		limit = { 
+			has_culture = culture:full_orcish
+		}
+		add_character_flag = full_orcish_race_flag
+		add_trait = race_trait_full_orcish
+		
+	} else_if = {
+		limit = { 
+			has_culture = culture:moreno_orcish
+		}
+		add_character_flag = moreno_orcish_race_flag
+		add_trait = race_trait_full_orcish
+		
+	} else_if = {
+		limit = { 
+			has_culture = culture:half_orcish
+		}
+		add_character_flag = half_orcish_race_flag
+		add_trait = race_trait_half_orcish
+	}
+	add_character_flag = char_setup_complete
 }
+
 
 race_trait_effects = { #adding all the traits per character flags and heritage.
 
@@ -194,6 +226,7 @@ race_trait_effects = { #adding all the traits per character flags and heritage.
 		}
 		add_trait = race_trait_half_orcish
 	}
+	add_character_flag = char_setup_complete
 }
 
 
