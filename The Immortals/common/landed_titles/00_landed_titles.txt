@@ -3,19 +3,19 @@
 @always_primary_score = 1000
 
 e_Onakaam_Empire = {
-    color = { 0 0 0 }
+    color = { 255 87 51 }
     capital = c_county_tier3
 
     k_Elvish_Kingdom = {
-        color = { 30 130 30 }
+        color = { 240 240 10 }
         capital = c_county_tier3
  
         d_Elvish_Duchy_North = {
-            color = { 30 50 30 }
+            color = { 240 240 10 }
             capital = c_county_tier3
              
             c_county_tier1 = {
-                color = { 0 50 0 }
+                color = { 180 190 20 }
                  
                 b_test1 = {
                     province = 3
@@ -34,7 +34,7 @@ e_Onakaam_Empire = {
                 }            
             }
             c_county_tier2 = {
-                color = { 0 55 0 }
+                color = { 200 210 40 }
  
                 b_test6 = {
                     province = 9
@@ -53,7 +53,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier3 = {
-                color = { 0 60 0 }
+                color = { 240 240 10 }
 
                 b_test11 = {
                     province = 17
@@ -72,7 +72,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier4 = {
-                 color = { 0 60 0 }
+                 color = { 210 210 40 }
 
                 b_test16 = {
                     province = 19
@@ -91,7 +91,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier5 = {
-                color = { 0 60 0 }
+                color = { 180 170 10 }
 
                 b_test21 = {
                     province = 24
@@ -108,11 +108,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Elvish_Duchy_South = {
-            color = { 30 180 30 }
+            color = { 230 220 90 }
             capital = c_county_tier11
             
             c_county_tier11 = {
-                color = { 0 80 0 }
+                color = { 230 220 90 }
 
                 b_test34 = {
                     province = 46
@@ -128,7 +128,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier9 = {
-                color = { 0 80 0 }
+                color = { 200 190 20 }
 
                 b_test38 = {
                     province = 31
@@ -144,7 +144,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier10 = {
-                color = { 0 80 0 }
+                color = { 220 220 50 }
 
                 b_test42 = {
                     province = 49
@@ -159,8 +159,8 @@ e_Onakaam_Empire = {
                     province = 41
                 }
             }
-            c_county_tier11 = {
-                color = { 0 80 0 }
+            c_county_tier25 = {
+                color = { 190 210 80 }
 
                 b_test46 = {
                     province = 38
@@ -177,11 +177,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Elvish_Duchy_East = {
-            color = { 30 180 30 }
+            color = { 30 190 240 }
             capital = c_county_tier6
              
                 c_county_tier6 = {
-                color = { 0 70 0 }
+                color = { 30 190 240 }
 
                 b_test25 = {
                     province = 27
@@ -200,7 +200,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier7 = {
-                color = { 0 75 0 }
+                color = { 30 150 240 }
 
                 b_test30 = {
                     province = 35
@@ -218,15 +218,15 @@ e_Onakaam_Empire = {
         }
     }
     k_Orcish_Kingdom = {
-        color = { 30 130 30 }
+        color = { 0 90 0 }
         capital = c_county_tier12
 
         d_Orcish_Duchy_South = {
-            color = { 30 50 30 }
+            color = { 0 90 0 }
             capital = c_county_tier12
              
             c_county_tier12 = {
-                color = { 0 50 0 }
+                color = { 0 90 0 }
                  
                 b_test50 = {
                     province = 82
@@ -251,7 +251,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier13 = {
-                color = { 0 50 0 }
+                color = { 40 110 10 }
                  
                 b_test57 = {
                     province = 104
@@ -267,7 +267,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier14 = {
-                color = { 0 50 0 }
+                color = { 20 90 20 }
                  
                 b_test61 = {
                     province = 110
@@ -299,7 +299,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier16 = {
-                color = { 0 50 0 }
+                color = { 60 140 30 }
                  
                 b_test69 = {
                     province = 94
@@ -315,7 +315,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier17 = {
-                color = { 0 50 0 }
+                color = { 20 40 20 }
                  
                 b_test73 = {
                     province = 93
@@ -336,11 +336,11 @@ e_Onakaam_Empire = {
         }
 
         d_Orcish_Duchy_West = {
-            color = { 30 50 30 }
+            color = { 43 54 43 }
             capital = c_county_tier18
              
             c_county_tier18 = {
-                color = { 0 50 0 }
+                color = { 43 54 43 }
                  
                 b_test78 = {
                     province = 64
@@ -359,7 +359,7 @@ e_Onakaam_Empire = {
                 }            
             }
             c_county_tier19 = {
-                color = { 0 50 0 }
+                color = { 118 122 118 }
                  
                 b_test83 = {
                     province = 63
@@ -378,7 +378,7 @@ e_Onakaam_Empire = {
                 }              
             }
             c_county_tier20 = {
-                color = { 0 50 0 }
+                color = { 78 82 78 }
                  
                 b_test88 = {
                     province = 71
@@ -397,7 +397,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier21 = {
-                color = { 0 50 0 }
+                color = { 70 90 70 }
                  
                 b_test93 = {
                     province = 88
@@ -417,11 +417,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Orcish_Duchy_East = {
-            color = { 30 50 30 }
+            color = { 60 90 50 }
             capital = c_county_tier22
              
             c_county_tier22 = {
-                color = { 0 50 0 }
+                color = { 60 90 50 }
                  
                 b_test98 = {
                     province = 56
@@ -437,7 +437,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier23 = {
-                color = { 0 50 0 }
+                color = { 50 80 40 }
                  
                 b_test102 = {
                     province = 78
@@ -453,7 +453,7 @@ e_Onakaam_Empire = {
                 }             
             }
             c_county_tier24 = {
-                color = { 0 50 0 }
+                color = { 70 120 60 }
                  
                 b_test106 = {
                     province = 52
