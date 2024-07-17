@@ -3,7 +3,7 @@
 
 	doctrine = pagan_hostility_doctrine
 
-	pagan_roots = yes
+	pagan_roots = yes #change this later
 
 	#Main Group
 	doctrine = doctrine_no_head

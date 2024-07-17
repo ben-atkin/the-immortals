@@ -11485,8 +11485,8 @@ morph_genes = {
 						mode = multiply
 						curve = {
 							{ 0.0 0.0 }
-							{ 0.38 0.0 }
-							{ 0.7 0.8 }
+							{ 0.1 0.0 }
+							{ 0.1 0.1 } # maybe change this
 						}
 					}
 					priority = 0

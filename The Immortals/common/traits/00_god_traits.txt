@@ -1,0 +1,14 @@
+#### GODS
+
+god_trait_01 = {
+  category = health
+
+  immortal = yes
+
+  martial = 50
+  diplomacy = 50
+  stewardship = 50
+  intrigue = 50
+  learning = 50
+  
+}

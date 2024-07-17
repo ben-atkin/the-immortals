@@ -1,5 +1,4 @@
-﻿### EK EDIT: Removed references to vanilla faiths and religions
-### EK TODO: Adapt the features to our own faiths
+﻿### EDIT:
 
 ###TRIGGER LIST
 
@@ -228,7 +227,7 @@ is_wrong_gender_in_faith_trigger = {
 	}
 }
 
-### EK EDIT: No Islam in TES
+### EDIT:: No Islam in TI
 faith_is_aniconic_trigger = {
 	faith = {
 		OR = {	
@@ -1348,8 +1347,8 @@ can_take_religious_vows_disregard_marriage_trigger = {
 	NOT = { has_character_flag = holy_order_member_requested_return_home }
 }
 
-### EK EDIT: These are real world regions soooooo...
-### EK TODO: Idk find a way to reuse it ig. For now it's disabled
+### EDIT: These are real world regions.
+
 does_religion_exist_in_world_region_trigger = { # The most efficient way I could think of to esentially do diplomatic range triggers on religions
 	# trigger_if = {
 		# limit = { location = { geographical_region = world_europe } } # Even though europe has many sub regions, it's overall size is small so no need to sub-divide!
@@ -1512,7 +1511,7 @@ has_tolerant_faith_or_culture_trigger = {
 
 
 
-### EK EDIT: No Jewish faith in EK
+### EDIT: No Jewish faith in TI
 is_mainstream_jewish_faith = {
 	# religion = religion:judaism_religion
 	# NOT = {
@@ -1552,7 +1551,7 @@ is_unprotected_hostile_faith = { # Checks if the faith is at least hostile but n
 }
 
 ### SYNCRETIC TRIGGERS ###
-### EK EDIT: no vanilla faiths in EK2.
+### EDIT: no vanilla faiths in TI.
 #islam_or_syncretic_with_islam_trigger = {
 #	$CHARACTER$ = {
 #		faith = {

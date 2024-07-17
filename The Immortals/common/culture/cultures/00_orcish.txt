@@ -21,7 +21,7 @@ full_orcish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = caucasian
+		10 = orcish
 	}
 }
 
@@ -75,6 +75,6 @@ half_orcish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = caucasian
+		10 = orcish
 	}
 }

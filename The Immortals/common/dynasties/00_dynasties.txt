@@ -5,5 +5,5 @@
 
 5001001 = {
 	name = "dynn_Sharp"
-	culture = "half_elvish"
+	culture = "wood_elvish"
 }

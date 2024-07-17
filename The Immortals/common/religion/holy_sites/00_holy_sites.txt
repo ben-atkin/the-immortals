@@ -1,6 +1,11 @@
-﻿## Add this later
+﻿#### TEMPORARY
 
-elvish_captial = {
+elvish_captial = { 
   county = c_county_tier4
   barony = b_test10
+}
+
+orcish_captial = {
+  county = c_county_tier9
+  barony = b_test34
 }
