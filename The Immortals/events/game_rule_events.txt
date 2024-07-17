@@ -1,4 +1,4 @@
-﻿### EK EDIT: Disabled vanilla specific content
+﻿### EDIT: Disabled vanilla specific content
 
 namespace = game_rule
 
@@ -132,7 +132,7 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 			government_has_flag = government_is_republic
 			government_has_flag = government_is_theocracy
 			#government_has_flag = government_is_landed_order - causing error
-			### EK EDIT: Matilda Canossa does not exist
+			### EDIT: Matilda Canossa does not exist
 			# AND = {
 			# exists = character:7757
 			# this = character:7757 #Matilda Canossa, her bookmark start is about overcoming the issue of no heir
@@ -328,7 +328,7 @@ game_rule.4 = { # Empire Obscurity Game Rule
 # HUNGARIAN MIGRATION #
 #######################
 
-### EK EDIT: The Hungarians do not exist, also see game_rule being disabled
+### DIT: The Hungarians do not exis
 # game_rule.1011 = {
 	# scope = none
 	# hidden = yes

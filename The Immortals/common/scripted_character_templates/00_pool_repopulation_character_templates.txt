@@ -1,4 +1,4 @@
-﻿### EK EDIT: Removed references to vanilla religions & cultures
+﻿### EDIT: Removed references to vanilla religions & cultures
 
 #################################### THE DUKE AND THE BODENSEE ######################################
 #																									#
@@ -731,8 +731,8 @@ pool_repopulate_spouse = {
 	}
 }
 
-### EK EDIT: Removed references to vanilla cultures & religion
-### EK TODO: Add our own cultural flavor
+### EDIT: Removed references to vanilla cultures & religion
+
 pool_repopulate_local_flavor = {
 	age = { 25 45 }
 	gender_female_chance = root_faith_dominant_gender_adjusted_female_chance #because council gender is doctrine dependent
@@ -777,7 +777,7 @@ pool_repopulate_local_flavor = {
 	dynasty = none
 	
 	after_creation = {
-		### EK EDIT: Plugged in our own special effects
+		### EDIT: Plugged in our own special effects
 		race_heritage_effect = yes
 		set_interesting_traits_and_modifiers_effect = yes
 		add_random_tiered_trait_xp_effect = {
