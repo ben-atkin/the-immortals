@@ -14,7 +14,7 @@ TI_race.0002 = {
 }
 
 
-# Directs newborns to race inheritance.
+# Directs (mainly newborns) to race inheritance.
 TI_race.0003 = {
 	hidden = yes
 

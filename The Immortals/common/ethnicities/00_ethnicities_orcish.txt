@@ -42,18 +42,6 @@ orcish = {
 	
 	### COLORS
 
-  skin_color_hue = { 
-    1 = { name = skin_color_hue_green      range = { 0.2 0.5 } } 
-  }
-
-  skin_color_saturation={ 
-    1 = { name =  skin_color_saturation     range = { 0.4 0.7 } } 
-  }
-
-  hair_color_hue={ 
-    1 = { name =  vanilla_hair_hue     range = { 0.3 0.6 } } 
-  }
-
   hair_color={ 
     1 = { 0.1 0.9 0.1 0.9 } 
   }
@@ -66,37 +54,20 @@ orcish = {
     1 = { 0.2 1.0 0.2 1.0 } 
   }
 
-  gene_chin_forward={ 
-    1 = { name = chin_forward_neg     range = { 0.1 0.4  } } 
+  skin_color_hue = { 
+    1 = { name = skin_color_hue_green      range = { 0.2 0.5 } } 
   }
 
-  gene_chin_height={ 
-    1 = { name = chin_height_pos     range = { 1.0 1.0 } } 
+  skin_color_saturation={ 
+    1 = { name =  skin_color_saturation     range = { 0.4 0.7 } } 
   }
 
-  gene_chin_width={ 
-    1 = { name = chin_width_pos     range = { 1.0 1.0 } } 
+  hair_color_hue={ 
+    1 = { name =  vanilla_hair_hue     range = { 0.3 0.6 } } 
   }
 
-  gene_eye_angle={ 
-    1 = { name = eye_angle_neg     range = { 0.2 0.5 } } 
-  }
-
-  gene_eye_depth={ 
-    1 = { name = eye_depth_pos     range = { 0.2 0.5 } } 
-  }
-
-  gene_eye_height={ 
-    1 = { name = eye_height_neg     range = { 0.2 0.5 } }
-  }
-
-  gene_eye_distance={ 
-    1 = { name = eye_distance_pos     range = { 0.1 0.4  } } 
-  }
-
-  gene_eye_shut={ 
-    1 = { name = eye_shut_pos     range = { 0.4 0.6 } } 
-  }
+  
+  ### HEAD
 
   gene_forehead_angle={ 
     1 = { name = forehead_angle_neg     range = { 0.4 0.6 } } 
@@ -136,6 +107,58 @@ orcish = {
 
   gene_head_top_width={ 
     1 = { name = head_top_width_pos     range = { 0.4 0.6 } } 
+  }
+  
+  ### EYES
+
+  gene_eye_angle={ 
+    1 = { name = eye_angle_neg     range = { 0.2 0.5 } } 
+  }
+
+  gene_eye_depth={ 
+    1 = { name = eye_depth_pos     range = { 0.2 0.5 } } 
+  }
+
+  gene_eye_height={ 
+    1 = { name = eye_height_neg     range = { 0.2 0.5 } }
+  }
+
+  gene_eye_distance={ 
+    1 = { name = eye_distance_pos     range = { 0.1 0.4  } } 
+  }
+
+  gene_eye_shut={ 
+    1 = { name = eye_shut_pos     range = { 0.4 0.6 } } 
+  }
+
+  gene_bs_eye_corner_depth={ 
+    1 = { name = eye_corner_depth_neg     range = { 1.0 1.0 } }
+  }
+
+  gene_bs_eye_fold_shape={ 
+    1 = { name = eye_fold_shape_neg      range = { 0.1 0.4  } } 
+  }
+
+  gene_bs_eye_size={ 
+    1 = { name = eye_size_pos     range = { 0.0 0.0 } } 
+  }
+
+  gene_bs_eye_upper_lid_size={ 
+    1 = { name = eye_upper_lid_size_pos     range = { 0.4 0.6 } } 
+  }
+
+  ### CHIN/JAWS
+  
+  gene_chin_forward={ 
+    1 = { name = chin_forward_neg     range = { 0.1 0.4  } } 
+  }
+
+  gene_chin_height={ 
+    1 = { name = chin_height_pos     range = { 1.0 1.0 } } 
+  }
+
+  gene_chin_width={ 
+    1 = { name = chin_width_pos     range = { 1.0 1.0 } } 
   }
 
   gene_jaw_angle={ 
@@ -226,21 +249,7 @@ orcish = {
     1 = { name = ear_size_pos     range = { 1.0 1.0 } } 
   }
 
-  gene_bs_eye_corner_depth={ 
-    1 = { name = eye_corner_depth_neg     range = { 1.0 1.0 } }
-  }
-
-  gene_bs_eye_fold_shape={ 
-    1 = { name = eye_fold_shape_neg      range = { 0.1 0.4  } } 
-  }
-
-  gene_bs_eye_size={ 
-    1 = { name = eye_size_pos     range = { 0.0 0.0 } } 
-  }
-
-  gene_bs_eye_upper_lid_size={ 
-    1 = { name = eye_upper_lid_size_pos     range = { 0.4 0.6 } } 
-  }
+  
 
   gene_bs_forehead_brow_curve={ 
     1 = { name = forehead_brow_curve_neg     range = { 1.0 1.0 } } 
