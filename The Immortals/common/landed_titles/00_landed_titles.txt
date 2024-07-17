@@ -159,7 +159,7 @@ e_Onakaam_Empire = {
                     province = 41
                 }
             }
-            c_county_tier11 = {
+            c_county_tier25 = {
                 color = { 0 80 0 }
 
                 b_test46 = {
