@@ -507,11 +507,11 @@ orcish = {
   }
 
   skin_color_hue = { 
-    1 = { name = skin_color_hue_green      range = { 0.2 0.4 } } 
+    1 = { name = skin_color_moreno_orcish     range = { 0.0 1.0 } } 
   }
 
   skin_color_saturation={ 
-    1 = { name =  skin_color_saturation     range = { 0.2 0.4 } } 
+    1 = { name =  skin_color_saturation     range = { 1.0 1.0 } } 
   }
 
   hair_color_hue={ 
