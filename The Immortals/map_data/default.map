@@ -16,8 +16,9 @@ seasons = "seasons.txt"
 # SEA ZONES
 #############
 
-#North European Seas
+#Onakaam Seas
 sea_zones = LIST { 1 }
+sea_zones = RANGE { 112 121 }
 
 ###############
 # MAJOR RIVERS
