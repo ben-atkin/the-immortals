@@ -1,7 +1,7 @@
 race_heritage_effect = { # set heritage flags
 	if = {
 		limit = { 
-			culture = { has_cultural_pillar = heritage_elvish }
+			culture = { has_cultural_pillar = heritage_elvish } # we may want to use has_cultural_parameter
 		}
 		add_character_flag = elvish_heritage_flag
 	}
@@ -11,16 +11,29 @@ race_heritage_effect = { # set heritage flags
 			culture = { has_cultural_pillar = heritage_orcish }
 		}
 		add_character_flag = orcish_heritage_flag
-	}		
+	}	else = {
+		debug_log = "No heritage flag: THIS AINT GOOD"
+	}
 	race_flag_effect = yes
 }
 
 
+
 # Checks if target character has a legitimate father
-has_married_parents = { if = { limit = { scope:real_father = scope:father } } }
+has_married_parents = {
+	debug_log = "MARRIED"
+	if = { limit = { scope:real_father = scope:father } } 
+}
 
 # Checks if target character does not have a legitimate father
-is_bastard = { if = { limit = { NOT = { scope:real_father = scope:father } } } }
+is_bastard = {
+	 debug_log = "IS_BASTARD"
+	 
+	 if = { limit = { NOT = { scope:real_father = scope:father } } } 
+}
+
+
+
 
 race_flag_effect = { 
 	if = { # if parents exist and are married:
@@ -28,7 +41,7 @@ race_flag_effect = {
 			AND = {
 				has_mother = yes # these two lines of code stumpted me for about 5 hours.
 				has_father = yes #
-				has_married_parents = yes
+				#scope:character = {has_married_parents = yes} - doesnt work :(
 			}
 		}
 		race_inheritance_effect = yes
@@ -37,7 +50,7 @@ race_flag_effect = {
 				AND = {
 					has_mother = yes
 					has_father = yes 
-					is_bastard = yes
+					#is_bastard = yes - doesnt work :(
 				}
 			}
 			race_inheritance_effect = yes
@@ -50,8 +63,8 @@ race_inheritance_effect = { #set race flags - this still needs alot of adjusting
 		if = {
 			limit = { 
 				OR = {
-					scope:mother = { has_character_flag = half_elvish_race_flag }
-					scope:real_father = { has_character_flag = half_elvish_race_flag } # removed real_father
+					scope:mother = { has_character_flag = half_elvish_race_flag } 
+					scope:real_father = { has_character_flag = half_elvish_race_flag }
 				}
 			}
 			add_character_flag = half_elvish_race_flag
@@ -228,6 +241,7 @@ race_trait_effects = { #adding all the traits per character flags and heritage.
 	}
 	add_character_flag = char_setup_complete
 }
+
 
 
 		
