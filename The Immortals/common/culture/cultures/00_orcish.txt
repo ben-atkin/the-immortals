@@ -48,7 +48,7 @@ moreno_orcish = {
 	unit_gfx = { western_unit_gfx }
 	
 	ethnicities = {
-		10 = caucasian
+		10 = moreno_eth_orcish
 	}
 }
 

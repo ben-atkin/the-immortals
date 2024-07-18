@@ -170,7 +170,7 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 			}
 		}
 
-		trigger_event = TI_race.0002
+		trigger_event = TI_race.0002 # this is inefficient. fix later.
 
 	}
 
