@@ -32,8 +32,11 @@
 ce__empty_designer.dds = { colors = 0 category = abstract }
 
 # The Immortals Custom Emblems
-ce_vines.dds = { colors = 1 category = circles_spirals }
-ce_hollow_sun.dds = { colors = 1 category = circles_spirals }
+ce_vines.dds = { colors = 1 category = immortals }
+ce_hollow_sun.dds = { colors = 1 category = immortals }
+ce_hollow_sun_colours.dds = { colors = 2 category = immortals }
+ce_custom_shield.dds = { colors = 2 category = immortals }
+ce_star_eagle.dds = { colors = 3 category = immortals }
 
 # Vanilla Emblems
 ce_african_asetena.dds = { colors = 1 category = abstract }
