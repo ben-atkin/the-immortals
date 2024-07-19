@@ -1,26 +1,28 @@
 ﻿name_list_elvish = {
 
 	cadet_dynasty_names = {
-		"dynn_Capraia"
+		"dynn_Cadet-S"
+		"dynn_Cadet-A"
 
 	}
 
 	dynasty_names = {
-		"dynn_Allucingolli"
+		"dynn_Sharp"
+		"dynn_Atkin"
 
 	}
 
 	male_names = {
-		Eldarion Thranduil Legolas Elrohir Finrod Glorfindel Erestor Gildor Haldir
+		Eldarion Thranduil Legolus Elrohir Finrod Glorfindel Erestor Gildor Haldir
 		Celeborn Thalion Aegnor Belegorn Maedhros Fingon Oropher Amras Amrod Caranthir Curufin
 		Ecthelion Gil-galad Ingwe Olwe Thingol Turgon Voronwe Angrod Beren Cirdan Daeron Eol
 		Feanor Gwindor Hurin Idril Lorindol Mablung Nargothrond Nimrodel Orodreth Rumil Saeros
-		Tathar Turin Voronwe
+		Tathar Turin 
 	}
 
 	female_names = {
-		Arwen Galadriel Luthien Idril Elwing Nimrodel Celebrian Aredhel Earwen Finduilas Melian
-		 Nellas Miriel Ancalime Amarie Andreth Arien Eilinel Elanor Elenwe Earendil Este Feawen
+		Arwen Galadriel Luthien Idril Elwing Celebrian Aredhel Earwen Finduilas Melian
+		Nellas Miriel Ancalime Amarie Andreth Arien Eilinel Elanor Elenwe Earendil Este Feawen
 		Gilraen Hareth Idis Ithilwen Laerwen Lindir Lissiel Lothiriel Miriel Morwen Nienor Niniel
 		Nivrim Noldorin Norui Nwalme Olwen Rian Silmarien Tari Tathariel Thuringwethil Undomiel
 		Vana Varda Yavanna

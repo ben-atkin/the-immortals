@@ -3,7 +3,7 @@ full_elvish = {
 
 	created = 100.1.1
 	
-	ethos = ethos_spiritual
+	ethos = ethos_stoic
 	heritage = heritage_elvish
 	language = language_italian
 	martial_custom = martial_custom_male_only
@@ -30,7 +30,7 @@ half_elvish = {
 
 	created = 100.1.1
 	
-	ethos = ethos_spiritual
+	ethos = ethos_stoic
 	heritage = heritage_elvish
 	language = language_italian
 	martial_custom = martial_custom_male_only
@@ -57,7 +57,7 @@ wood_elvish = {
 
 	created = 100.1.1
 	
-	ethos = ethos_spiritual
+	ethos = ethos_stoic
 	heritage = heritage_elvish
 	language = language_italian
 	martial_custom = martial_custom_male_only
@@ -84,7 +84,7 @@ dark_elvish = {
 
 	created = 100.1.1
 	
-	ethos = ethos_spiritual
+	ethos = ethos_stoic
 	heritage = heritage_elvish
 	language = language_italian
 	martial_custom = martial_custom_male_only

@@ -13,7 +13,7 @@ full_orcish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_turkish
+	name_list = name_list_orcish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -40,7 +40,7 @@ moreno_orcish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_turkish
+	name_list = name_list_orcish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
@@ -67,7 +67,7 @@ half_orcish = {
 		tradition_poetry
 	}
 	
-	name_list = name_list_turkish
+	name_list = name_list_orcish
 	
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
