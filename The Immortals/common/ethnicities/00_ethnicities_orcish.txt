@@ -47,7 +47,7 @@ orcish = {
   }
 
   skin_color={ 
-    1 = { 0.7 0.9 0.7 0.9 } 
+    1 = { 0.8 0.8 0.8 0.8 } 
   }
 
   eye_color={ 
@@ -55,11 +55,11 @@ orcish = {
   }
 
   skin_color_hue = {
-    1 = { name = skin_color_hue_green      					range = { 0.4 0.55 } } 
+    1 = { name = skin_color_hue_green      					range = { 0.35 0.45 } } 
   }
 
   skin_color_saturation={ 
-    1 = { name =  skin_color_saturation     				range = { 0.5 0.65 } } 
+    1 = { name =  vanilla_skin_saturation     				range = { 0.7 0.7 } } 
   }
 
   hair_color_hue={ 
@@ -524,11 +524,11 @@ moreno_eth_orcish = {
   }
 
   skin_color_hue = { 
-    1 = { name = skin_color_moreno_orcish     			range = { 0.0 1.0 } } 
+    1 = { name = skin_color_moreno_orcish     			range = { 0.8 1.0 } } 
   }
 
   skin_color_saturation={ 
-    1 = { name =  skin_color_saturation     				range = { 1.0 1.0 } } 
+    1 = { name =  vanilla_skin_saturation     			range = { 0.7 0.7 } } 
   }
 
   hair_color_hue={ 

@@ -56,9 +56,13 @@ elvish = {
 		1 = { 0.06 0.0 0.068 0.0 }
 	}
 
-	#eye_color_saturation = { # doesnt exist
-	#	1 = { name = eye_color_saturation			range = { 0.0 0.7 } }
-	#}
+	skin_color_hue = {
+    1 = { name = vanilla_skin_hue      					range = { 0.0 1.0 } } 
+  }
+
+	skin_color_saturation = { 
+		1 = { name = vanilla_skin_saturation			range = { 0.5 0.5 } }
+	}
 
 	hairstyles = {
 		1 = { name = fp1_hairstyles_straight      		range = { 0.0 0.8 } }
