@@ -1,4 +1,4 @@
-﻿racial_features = {
+﻿racial_features = { # currently not being used.
 	
 	elvish_no_beard = {
 		dna_modifiers = {
