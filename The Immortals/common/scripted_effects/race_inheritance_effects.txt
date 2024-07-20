@@ -12,26 +12,28 @@ race_heritage_effect = { # set heritage flags
 		}
 		add_character_flag = orcish_heritage_flag
 	}	else = {
-		debug_log = "No heritage flag: THIS AINT GOOD"
+		debug_log = "TI DEBUG: No heritage flag: AINT GOOD"
 	}
 	race_flag_effect = yes
 }
 
 
 
-# Checks if target character has a legitimate father
-has_married_parents = {
-	debug_log = "MARRIED"
-	if = { limit = { scope:real_father = scope:father } } 
-}
+## Checks if target character has a legitimate father
+#has_married_parents = {
+#	debug_log = "MARRIED"
+#	if = { limit = { scope:real_father = scope:father } } 
+#}
 
 # Checks if target character does not have a legitimate father
-is_bastard = {
-	 debug_log = "IS_BASTARD"
-	 
-	 if = { limit = { NOT = { scope:real_father = scope:father } } } 
-}
+#is_bastard = {
+#	 debug_log = "IS_BASTARD"
+#	 
+#	 if = { limit = { NOT = { scope:real_father = scope:father } } } 
+#}
 
+
+#has_married_parents = {scope:real_father = scope:father}
 
 
 
@@ -41,7 +43,7 @@ race_flag_effect = {
 			AND = {
 				has_mother = yes # these two lines of code stumpted me for about 5 hours.
 				has_father = yes #
-				#scope:character = {has_married_parents = yes} - doesnt work :(
+				scope:real_father = scope:father
 			}
 		}
 		race_inheritance_effect = yes
@@ -50,7 +52,7 @@ race_flag_effect = {
 				AND = {
 					has_mother = yes
 					has_father = yes 
-					#is_bastard = yes - doesnt work :(
+					scope:is_bastard = yes
 				}
 			}
 			race_inheritance_effect = yes
@@ -175,6 +177,7 @@ race_no_parents_effect = {
 		add_character_flag = half_orcish_race_flag
 		add_trait = race_trait_half_orcish
 	}
+	debug_log = "TI DEBUG: Character had no parents, assigned race via culture and heritage"
 	add_character_flag = char_setup_complete
 }
 
@@ -240,6 +243,7 @@ race_trait_effects = { #adding all the traits per character flags and heritage.
 		add_trait = race_trait_half_orcish
 	}
 	add_character_flag = char_setup_complete
+	debug_log = "TI DEBUG: Race inheritance working as expected"
 }
 
 

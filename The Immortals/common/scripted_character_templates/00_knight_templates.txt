@@ -1,4 +1,4 @@
-﻿### EK EDIT: added our character setup effects
+﻿## TI EDITS
 
 knight_errant_character = {
 	age = { 18 32 }
@@ -39,7 +39,7 @@ knight_errant_character = {
 			limit = { has_dlc = tours_and_tournaments }
 			add_trait = tourney_participant
 			add_random_tourney_participant_level_effect = yes
-			#EK EDIT: 
+			## TI EDITS 
 			race_heritage_effect = yes
 		}
 	}
@@ -87,7 +87,7 @@ knight = {
 	prowess = { 8 12 }
 	gender_female_chance = root_soldier_female_chance
 
-	### EK EDIT
+	## TI EDITS
 	after_creation = {
 		race_heritage_effect = yes
 	}

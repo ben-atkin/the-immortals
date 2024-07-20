@@ -3,6 +3,7 @@ tags={
 	"Total Conversion"
 }
 name="The Immortals"
+replace_path="common/flavorization"
 replace_path="common/bookmark_portraits"
 replace_path="common/bookmarks"
 replace_path="common/religion/religions"

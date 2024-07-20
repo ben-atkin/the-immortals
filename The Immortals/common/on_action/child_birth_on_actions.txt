@@ -367,14 +367,13 @@ on_birth_real_father = {
 # scope:is_bastard, true if a known bastard
 on_birth_child = {
 	events = {
+		TI_race.0003 # please work
 		# middle_east_decisions.0012 #Saoshyant Descendants.
 		major_decisions.0101 #Divine/Consecrated Blood Descendants.
 		birth.8001 #Reincarnation
 		# birth.8011 #Born in the Purple
 		trait_specific.0500 #To handle genetic traits not expressed until later in life
 		# debug.0010 # Disease data tracking
-		TI_race.0003 # please work
-
 	}
 	effect = {
 		# Make sure that children aren't Lowborn if one of their parents are, in fact, of noble stock
