@@ -120,3 +120,8 @@
 119;110;111;87;sea_tile8;x;
 120;77;77;31;sea_tile9;x;
 121;65;65;47;sea_tile10;x;
+122;135;64;64;impassable_terrain1;x;
+123;140;36;36;impassable_terrain2;x;
+124;174;109;109;impassable_terrain3;x;
+125;224;49;49;impassable_terrain4;x;
+126;168;97;97;impassable_terrain5;x;

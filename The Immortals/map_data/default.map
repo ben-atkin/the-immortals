@@ -34,6 +34,8 @@ sea_zones = RANGE { 112 121 }
 # Can be colored by whoever owns the most of the province's neighbours.
 # Blocks unit movement.
 
+impassable_mountains = range { 122 126 }
+
 ############
 # WASTELAND
 ############
