@@ -548,6 +548,8 @@ pdxmesh = {
 
 		#### BLEND SHAPES ####
 
+		blend_shape = { id = "race_elvish_male_ears"			type = "blendshapes/race_elvish_male_ears_01.mesh" }
+
 		blend_shape = { id = "male_bs_cheek_fat_min"	            						type = "blendshapes/male_bs_cheek_fat_min.mesh"  }
 		blend_shape = { id = "male_bs_cheek_fat_max"	            						type = "blendshapes/male_bs_cheek_fat_max.mesh"  }
 		blend_shape = { id = "male_bs_cheek_forward_min"	        						type = "blendshapes/male_bs_cheek_forward_min.mesh"  }
@@ -695,9 +697,6 @@ pdxmesh = {
 		blend_shape = { id = "male_nbs_forehead_brow_height_max"							type = "blendshapes/male_nbs_forehead_brow_height_max.mesh" data = "normal|tangent" }
 		blend_shape = { id = "male_nbs_head_profile_min"									type = "blendshapes/male_bs_head_profile_min.mesh" data = "normal|tangent" }
 	
-		#### The Immortals Blendshapes
-		blend_shape = { id = "male_bs_elf_ears"												type = "blendshapes/male_bs_elf_ears.mesh" }
-
 		#### Generic animations
 		animation = { id = "head_idle_1"													type = "male_head_idle_1.anim" }
 		animation = { id = "head_idle_2"													type = "male_head_idle_2.anim" }
@@ -755,7 +754,9 @@ entity = {
 				body_part = head
 			}
         }
-    }		
+    }
+
+	attribute = { name = "race_elvish_ears"					blend_shape = "race_elvish_male_ears" }	
 
 	attribute = { name = "chin_forward"														additive_animation = "chin_forward" default = 0.5 }			
 	attribute = { name = "chin_height"														additive_animation = "chin_height" default = 0.5 }	
@@ -967,9 +968,6 @@ entity = {
 	#### Blend shapes used on other body parts than the face, therefore using the neutral face blend
 	attribute = { name = "teeth_bs_lower_down"												blend_shape = "male_bs_neutral" }
 	attribute = { name = "teeth_bs_cheek_fat_neg"											blend_shape = "male_bs_neutral" }
-
-	#### The Immortals Blendshapes Names
-	attribute = { name = "bs_elf_ears"														blend_shape = "male_bs_elf_ears" }
 
 	#### Animations
 
