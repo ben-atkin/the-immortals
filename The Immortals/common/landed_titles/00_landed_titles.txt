@@ -237,9 +237,6 @@ e_Onakaam_Empire = {
                 b_test52 = {
                     province = 83
                 }
-                b_test53 = {
-                    province = 77
-                }
                 b_test54 = {
                     province = 100
                 }
@@ -255,9 +252,6 @@ e_Onakaam_Empire = {
                  
                 b_test57 = {
                     province = 104
-                }
-                b_test58 = {
-                    province = 76
                 }
                 b_test59 = {
                     province = 103
@@ -298,47 +292,41 @@ e_Onakaam_Empire = {
                     province = 98
                 }           
             }
-            c_county_tier16 = {
-                color = { 60 140 30 }
-                 
-                b_test69 = {
-                    province = 94
+            c_county_tier26 = {
+                color = { 10 10 10 }
+
+                b_test53 = {
+                    province = 75
                 }
-                b_test70 = {
-                    province = 95
+                b_test115 = {
+                    province = 76
                 }
-                b_test71 = {
-                    province = 91
+                b_test58 = {
+                    province = 77
                 }
-                b_test72 = {
-                    province = 84
-                }           
-            }
-            c_county_tier17 = {
-                color = { 20 40 20 }
-                 
-                b_test73 = {
-                    province = 93
-                }
-                b_test74 = {
-                    province = 90
-                }
-                b_test75 = {
-                    province = 92
-                }
-                b_test76 = {
-                    province = 96
-                } 
-                b_test77 = {
-                    province = 97
-                }          
             }
         }
 
-        d_Orcish_Duchy_West = {
+        d_Orcish_Duchy_North = {
             color = { 43 54 43 }
-            capital = c_county_tier18
+            capital = c_county_tier22
              
+            c_county_tier22 = {
+                color = { 60 90 50 }
+                 
+                b_test98 = {
+                    province = 55
+                }
+                b_test99 = {
+                    province = 54
+                }
+                b_test100 = {
+                    province = 58
+                }
+                b_test101 = {
+                    province = 59
+                }           
+            } 
             c_county_tier18 = {
                 color = { 43 54 43 }
                  
@@ -349,14 +337,18 @@ e_Onakaam_Empire = {
                     province = 65
                 }
                 b_test80 = {
-                    province = 58
-                }
+                    province = 66
+                }           
+            }
+            c_county_tier28 = {
+                color =  { 10 10 10 }
+
                 b_test81 = {
-                    province = 59
+                    province = 67
                 }
                 b_test82 = {
                     province = 60
-                }            
+                } 
             }
             c_county_tier19 = {
                 color = { 118 122 118 }
@@ -369,25 +361,21 @@ e_Onakaam_Empire = {
                 }
                 b_test85 = {
                     province = 62
-                }
-                b_test86 = {
-                    province = 66
-                }
-                b_test87 = {
-                    province = 67
-                }              
+                }           
             }
+        }
+        d_Orcish_Duchy_West = {
+            color = { 120 120 120 }
+            capital = c_county_tier21
+
             c_county_tier20 = {
                 color = { 78 82 78 }
                  
                 b_test88 = {
                     province = 71
                 }
-                b_test89 = {
-                    province = 70
-                }
                 b_test90 = {
-                    province = 72
+                    province = 91
                 }
                 b_test91 = {
                     province = 85
@@ -400,50 +388,70 @@ e_Onakaam_Empire = {
                 color = { 70 90 70 }
                  
                 b_test93 = {
-                    province = 88
+                    province = 89
                 }
                 b_test94 = {
-                    province = 89
+                    province = 88
                 }
                 b_test95 = {
                     province = 87
                 }
+                b_test74 = {
+                    province = 90
+                }       
+            }
+            c_county_tier29 = {
+                color = { 10 10 10 }
+
                 b_test96 = {
-                    province = 68
+                    province = 69
                 }
                 b_test97 = {
-                    province = 69
+                    province = 68
+                } 
+                b_test89 = {
+                    province = 70
+                }
+            }
+            c_county_tier16 = {
+                color = { 60 140 30 }
+                 
+                b_test69 = {
+                    province = 94
+                }
+                b_test70 = {
+                    province = 95
+                }
+                b_test72 = {
+                    province = 84
                 }           
+            }
+            c_county_tier17 = {
+                color = { 20 40 20 }
+                 
+                b_test73 = {
+                    province = 93
+                }
+                b_test75 = {
+                    province = 92
+                }
+                b_test76 = {
+                    province = 96
+                } 
+                b_test77 = {
+                    province = 97
+                }          
             }
         }
         d_Orcish_Duchy_East = {
             color = { 60 90 50 }
-            capital = c_county_tier22
+            capital = c_county_tier24
              
-            c_county_tier22 = {
-                color = { 60 90 50 }
-                 
-                b_test98 = {
-                    province = 56
-                }
-                b_test99 = {
-                    province = 54
-                }
-                b_test100 = {
-                    province = 55
-                }
-                b_test101 = {
-                    province = 57
-                }           
-            }
             c_county_tier23 = {
                 color = { 50 80 40 }
                  
                 b_test102 = {
                     province = 78
-                }
-                b_test103 = {
-                    province = 73
                 }
                 b_test104 = {
                     province = 79
@@ -462,14 +470,37 @@ e_Onakaam_Empire = {
                     province = 51
                 }
                 b_test108 = {
+                    province = 128
+                }       
+                b_test109 = {
+                    province = 129
+                }    
+            }
+            c_county_tier27 = {
+                color = { 10 10 10 }
+
+                 b_test110 = {
                     province = 53
                 }
-                b_test109 = {
+                b_test111 = {
                     province = 74
+                }   
+                b_test112 = {
+                    province = 56
                 }
-                b_test110 = {
-                    province = 75
-                }            
+            }
+            c_county_tier30 = {
+                color = { 10 10 10 }
+
+                b_test103 = {
+                    province = 73
+                }
+                b_test113 = {
+                    province = 72
+                }
+                b_test114 = {
+                    province = 57
+                }
             }
         }
     }
