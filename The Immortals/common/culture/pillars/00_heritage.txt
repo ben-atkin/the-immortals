@@ -15,3 +15,12 @@ heritage_orcish = {
 		species_orcish = yes
 	}
 }
+
+## Human
+heritage_human = {
+	type = heritage
+
+	parameters = {
+		species_human = yes
+	}
+}

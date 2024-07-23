@@ -9,3 +9,8 @@ orcish_captial = {
   county = c_county_tier12
   barony = b_test50
 }
+
+human_captial = {
+  county = c_county_tier31
+  barony = b_test116
+}

@@ -364,3 +364,15 @@
 
     holding = castle_holding
     }
+128 = {
+    faith = orcish_faith
+    culture = half_orcish
+
+    holding = castle_holding
+    }
+129 = {
+    faith = orcish_faith
+    culture = half_orcish
+
+    holding = castle_holding
+    }
