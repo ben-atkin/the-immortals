@@ -177,11 +177,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Elvish_Duchy_East = {
-            color = { 30 190 240 }
+            color = { 190 210 10 }
             capital = c_county_tier6
              
                 c_county_tier6 = {
-                color = { 30 190 240 }
+                color = { 190 210 10 }
 
                 b_test25 = {
                     province = 27
@@ -200,7 +200,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier7 = {
-                color = { 30 150 240 }
+                color = { 190 180 10 }
 
                 b_test30 = {
                     province = 35
@@ -293,7 +293,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier26 = {
-                color = { 10 10 10 }
+                color = { 60 200 30 }
 
                 b_test53 = {
                     province = 75
@@ -328,7 +328,7 @@ e_Onakaam_Empire = {
                 }           
             } 
             c_county_tier18 = {
-                color = { 43 54 43 }
+                color = { 120 150 90 }
                  
                 b_test78 = {
                     province = 64
@@ -341,7 +341,7 @@ e_Onakaam_Empire = {
                 }           
             }
             c_county_tier28 = {
-                color =  { 10 10 10 }
+                color =  { 43 54 43 }
 
                 b_test81 = {
                     province = 67
@@ -351,7 +351,7 @@ e_Onakaam_Empire = {
                 } 
             }
             c_county_tier19 = {
-                color = { 118 122 118 }
+                color = { 80 150 90 }
                  
                 b_test83 = {
                     province = 63
@@ -369,7 +369,7 @@ e_Onakaam_Empire = {
             capital = c_county_tier21
 
             c_county_tier20 = {
-                color = { 78 82 78 }
+                color = { 80 150 50 }
                  
                 b_test88 = {
                     province = 71
@@ -401,7 +401,7 @@ e_Onakaam_Empire = {
                 }       
             }
             c_county_tier29 = {
-                color = { 10 10 10 }
+                color = { 78 82 78 }
 
                 b_test96 = {
                     province = 69
@@ -477,7 +477,7 @@ e_Onakaam_Empire = {
                 }    
             }
             c_county_tier27 = {
-                color = { 10 10 10 }
+                color = { 60 150 60 }
 
                  b_test110 = {
                     province = 53
@@ -490,7 +490,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier30 = {
-                color = { 10 10 10 }
+                color = { 100 120 60 }
 
                 b_test103 = {
                     province = 73
@@ -505,15 +505,15 @@ e_Onakaam_Empire = {
         }
     }
     k_Jaka_Kingdom = {
-        color = { 0 0 0 }
+        color = { 50 100 200 }
         capital = c_county_tier31
 
         d_Jaka_Duchy_West = {
-            color = { 0 0 0 }
+            color = { 50 100 200 }
             capital = c_county_tier31
 
             c_county_tier31 = {
-                color = { 0 0 0 }
+                color = { 50 100 200 }
 
                 b_test116 = {
                     province = 169
@@ -535,7 +535,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier32 = {
-                color = { 0 0 0 }
+                color = { 30 80 180 }
 
                 b_test122 = {
                     province = 173
@@ -548,7 +548,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier33 = {
-                color = { 0 0 0 }
+                color = { 50 90 140 }
 
                 b_test125 = {
                     province = 160
@@ -567,7 +567,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier34 = {
-                color = { 0 0 0 }
+                color = { 60 110 140 }
 
                 b_test130 = {
                     province = 161
@@ -583,7 +583,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier35 = {
-                color = { 0 0 0 }
+                color = { 50 130 220 }
 
                 b_test134 = {
                     province = 158
@@ -599,7 +599,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier36 = {
-                color = { 0 0 0 }
+                color = { 70 130 180 }
 
                 b_test138 = {
                     province = 154
@@ -613,11 +613,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Jaka_Duchy_East = {
-            color = { 0 0 0 }
+            color = { 50 70 180 }
             capital = c_county_tier37
 
             c_county_tier37 = {
-                color = { 0 0 0 }
+                color = { 50 70 180 }
 
                 b_test141 = {
                     province = 140
@@ -633,7 +633,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier38 = {
-                color = { 0 0 0 }
+                color = { 50 110 190 }
 
                 b_test145 = {
                     province = 148
@@ -645,8 +645,8 @@ e_Onakaam_Empire = {
                     province = 138
                 }
             }
-            c_county_tier38 = {
-                color = { 0 0 0 }
+            c_county_tier39 = {
+                color = { 50 70 140 }
 
                 b_test148 = {
                     province = 130
@@ -661,8 +661,8 @@ e_Onakaam_Empire = {
                     province = 137
                 }
             }
-            c_county_tier39 = {
-                color = { 0 0 0 }
+            c_county_tier40 = {
+                color = { 50 130 210 }
 
                 b_test152 = {
                     province = 134
@@ -677,8 +677,8 @@ e_Onakaam_Empire = {
                     province = 133
                 }
             }
-            c_county_tier40 = {
-                color = { 0 0 0 }
+            c_county_tier41 = {
+                color = { 30 75 200 }
 
                 b_test156 = {
                     province = 141
@@ -695,11 +695,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Jaka_Duchy_Island = {
-            color = { 0 0 0 }
-            capital = c_county_tier41
+            color = { 100 100 280 }
+            capital = c_county_tier42
 
-            c_county_tier41 = {
-                color = { 0 0 0 }
+            c_county_tier42 = {
+                color = { 100 100 280 }
 
                 b_test160 = {
                     province = 178
@@ -714,8 +714,8 @@ e_Onakaam_Empire = {
                     province = 179
                 }
             }
-            c_county_tier42 = {
-                color = { 0 0 0 }
+            c_county_tier43 = {
+                color = { 50 110 220 }
 
                 b_test164 = {
                     province = 174
