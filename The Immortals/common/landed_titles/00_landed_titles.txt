@@ -504,6 +504,197 @@ e_Onakaam_Empire = {
             }
         }
     }
+    k_Jaka_Kingdom = {
+        color = { 0 0 0 }
+        capital = c_county_tier31
+
+        d_Jaka_Duchy_West = {
+            color = { 0 0 0 }
+            capital = c_county_tier31
+
+            c_county_tier31 = {
+                color = { 0 0 0 }
+
+                b_test116 = {
+                    province = 169
+                }
+                b_test117 = {
+                    province = 157
+                }
+                b_test118 = {
+                    province = 166
+                }
+                b_test119 = {
+                    province = 167
+                }
+                b_test120 = {
+                    province = 168
+                }
+                b_test121 = {
+                    province = 170
+                }
+            }
+            c_county_tier32 = {
+                color = { 0 0 0 }
+
+                b_test122 = {
+                    province = 173
+                }
+                b_test123 = {
+                    province = 171
+                }
+                b_test124 = {
+                    province = 172
+                }
+            }
+            c_county_tier33 = {
+                color = { 0 0 0 }
+
+                b_test125 = {
+                    province = 160
+                }
+                b_test126 = {
+                    province = 150
+                }
+                b_test127 = {
+                    province = 159
+                }
+                b_test128 = {
+                    province = 164
+                }
+                b_test129 = {
+                    province = 165
+                }
+            }
+            c_county_tier34 = {
+                color = { 0 0 0 }
+
+                b_test130 = {
+                    province = 161
+                }
+                b_test131 = {
+                    province = 149
+                }
+                b_test132 = {
+                    province = 162
+                }
+                b_test133 = {
+                    province = 163
+                }
+            }
+            c_county_tier35 = {
+                color = { 0 0 0 }
+
+                b_test134 = {
+                    province = 158
+                }
+                b_test135 = {
+                    province = 151
+                }
+                b_test136 = {
+                    province = 152
+                }
+                b_test137 = {
+                    province = 153
+                }
+            }
+            c_county_tier36 = {
+                color = { 0 0 0 }
+
+                b_test138 = {
+                    province = 154
+                }
+                b_test139 = {
+                    province = 155
+                }
+                b_test140 = {
+                    province = 156
+                }
+            }
+        }
+        d_Jaka_Duchy_East = {
+            color = { 0 0 0 }
+            capital = c_county_tier37
+
+            c_county_tier37 = {
+                color = { 0 0 0 }
+
+                b_test141 = {
+                    province = 140
+                }
+                b_test142 = {
+                    province = 139
+                }
+                b_test143 = {
+                    province = 145
+                }
+                b_test144 = {
+                    province = 146
+                }
+            }
+            c_county_tier38 = {
+                color = { 0 0 0 }
+
+                b_test145 = {
+                    province = 148
+                }
+                b_test146 = {
+                    province = 147
+                }
+                b_test147 = {
+                    province = 138
+                }
+            }
+            c_county_tier38 = {
+                color = { 0 0 0 }
+
+                b_test148 = {
+                    province = 130
+                }
+                b_test149 = {
+                    province = 131
+                }
+                b_test150 = {
+                    province = 136
+                }
+                b_test151 = {
+                    province = 137
+                }
+            }
+            c_county_tier39 = {
+                color = { 0 0 0 }
+
+                b_test152 = {
+                    province = 134
+                }
+                b_test153 = {
+                    province = 135
+                }
+                b_test154 = {
+                    province = 132
+                }
+                b_test155 = {
+                    province = 133
+                }
+            }
+            c_county_tier40 = {
+                color = { 0 0 0 }
+
+                b_test156 = {
+                    province = 141
+                }
+                b_test157 = {
+                    province = 142
+                }
+                b_test158 = {
+                    province = 143
+                }
+                b_test159 = {
+                    province = 144
+                }
+            }
+        }
+    }
 }
 
 # These titles cut hundreds of errors from logs. 
