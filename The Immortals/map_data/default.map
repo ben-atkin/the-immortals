@@ -19,6 +19,7 @@ seasons = "seasons.txt"
 #Onakaam Seas
 sea_zones = LIST { 1 }
 sea_zones = RANGE { 112 121 }
+sea_zones = RANGE { 180 201 }
 
 ###############
 # MAJOR RIVERS
