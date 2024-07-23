@@ -694,6 +694,37 @@ e_Onakaam_Empire = {
                 }
             }
         }
+        d_Jaka_Duchy_Island = {
+            color = { 0 0 0 }
+            capital = c_county_tier41
+
+            c_county_tier41 = {
+                color = { 0 0 0 }
+
+                b_test160 = {
+                    province = 178
+                }
+                b_test161 = {
+                    province = 176
+                }
+                b_test162 = {
+                    province = 177
+                }
+                b_test163 = {
+                    province = 179
+                }
+            }
+            c_county_tier42 = {
+                color = { 0 0 0 }
+
+                b_test164 = {
+                    province = 174
+                }
+                b_test165 = {
+                    province = 175
+                }
+            }
+        }
     }
 }
 
