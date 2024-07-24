@@ -1,5 +1,5 @@
-﻿elvish_religion = {
-	family = rf_elvish
+human_religion = {
+	family = rf_human
 
 	doctrine = pagan_hostility_doctrine
 
@@ -49,98 +49,98 @@
 	holy_order_maa = { horn_warrior }
 
 	localization = {
-		HighGodName = elvish_high_god_name
-		HighGodName2 = elvish_high_god_name_2
-		HighGodNamePossessive = elvish_high_god_name_possessive
+		HighGodName = human_high_god_name
+		HighGodName2 = human_high_god_name_2
+		HighGodNamePossessive = human_high_god_name_possessive
 		HighGodNameSheHe = CHARACTER_SHEHE_HE
 		HighGodHerselfHimself = CHARACTER_HIMSELF
 		HighGodHerHis = CHARACTER_HERHIS_HIS
-		HighGodNameAlternate = elvish_high_god_name_alternate
-		HighGodNameAlternatePossessive = elvish_high_god_name_alternate_possessive
+		HighGodNameAlternate = human_high_god_name_alternate
+		HighGodNameAlternatePossessive = human_high_god_name_alternate_possessive
 
 		#Creator
-		CreatorName = elvish_high_god_name
-		CreatorNamePossessive = elvish_high_god_name_possessive
+		CreatorName = human_high_god_name
+		CreatorNamePossessive = human_high_god_name_possessive
 		CreatorSheHe = CHARACTER_SHEHE_HE
 		CreatorHerHis = CHARACTER_HERHIS_HIS
 		CreatorHerHim = CHARACTER_HERHIM_HIM
 
 		#HealthGod
-		HealthGodName = elvish_health_god_name
-		HealthGodNamePossessive = elvish_health_god_name_possessive
+		HealthGodName = human_health_god_name
+		HealthGodNamePossessive = human_health_god_name_possessive
 		HealthGodSheHe = CHARACTER_SHEHE_HE
 		HealthGodHerHis = CHARACTER_HERHIS_HIS
 		HealthGodHerHim = CHARACTER_HERHIM_HIM
 		
 		#FertilityGod
-		FertilityGodName = elvish_fertility_god_name
-		FertilityGodNamePossessive = elvish_fertility_god_name_possessive
+		FertilityGodName = human_fertility_god_name
+		FertilityGodNamePossessive = human_fertility_god_name_possessive
 		FertilityGodSheHe = CHARACTER_SHEHE_SHE
 		FertilityGodHerHis = CHARACTER_HERHIS_HER
 		FertilityGodHerHim = CHARACTER_HERHIM_HER
 
 		#WealthGod
-		WealthGodName = elvish_wealth_god_name
-		WealthGodNamePossessive = elvish_wealth_god_name_possessive
+		WealthGodName = human_wealth_god_name
+		WealthGodNamePossessive = human_wealth_god_name_possessive
 		WealthGodSheHe = CHARACTER_SHEHE_SHE
 		WealthGodHerHis = CHARACTER_HERHIS_HER
 		WealthGodHerHim = CHARACTER_HERHIM_HER
 
 		#HouseholdGod
-		HouseholdGodName = elvish_wealth_god_name
-		HouseholdGodNamePossessive = elvish_wealth_god_name_possessive
+		HouseholdGodName = human_wealth_god_name
+		HouseholdGodNamePossessive = human_wealth_god_name_possessive
 		HouseholdGodSheHe = CHARACTER_SHEHE_SHE
 		HouseholdGodHerHis = CHARACTER_HERHIS_HER
 		HouseholdGodHerHim = CHARACTER_HERHIM_HER
 
 		#FateGod
-		FateGodName = elvish_high_god_name
-		FateGodNamePossessive = elvish_high_god_name_possessive
+		FateGodName = human_high_god_name
+		FateGodNamePossessive = human_high_god_name_possessive
 		FateGodSheHe = CHARACTER_SHEHE_HE
 		FateGodHerHis = CHARACTER_HERHIS_HIS
 		FateGodHerHim = CHARACTER_HERHIM_HIM
 
 		#KnowledgeGod
-		KnowledgeGodName = elvish_knowledge_god_name
-		KnowledgeGodNamePossessive = elvish_knowledge_god_name_possessive
+		KnowledgeGodName = human_knowledge_god_name
+		KnowledgeGodNamePossessive = human_knowledge_god_name_possessive
 		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
 		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
 		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
 
 		#WarGod
-		WarGodName = elvish_war_god_name
-		WarGodNamePossessive = elvish_war_god_name_possessive
+		WarGodName = human_war_god_name
+		WarGodNamePossessive = human_war_god_name_possessive
 		WarGodSheHe = CHARACTER_SHEHE_HE
 		WarGodHerHis = CHARACTER_HERHIS_HIS
 		WarGodHerHim = CHARACTER_HERHIM_HIM
 
 		#TricksterGod
-		TricksterGodName = elvish_knowledge_god_name
-		TricksterGodNamePossessive = elvish_knowledge_god_name_possessive
+		TricksterGodName = human_knowledge_god_name
+		TricksterGodNamePossessive = human_knowledge_god_name_possessive
 		TricksterGodSheHe = CHARACTER_SHEHE_HE
 		TricksterGodHerHis = CHARACTER_HERHIS_HIS
 		TricksterGodHerHim = CHARACTER_HERHIM_HIM
 
 		#NightGod
-		NightGodName = elvish_night_god_name
-		NightGodNamePossessive = elvish_night_god_name_possessive
+		NightGodName = human_night_god_name
+		NightGodNamePossessive = human_night_god_name_possessive
 		NightGodSheHe = CHARACTER_SHEHE_SHE
 		NightGodHerHis = CHARACTER_HERHIS_HER
 		NightGodHerHim = CHARACTER_HERHIM_HER
 
 		#WaterGod
-		WaterGodName = elvish_water_god_name
-		WaterGodNamePossessive = elvish_water_god_name_possessive
+		WaterGodName = human_water_god_name
+		WaterGodNamePossessive = human_water_god_name_possessive
 		WaterGodSheHe = CHARACTER_SHEHE_IT
 		WaterGodHerHis = CHARACTER_HERHIS_ITS
 		WaterGodHerHim = CHARACTER_HERHIM_IT
 
 
-		PantheonTerm = elvish_the_abosom
-		PantheonTerm2 = elvish_the_abosom_2
-		PantheonTerm3 = elvish_the_abosom_3
+		PantheonTerm = human_the_abosom
+		PantheonTerm2 = human_the_abosom_2
+		PantheonTerm3 = human_the_abosom_3
 		PantheonTermHasHave = pantheon_term_have
-		GoodGodNames = { elvish_high_god_name elvish_high_god_name_alternate elvish_health_god_name elvish_knowledge_god_name elvish_the_nsamanfo }
+		GoodGodNames = { human_high_god_name human_high_god_name_alternate human_health_god_name human_knowledge_god_name human_the_nsamanfo }
 		DevilName = paganism_evil_god_decay
 		DevilNamePossessive = paganism_evil_god_decay_possessive
 		DevilSheHe = CHARACTER_SHEHE_IT
@@ -151,13 +151,13 @@
 		HouseOfWorship2 = paganism_house_of_worship_2
 		HouseOfWorship3 = paganism_house_of_worship_3
 		HouseOfWorshipPlural = paganism_house_of_worship_plural
-		ReligiousSymbol = elvish_gye_nyame
-		ReligiousSymbol2 = elvish_gye_nyame_2
-		ReligiousSymbol3 = elvish_gye_nyame_3
+		ReligiousSymbol = human_gye_nyame
+		ReligiousSymbol2 = human_gye_nyame_2
+		ReligiousSymbol3 = human_gye_nyame_3
 		ReligiousText = paganism_religious_text
 		ReligiousText2 = paganism_religious_text_2
 		ReligiousText3 = paganism_religious_text_3
-		ReligiousHeadName = elvish_religious_head_nsoroma
+		ReligiousHeadName = human_religious_head_nsoroma
 		ReligiousHeadTitleName = paganism_religious_head_title_name
 		DevoteeMale = paganism_devotee
 		DevoteeMalePlural = paganism_devoteeplural
@@ -172,27 +172,27 @@
 		PriestNeuter = paganism_priest
 		PriestNeuterPlural = paganism_priest_plural
 		AltPriestTermPlural = paganism_priest_alternate_plural
-		BishopMale = elvish_high_priest
-		BishopMalePlural = elvish_high_priest_plural
-		BishopFemale = elvish_high_priest
-		BishopFemalePlural = elvish_high_priest_plural
-		BishopNeuter = elvish_high_priest
-		BishopNeuterPlural = elvish_high_priest_plural
-		DivineRealm = elvish_divine_realm
-		DivineRealm2 = elvish_divine_realm_2
-		DivineRealm3 = elvish_divine_realm_3
-		PositiveAfterLife = elvish_afterlife
-		PositiveAfterLife2 = elvish_afterlife_2
-		PositiveAfterLife3 = elvish_afterlife_3
-		NegativeAfterLife = elvish_afterlife
-		NegativeAfterLife2 = elvish_afterlife_2
-		NegativeAfterLife3 = elvish_afterlife_3
+		BishopMale = human_high_priest
+		BishopMalePlural = human_high_priest_plural
+		BishopFemale = human_high_priest
+		BishopFemalePlural = human_high_priest_plural
+		BishopNeuter = human_high_priest
+		BishopNeuterPlural = human_high_priest_plural
+		DivineRealm = human_divine_realm
+		DivineRealm2 = human_divine_realm_2
+		DivineRealm3 = human_divine_realm_3
+		PositiveAfterLife = human_afterlife
+		PositiveAfterLife2 = human_afterlife_2
+		PositiveAfterLife3 = human_afterlife_3
+		NegativeAfterLife = human_afterlife
+		NegativeAfterLife2 = human_afterlife_2
+		NegativeAfterLife3 = human_afterlife_3
 		DeathDeityName = paganism_death_deity_name
 		DeathDeityNamePossessive = paganism_death_deity_name_possessive
 		DeathDeitySheHe = CHARACTER_SHEHE_IT
 		DeathDeityHerHis = CHARACTER_HERHIS_ITS
-		WitchGodName = elvish_night_god_name
-		WitchGodNamePossessive = elvish_night_god_name_possessive
+		WitchGodName = human_night_god_name
+		WitchGodNamePossessive = human_night_god_name_possessive
 		WitchGodHerHis = CHARACTER_HERHIS_HER
 		WitchGodSheHe = CHARACTER_SHEHE_SHE
 		WitchGodHerHim = CHARACTER_HERHIM_HER
@@ -204,11 +204,11 @@
 	}	
 
 	faiths = {
-		elvish_faith = {
-			color = { 125 75 200 }
-			icon = jainism
+		human_faith = {
+			color = { 0 100 175 }
+			icon = akanism
 
-			holy_site = elvish_capital
+			holy_site = human_capital
 
 			#doctrine = unreformed_faith_doctrine # changed this
 

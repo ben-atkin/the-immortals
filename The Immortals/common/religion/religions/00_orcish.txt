@@ -207,11 +207,11 @@ orcish_religion = {
 
 	faiths = {
 		orcish_faith = {
-			color = { 0 180 0 }
-			icon = akanism
-			reformed_icon = akanism_reformed
+			color = { 0 80 0 }
+			icon = valentinianism
+			reformed_icon = valentinianism
 
-			holy_site = orcish_captial
+			holy_site = orcish_capital
 
 			doctrine = unreformed_faith_doctrine
 

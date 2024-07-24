@@ -144,19 +144,19 @@
     }
 26 = {
     faith = elvish_faith
-    culture = full_elvish
+    culture = half_elvish
 
     holding = castle_holding
     }
 27 = {
     faith = elvish_faith
-    culture = full_elvish
+    culture = half_elvish
 
     holding = castle_holding
     }
 28 = {
     faith = elvish_faith
-    culture = full_elvish
+    culture = half_elvish
 
     holding = castle_holding
     }
@@ -186,13 +186,13 @@
     }
 33 = {
     faith = elvish_faith
-    culture = full_elvish
+    culture = half_elvish
 
     holding = castle_holding
     }
 34 = {
     faith = elvish_faith
-    culture = full_elvish
+    culture = half_elvish
 
     holding = castle_holding
     }

@@ -1,0 +1,27 @@
+full_human = {
+  color = { 0 100 175 }
+
+	created = 100.1.1
+	
+	ethos = ethos_stoic
+	heritage = heritage_human
+	language = language_italian
+	martial_custom = martial_custom_male_only
+	traditions = {
+		tradition_formation_fighting
+		tradition_republican_legacy
+		tradition_poetry
+	}
+	
+	name_list = name_list_human
+	
+	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { western_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+	
+	ethnicities = {
+		1 = human
+		#1 = beastfolk
+	}
+}

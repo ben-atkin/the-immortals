@@ -177,11 +177,11 @@ e_Onakaam_Empire = {
             }
         }
         d_Elvish_Duchy_East = {
-            color = { 30 190 240 }
+            color = { 190 210 10 }
             capital = c_county_tier6
              
                 c_county_tier6 = {
-                color = { 30 190 240 }
+                color = { 190 210 10 }
 
                 b_test25 = {
                     province = 27
@@ -200,7 +200,7 @@ e_Onakaam_Empire = {
                 }
             }
             c_county_tier7 = {
-                color = { 30 150 240 }
+                color = { 190 180 10 }
 
                 b_test30 = {
                     province = 35
@@ -237,9 +237,6 @@ e_Onakaam_Empire = {
                 b_test52 = {
                     province = 83
                 }
-                b_test53 = {
-                    province = 77
-                }
                 b_test54 = {
                     province = 100
                 }
@@ -255,9 +252,6 @@ e_Onakaam_Empire = {
                  
                 b_test57 = {
                     province = 104
-                }
-                b_test58 = {
-                    province = 76
                 }
                 b_test59 = {
                     province = 103
@@ -298,49 +292,43 @@ e_Onakaam_Empire = {
                     province = 98
                 }           
             }
-            c_county_tier16 = {
-                color = { 60 140 30 }
-                 
-                b_test69 = {
-                    province = 94
+            c_county_tier26 = {
+                color = { 60 200 30 }
+
+                b_test53 = {
+                    province = 75
                 }
-                b_test70 = {
-                    province = 95
+                b_test115 = {
+                    province = 76
                 }
-                b_test71 = {
-                    province = 91
+                b_test58 = {
+                    province = 77
                 }
-                b_test72 = {
-                    province = 84
-                }           
-            }
-            c_county_tier17 = {
-                color = { 20 40 20 }
-                 
-                b_test73 = {
-                    province = 93
-                }
-                b_test74 = {
-                    province = 90
-                }
-                b_test75 = {
-                    province = 92
-                }
-                b_test76 = {
-                    province = 96
-                } 
-                b_test77 = {
-                    province = 97
-                }          
             }
         }
 
-        d_Orcish_Duchy_West = {
+        d_Orcish_Duchy_North = {
             color = { 43 54 43 }
-            capital = c_county_tier18
+            capital = c_county_tier22
              
+            c_county_tier22 = {
+                color = { 60 90 50 }
+                 
+                b_test98 = {
+                    province = 55
+                }
+                b_test99 = {
+                    province = 54
+                }
+                b_test100 = {
+                    province = 58
+                }
+                b_test101 = {
+                    province = 59
+                }           
+            } 
             c_county_tier18 = {
-                color = { 43 54 43 }
+                color = { 120 150 90 }
                  
                 b_test78 = {
                     province = 64
@@ -349,17 +337,21 @@ e_Onakaam_Empire = {
                     province = 65
                 }
                 b_test80 = {
-                    province = 58
-                }
+                    province = 66
+                }           
+            }
+            c_county_tier28 = {
+                color =  { 43 54 43 }
+
                 b_test81 = {
-                    province = 59
+                    province = 67
                 }
                 b_test82 = {
                     province = 60
-                }            
+                } 
             }
             c_county_tier19 = {
-                color = { 118 122 118 }
+                color = { 80 150 90 }
                  
                 b_test83 = {
                     province = 63
@@ -369,25 +361,21 @@ e_Onakaam_Empire = {
                 }
                 b_test85 = {
                     province = 62
-                }
-                b_test86 = {
-                    province = 66
-                }
-                b_test87 = {
-                    province = 67
-                }              
+                }           
             }
+        }
+        d_Orcish_Duchy_West = {
+            color = { 120 120 120 }
+            capital = c_county_tier21
+
             c_county_tier20 = {
-                color = { 78 82 78 }
+                color = { 80 150 50 }
                  
                 b_test88 = {
                     province = 71
                 }
-                b_test89 = {
-                    province = 70
-                }
                 b_test90 = {
-                    province = 72
+                    province = 91
                 }
                 b_test91 = {
                     province = 85
@@ -400,50 +388,70 @@ e_Onakaam_Empire = {
                 color = { 70 90 70 }
                  
                 b_test93 = {
-                    province = 88
+                    province = 89
                 }
                 b_test94 = {
-                    province = 89
+                    province = 88
                 }
                 b_test95 = {
                     province = 87
                 }
+                b_test74 = {
+                    province = 90
+                }       
+            }
+            c_county_tier29 = {
+                color = { 78 82 78 }
+
                 b_test96 = {
-                    province = 68
+                    province = 69
                 }
                 b_test97 = {
-                    province = 69
+                    province = 68
+                } 
+                b_test89 = {
+                    province = 70
+                }
+            }
+            c_county_tier16 = {
+                color = { 60 140 30 }
+                 
+                b_test69 = {
+                    province = 94
+                }
+                b_test70 = {
+                    province = 95
+                }
+                b_test72 = {
+                    province = 84
                 }           
+            }
+            c_county_tier17 = {
+                color = { 20 40 20 }
+                 
+                b_test73 = {
+                    province = 93
+                }
+                b_test75 = {
+                    province = 92
+                }
+                b_test76 = {
+                    province = 96
+                } 
+                b_test77 = {
+                    province = 97
+                }          
             }
         }
         d_Orcish_Duchy_East = {
             color = { 60 90 50 }
-            capital = c_county_tier22
+            capital = c_county_tier24
              
-            c_county_tier22 = {
-                color = { 60 90 50 }
-                 
-                b_test98 = {
-                    province = 56
-                }
-                b_test99 = {
-                    province = 54
-                }
-                b_test100 = {
-                    province = 55
-                }
-                b_test101 = {
-                    province = 57
-                }           
-            }
             c_county_tier23 = {
                 color = { 50 80 40 }
                  
                 b_test102 = {
                     province = 78
-                }
-                b_test103 = {
-                    province = 73
                 }
                 b_test104 = {
                     province = 79
@@ -462,14 +470,259 @@ e_Onakaam_Empire = {
                     province = 51
                 }
                 b_test108 = {
+                    province = 128
+                }       
+                b_test109 = {
+                    province = 129
+                }    
+            }
+            c_county_tier27 = {
+                color = { 60 150 60 }
+
+                 b_test110 = {
                     province = 53
                 }
-                b_test109 = {
+                b_test111 = {
                     province = 74
+                }   
+                b_test112 = {
+                    province = 56
                 }
-                b_test110 = {
-                    province = 75
-                }            
+            }
+            c_county_tier30 = {
+                color = { 100 120 60 }
+
+                b_test103 = {
+                    province = 73
+                }
+                b_test113 = {
+                    province = 72
+                }
+                b_test114 = {
+                    province = 57
+                }
+            }
+        }
+    }
+    k_Jaka_Kingdom = {
+        color = { 50 100 200 }
+        capital = c_county_tier31
+
+        d_Jaka_Duchy_West = {
+            color = { 50 100 200 }
+            capital = c_county_tier31
+
+            c_county_tier31 = {
+                color = { 50 100 200 }
+
+                b_test116 = {
+                    province = 169
+                }
+                b_test117 = {
+                    province = 157
+                }
+                b_test118 = {
+                    province = 166
+                }
+                b_test119 = {
+                    province = 167
+                }
+                b_test120 = {
+                    province = 168
+                }
+                b_test121 = {
+                    province = 170
+                }
+            }
+            c_county_tier32 = {
+                color = { 30 80 180 }
+
+                b_test122 = {
+                    province = 173
+                }
+                b_test123 = {
+                    province = 171
+                }
+                b_test124 = {
+                    province = 172
+                }
+            }
+            c_county_tier33 = {
+                color = { 50 90 140 }
+
+                b_test125 = {
+                    province = 160
+                }
+                b_test126 = {
+                    province = 150
+                }
+                b_test127 = {
+                    province = 159
+                }
+                b_test128 = {
+                    province = 164
+                }
+                b_test129 = {
+                    province = 165
+                }
+            }
+            c_county_tier34 = {
+                color = { 60 110 140 }
+
+                b_test130 = {
+                    province = 161
+                }
+                b_test131 = {
+                    province = 149
+                }
+                b_test132 = {
+                    province = 162
+                }
+                b_test133 = {
+                    province = 163
+                }
+            }
+            c_county_tier35 = {
+                color = { 50 130 220 }
+
+                b_test134 = {
+                    province = 158
+                }
+                b_test135 = {
+                    province = 151
+                }
+                b_test136 = {
+                    province = 152
+                }
+                b_test137 = {
+                    province = 153
+                }
+            }
+            c_county_tier36 = {
+                color = { 70 130 180 }
+
+                b_test138 = {
+                    province = 154
+                }
+                b_test139 = {
+                    province = 155
+                }
+                b_test140 = {
+                    province = 156
+                }
+            }
+        }
+        d_Jaka_Duchy_East = {
+            color = { 50 70 180 }
+            capital = c_county_tier37
+
+            c_county_tier37 = {
+                color = { 50 70 180 }
+
+                b_test141 = {
+                    province = 140
+                }
+                b_test142 = {
+                    province = 139
+                }
+                b_test143 = {
+                    province = 145
+                }
+                b_test144 = {
+                    province = 146
+                }
+            }
+            c_county_tier38 = {
+                color = { 50 110 190 }
+
+                b_test145 = {
+                    province = 148
+                }
+                b_test146 = {
+                    province = 147
+                }
+                b_test147 = {
+                    province = 138
+                }
+            }
+            c_county_tier39 = {
+                color = { 50 70 140 }
+
+                b_test148 = {
+                    province = 130
+                }
+                b_test149 = {
+                    province = 131
+                }
+                b_test150 = {
+                    province = 136
+                }
+                b_test151 = {
+                    province = 137
+                }
+            }
+            c_county_tier40 = {
+                color = { 50 130 210 }
+
+                b_test152 = {
+                    province = 134
+                }
+                b_test153 = {
+                    province = 135
+                }
+                b_test154 = {
+                    province = 132
+                }
+                b_test155 = {
+                    province = 133
+                }
+            }
+            c_county_tier41 = {
+                color = { 30 75 200 }
+
+                b_test156 = {
+                    province = 141
+                }
+                b_test157 = {
+                    province = 142
+                }
+                b_test158 = {
+                    province = 143
+                }
+                b_test159 = {
+                    province = 144
+                }
+            }
+        }
+        d_Jaka_Duchy_Island = {
+            color = { 100 100 280 }
+            capital = c_county_tier42
+
+            c_county_tier42 = {
+                color = { 100 100 280 }
+
+                b_test160 = {
+                    province = 178
+                }
+                b_test161 = {
+                    province = 176
+                }
+                b_test162 = {
+                    province = 177
+                }
+                b_test163 = {
+                    province = 179
+                }
+            }
+            c_county_tier43 = {
+                color = { 50 110 220 }
+
+                b_test164 = {
+                    province = 174
+                }
+                b_test165 = {
+                    province = 175
+                }
             }
         }
     }

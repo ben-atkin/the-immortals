@@ -59,7 +59,7 @@ orcish = {
   }
 
   skin_color_saturation={ 
-    1 = { name =  vanilla_skin_saturation     				range = { 0.7 0.7 } } 
+    1 = { name =  vanilla_skin_saturation     			range = { 0.7 0.7 } } 
   }
 
   hair_color_hue={ 
