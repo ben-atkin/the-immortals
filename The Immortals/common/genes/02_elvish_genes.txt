@@ -5,7 +5,7 @@ morph_genes = {
 		ugliness_feature_categories = { head }
 		group = ears
 
-		default_1 = {
+		default_0 = {
 			visible = no
 			index = 0
 			male = {}
@@ -14,10 +14,20 @@ morph_genes = {
 			girl = male
 		}
 
-		pointy_ears_01 = {
+		elvish_ears_1 = {
 			index = 1
 			male = {
-				setting = { required_tags = "not(snug_headgear)" attribute = "race_elvish_ears"	value = { min = 0.0 max = 1.0 }	age = age_preset_child_features_wide_range }
+				setting = { required_tags = "not(snug_headgear)" attribute = "race_elvish_ears_1"	value = { min = 0.0 max = 1.0 }	age = age_preset_child_features_wide_range }
+			}
+			female = male
+			boy = male
+			girl = male
+		}
+
+		elvish_ears_2 = {
+			index = 2
+			male = {
+				setting = { required_tags = "not(snug_headgear)" attribute = "race_elvish_ears_2"	value = { min = 0.0 max = 1.0 }	age = age_preset_child_features_wide_range }
 			}
 			female = male
 			boy = male

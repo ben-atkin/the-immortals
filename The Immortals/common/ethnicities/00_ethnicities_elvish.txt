@@ -125,7 +125,8 @@ elvish = {
 	}
 
 	gene_race_elvish_ears = {
-		1 = { name = elvish_ears_01 										range = {0.4 1.0} }
+		1 = { name = elvish_ears_1 										range = {0.4 1.0} }
+		1 = { name = elvish_ears_2 										range = {0.4 1.0} }
 	}
 
     
@@ -372,7 +373,8 @@ wood_elvish = { #not used yet. - and needs to be configured.
 	}
 
 	gene_race_elvish_ears = {
-		1 = { name = elvish_ears_01 										range = {0.4 1.0} }
+		1 = { name = elvish_ears_1 										range = {0.4 1.0} }
+		1 = { name = elvish_ears_2 										range = {0.4 1.0} }
 	}
 
     

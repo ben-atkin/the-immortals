@@ -1,16 +1,16 @@
 ﻿#### TEMPORARY
 
-elvish_captial = { 
+elvish_capital = { 
   county = c_county_tier3
   barony = b_test11
 }
 
-orcish_captial = {
+orcish_capital = {
   county = c_county_tier12
   barony = b_test50
 }
 
-human_captial = {
+human_capital = {
   county = c_county_tier31
   barony = b_test116
 }

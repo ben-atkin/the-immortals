@@ -548,7 +548,8 @@ pdxmesh = {
 
 		#### BLEND SHAPES ####
 
-		blend_shape = { id = "race_elvish_male_ears"			type = "blendshapes/race_elvish_male_ears_01.mesh" }
+		blend_shape = { id = "race_elvish_male_ears_1"			type = "blendshapes/race_elvish_male_ears_1.mesh" }
+		blend_shape = { id = "race_elvish_male_ears_2"			type = "blendshapes/race_elvish_male_ears_2.mesh" }
 
 		blend_shape = { id = "male_bs_cheek_fat_min"	            						type = "blendshapes/male_bs_cheek_fat_min.mesh"  }
 		blend_shape = { id = "male_bs_cheek_fat_max"	            						type = "blendshapes/male_bs_cheek_fat_max.mesh"  }
@@ -756,7 +757,8 @@ entity = {
         }
     }
 
-	attribute = { name = "race_elvish_ears"					blend_shape = "race_elvish_male_ears" }	
+	attribute = { name = "race_elvish_ears_1"					blend_shape = "race_elvish_male_ears_1" }
+	attribute = { name = "race_elvish_ears_2"					blend_shape = "race_elvish_male_ears_2" }	
 
 	attribute = { name = "chin_forward"														additive_animation = "chin_forward" default = 0.5 }			
 	attribute = { name = "chin_height"														additive_animation = "chin_height" default = 0.5 }	

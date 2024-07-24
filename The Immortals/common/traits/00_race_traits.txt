@@ -4,32 +4,32 @@
 race_trait_full_elvish = {
   category = health
 
-  health = 1
-  life_expectancy = 150
+  health = 0.5
+  life_expectancy = 700
   learning = 2
 }
 
 race_trait_half_elvish = {
   category = health
 
-  health = 1
-  life_expectancy = 80
+  health = 0.25
+  life_expectancy = 120
   stewardship = 1
 }
 
 race_trait_wood_elvish = {
   category = health
 
-  health = 1
-  life_expectancy = 120
+  health = 0.5
+  life_expectancy = 700
   diplomacy = 1
 }
 
 race_trait_dark_elvish = {
   category = health
 
-  health = 1
-  life_expectancy = 100
+  health = 0.5
+  life_expectancy = 700
   intrigue = 1
 }
 
@@ -39,13 +39,27 @@ race_trait_dark_elvish = {
 race_trait_full_orcish = {
   category = health
 
-  health = 1
+  health = 0.4
   martial = 3
 }
 
 race_trait_half_orcish = {
   category = health
 
-  health = 1  
+  health = 0.4
   martial = 3
+}
+
+
+
+### HUMAN
+
+race_trait_human = {
+  category = health
+
+  diplomacy = 1
+  martial = 1
+  stewardship = 1
+  intrigue = 1
+  learning = 1
 }

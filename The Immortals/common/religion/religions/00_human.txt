@@ -205,10 +205,10 @@ human_religion = {
 
 	faiths = {
 		human_faith = {
-			color = { 0 180 0 }
+			color = { 0 100 175 }
 			icon = akanism
 
-			holy_site = human_captial
+			holy_site = human_capital
 
 			#doctrine = unreformed_faith_doctrine # changed this
 

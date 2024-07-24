@@ -1,5 +1,5 @@
 full_orcish = {
-  color = { 0 150 0 }
+  color = { 0 80 0 }
 
 	created = 100.1.1
 	
@@ -26,7 +26,7 @@ full_orcish = {
 }
 
 moreno_orcish = {
-  color = { 0 150 0 }
+  color = { 0 80 35 }
 
 	created = 100.1.1
 	
@@ -53,7 +53,7 @@ moreno_orcish = {
 }
 
 half_orcish = {
-  color = { 0 150 0 }
+  color = { 10 70 10 }
 
 	created = 100.1.1
 	

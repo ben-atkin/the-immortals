@@ -205,10 +205,10 @@
 
 	faiths = {
 		elvish_faith = {
-			color = { 0 180 0 }
-			icon = akanism
+			color = { 125 75 200 }
+			icon = jainism
 
-			holy_site = elvish_captial
+			holy_site = elvish_capital
 
 			#doctrine = unreformed_faith_doctrine # changed this
 

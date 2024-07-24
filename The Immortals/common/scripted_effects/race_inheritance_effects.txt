@@ -11,8 +11,12 @@ race_heritage_effect = { # set heritage flags
 			culture = { has_cultural_pillar = heritage_orcish }
 		}
 		add_character_flag = orcish_heritage_flag
-	}	else = {
-		debug_log = "TI DEBUG: No heritage flag: AINT GOOD"
+	}
+	else_if = { 
+		limit = { 
+			culture = { has_cultural_pillar = heritage_human }
+		}
+		add_character_flag = human_heritage_flag
 	}
 	race_flag_effect = yes
 }
@@ -121,6 +125,16 @@ race_inheritance_effect = { #set race flags - this still needs alot of adjusting
 			}
 			add_character_flag = half_orcish_race_flag
 		}	
+
+		else_if = { ##human
+			limit = { 
+				OR = {
+					scope:mother = { has_character_flag = full_human_race_flag }
+					scope:real_father = { has_character_flag = full_human_race_flag }
+				}
+			}
+			add_character_flag = full_human_race_flag
+		}
 	race_trait_effects = yes
 } 
 
@@ -176,9 +190,14 @@ race_no_parents_effect = {
 		}
 		add_character_flag = half_orcish_race_flag
 		add_trait = race_trait_half_orcish
+	} 
+	else_if = { #human
+		limit = { 
+			has_culture = culture:full_human
+		}
+		add_character_flag = full_human_race_flag
+		add_trait = race_trait_human
 	}
-	debug_log = "TI DEBUG: Character had no parents, assigned race via culture and heritage"
-	add_character_flag = char_setup_complete
 }
 
 
@@ -241,9 +260,18 @@ race_trait_effects = { #adding all the traits per character flags and heritage.
 			}
 		}
 		add_trait = race_trait_half_orcish
+	} 
+	
+	else_if = { #human - not working fully
+		limit = {
+			AND = {
+				has_character_flag = full_human_race_flag
+				has_character_flag = human_heritage_flag
+			}
+		}
+		add_trait = race_trait_human
 	}
 	add_character_flag = char_setup_complete
-	debug_log = "TI DEBUG: Race inheritance working as expected"
 }
 
 
