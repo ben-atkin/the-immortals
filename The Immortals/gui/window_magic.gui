@@ -1,0 +1,2384 @@
+## TI Addition: Creates an in-game window to cast spells using Magic. Was a massive pain to get working correctly. Feel free to steal the code.
+
+types Magic
+{
+	type spellchart_button = button_round ## is called in hud.gui right next to the inventory button.
+	{
+		name = "spellchart_button"
+		visible = "[Not(IsObserver)]"
+
+		using = tooltip_ne
+		tooltip = "SPELLCHART_BUTTON"
+
+		icon_round_button_base = {}
+
+		button_icon_highlight = {
+			block "highlight_icon_size"
+			{
+				size = { 35 35 }
+			}
+			parentanchor = center
+			texture = "gfx/interface/icons/TI_spellcaster_icon.dds"
+		}
+
+		size = { 55 55 }
+		parentanchor = left
+
+		# Calls a Scripted Gui that toggles the variable 'spellchart_open'. AKA - toggles the visibilty of 'window_magic'
+		# Also because we're calling a Scripted Gui, we set it in gui/scripted_widgets. Had me stuck for a few too many hours.
+		onclick = "[GetScriptedGui('spellchart_script').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[GetVariableSystem.Set( 'spell_tabs', 'cantrips' )]"
+
+	}
+
+	Type button_tab_level = button_tab {
+		size = { 0 70 }
+		layoutpolicy_horizontal = expanding
+
+		# block "school_tooltip" {
+		# 	tooltip = school_alteration
+		# }
+		block "school_context" {
+			datacontext = "[GetScriptedGui('spellchart_tab_cantrips')]"
+		}
+		down = "[Not(ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+		onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		#onclick = "[VariableSystem.Clear('spell_county_list_open')]"
+
+		background = {
+			# texture = "gfx/interface/spellbook_widget/spell_school_tab_bg.dds"
+			block "school_bg_frame" {
+				frame = 5
+			}
+			framesize = { 140 70 }
+			margin = { 0 0 }
+			margin_bottom = 5
+		}
+
+		highlight_icon = {
+			size = { 64 64 }
+			parentanchor = center
+			alwaystransparent = yes
+			# block "school_icon" {
+			# 	texture = "gfx/interface/spellbook_widget/school_alteration.dds"
+			# }
+		}
+
+		using = tooltip_above
+	}
+}
+
+Template ButtonSpellList {
+	widget = {
+		scissor = yes
+		size = { 420 38 }
+
+		highlight_icon = {
+			size = { 420 70 }
+			position = { -40 -5 }
+
+			#texture = "gfx/interface/spellbook_widget/spell_school_tab_bg.dds"
+			#frame = "[FixedPointToInt(GetPlayer.MakeScope.ScriptValue('spell_school_bg'))]"
+			framesize = { 140 70 }
+			spriteType = Corneredstretched
+			spriteborder = { 1 1 }
+			alpha = 0.6
+
+			block "tint_greyout" {
+				tintcolor = { 0.6 0.6 0.6 1.0 }
+				effectname = "GreyedOut"
+			}
+
+			modify_texture = {
+				texture = "gfx/interface/component_masks/mask_fade_horizontal_extended.dds"
+				blend_mode = alphamultiply
+			}
+
+			using = Mask_Rough_Edges
+		}
+	}
+
+	widget = {
+		size = { 50 40 }
+		position = { 0 0 }
+		highlight_icon = {
+			name = "spell_level_icon"
+			size = { 32 32 }
+			#texture = "gfx/interface/spellbook_widget/spell_tier.dds"
+			frame = "[FixedPointToInt(EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_level' )))]"
+			framesize = { 128 128 }
+			parentanchor = center
+			using = Master_Button_Modify_Texture
+			tooltip = spell_tier
+			block "tint_greyout" {
+				tintcolor = { 0.7 0.7 0.7 1.0 }
+				effectname = "GreyedOut"
+			}
+		}
+	}
+	widget = {
+		size = { 350 40 }
+		position = { 50 0 }
+		text_single = {
+			name = "spell_name"
+			parentanchor = vcenter
+			text = spell_name
+			layoutpolicy_horizontal = expanding
+			align = top|left
+			tooltip = spell_effect
+			block "spell_font" {
+				default_format = "#clickable"
+			}
+			margin = { 0 0 }
+		}
+	}
+	widget = {
+		size = { 130 40 }
+		parentanchor = right
+		
+		position = { -50 0 }
+		text_single = {
+			name = "spell_cost"
+			parentanchor = vcenter
+			position = { 25 0 }
+			text = "[EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_cost' ))|0]"
+			layoutpolicy_horizontal = expanding
+			align = top|left
+			block "spell_font" {
+				default_format = "#high"
+			}
+			margin = { 4 0 }
+		}
+		highlight_icon = {
+			texture = "gfx/interface/TI_magic_icon_test.dds"
+			size = { 25 25 }
+			parentanchor = vcenter
+			alwaystransparent = yes
+			block "tint_greyout" {
+				tintcolor = { 0.5 0.5 0.5 1.0 }
+				effectname = "GreyedOut"
+			}
+		}
+		text_single = {
+			name = "spell_cost_tt"
+			parentanchor = vcenter
+			size = { 25 25 }
+			minimumsize = { 25 25 }
+			maximumsize = { 25 25 }
+			text = "[Concept( 'magic', '    ' )]"
+			align = vcenter
+			fontsize = 25
+		}
+	}
+	flowcontainer = {
+		name = "spell_icons"
+		parentanchor = right
+		position = { -5 0 }
+		ignoreinvisible = yes
+		# widget = {
+		#     size = { 40 40 }
+		#     visible = "[Not( EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_cooldown' )), '(CFixedPoint)0' ) )]"
+		#     highlight_icon = {
+		#         name = "spell_cooldown_icon"
+		#         size = { 34 34 }
+		#         texture = "gfx/interface/icons/icon_time.dds"
+		#         parentanchor = center
+		#         tooltip = spell_cooldown
+		#         block "tint_greyout" {
+		#             tintcolor = { 0.7 0.7 0.7 1.0 }
+		#             effectname = "GreyedOut"
+		#         }
+		#     }
+		# }
+		# widget = {
+		# 	size = { 65 40 } #this size allows several of the below icons to display without looking like garbage
+		# 	visible = "[EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_province' )), '(CFixedPoint)1' )]"
+		# 	highlight_icon = {
+		# 		name = "spell_province_icon"
+		# 		size = { 32 32 }
+		# 		texture = "gfx/interface/icons/map_icons/onmap_holding_icon.dds"
+		# 		parentanchor = center
+		# 		tooltip = spell_province
+		# 		block "tint_greyout" {
+		# 			tintcolor = { 0.7 0.7 0.7 1.0 }
+		# 			effectname = "GreyedOut"
+		# 		}
+		# 	}
+		# }
+		# widget = {
+		# 	size = { 65 40 }
+		# 	visible = "[EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_secret' )), '(CFixedPoint)1' )]"
+		# 	highlight_icon = {
+		# 		name = "spell_secret_icon"
+		# 		size = { 34 34 }
+		# 		texture = "gfx/interface/icons/schemes/icon_secrecy.dds"
+		# 		parentanchor = center
+		# 		tooltip = spell_secret
+		# 		block "tint_greyout" {
+		# 			effectname = "GreyedOut"
+		# 		}
+		# 	}
+		# }
+		# widget = {
+		# 	size = { 65 40 }
+		# 	visible = "[EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate( Scope.GetFlagName, '_hostile' )), '(CFixedPoint)1' )]"
+		# 	highlight_icon = {
+		# 		name = "spell_hostile_icon"
+		# 		size = { 34 34 }
+		# 		texture = "gfx/interface/icons/symbols/icon_warning.dds"
+		# 		parentanchor = center
+		# 		tooltip = spell_hostile
+		# 		block "tint_greyout" {
+		# 			effectname = "GreyedOut"
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+window = {
+	name = "window_magic"
+
+	visible = "[GetPlayer.MakeScope.Var('spellchart_open').IsSet]"
+
+	parentanchor = center
+	allow_outside = yes
+
+	using = Window_Movable
+	using = Window_Size_CharacterList
+	using = Window_Background
+	using = Window_Decoration_Spike
+	
+	
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		#using = Sound_WindowShow_Standard
+		#using = Window_Position_MainTab
+		#using = Expand_Admin_Themes
+
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		#using = Sound_WindowHide_Standard
+		#using = Window_Position_MainTab_Hide
+	}
+
+	vbox = {
+
+		using = Window_Margins
+
+		
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text"
+			{
+				text = "SPELLCHART_WIDGET_TITLE"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetScriptedGui('spellchart_script').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+
+
+		vbox = {
+			#layoutpolicy_vertical = expanding
+			#visible = "[GetVariableSystem.HasValue('spellbook_tab', 'spells')]"
+			hbox = {
+				name = "portraits_and_info"
+				layoutpolicy_horizontal = expanding
+				margin = { 10 5 }
+	
+				background = {
+					using = Background_Area
+				}
+	
+				widget = {
+					size = { 110 120 }
+					portrait_head = {
+						datacontext = "[GetPlayer.MakeScope.Var('spell_caster').Char]"
+						visible = "[Character.IsValid]"
+					}
+	
+					button_round = {
+						size = { 30 30 }
+						name = "switch_caster"
+						parentanchor = left
+						onclick = "[GetScriptedGui('spell_switch_caster').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						enabled = "[GetScriptedGui('spell_switch_caster').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						raw_tooltip = "Switch Caster"
+						using = tooltip_ne
+	
+						button_change = {
+							size = { 30 30 }
+							alwaystransparent = yes
+							parentanchor = center
+						}
+					}
+				}
+	
+				text_multi = {
+					size = { 250 0 }
+					name = "info_text"
+					multiline = yes
+					autoresize = yes
+					max_width = 250
+					text = spell_casting_info
+					align = center
+					#using = Font_Size_Medium
+				}
+	
+				widget = {
+					size = { 110 120 }
+					#visible = "[ObjectsEqual(GetPlayer.MakeScope.Var('spell_recipient').Char, GetPlayer)]"
+					portrait_head = {
+						datacontext = "[GetPlayer.MakeScope.Var('spell_recipient').Char]"
+						visible = "[And(Character.IsValid, Not(ObjectsEqual(GetPlayer.MakeScope.Var('spell_recipient').Char, GetPlayer.MakeScope.Var('spell_caster').Char)))]"
+	
+						blockoverride "portrait_transformation"
+						{
+							portrait_scale = { -1 1 }
+							portrait_offset = { 1 0 }
+						}
+					}
+
+					button_round = {
+						size = { 30 30 }
+						name = "switch_castee"
+						parentanchor = right
+						onclick = "[GetScriptedGui('spell_switch_castee').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						enabled = "[GetScriptedGui('spell_switch_castee').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						raw_tooltip = "Switch Castee"
+						using = tooltip_ne
+	
+						button_change = {
+							size = { 30 30 }
+							alwaystransparent = yes
+							parentanchor = center
+						}
+					}
+				}
+			}
+		}
+
+
+		hbox = {
+			name = "tabs"
+			layoutpolicy_horizontal = expanding
+			margin = { 15 0 }
+
+			button_tab_level = {
+				name = "cantrips"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_cantrips')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "Cantrips" ## TEMP until we have ART :)
+			}
+
+			button_tab_level = {
+				name = "lvl1"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_lvl1')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "1st Level" ## TEMP until we have ART :)
+			}
+
+			button_tab_level = {
+				name = "lvl2"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_lvl2')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "2nd Level" ## TEMP until we have ART :)
+			}
+
+			button_tab_level = {
+				name = "lvl3"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_lvl3')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "3rd Level" ## TEMP until we have ART :)
+			}
+
+			button_tab_level = {
+				name = "lvl4"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_lvl4')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "4th Level" ## TEMP until we have ART :)
+			}
+
+			button_tab_level = {
+				name = "lvl5"
+				blockoverride "school_context" {
+					datacontext = "[GetScriptedGui('spellchart_tab_lvl5')]"
+				}
+				blockoverride "school_bg_frame" {
+					frame = 1
+				}
+
+				raw_text = "5th Level" ## TEMP until we have ART :)
+			}
+
+		}
+
+		hbox = {
+			name = "spell_lists"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			margin = { 15 0 }
+
+			scrollbox = {
+				name = "spells_scrollbox"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				background = {
+					#texture = "gfx/interface/spellbook_widget/spell_school_tab_bg.dds"
+					#frame = "[FixedPointToInt(GetPlayer.MakeScope.ScriptValue('spell_school_bg'))]"
+					framesize = { 140 70 }
+					spriteType = Corneredstretched
+					spriteborder = { 1 1 }
+					alpha = 0.5
+
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+						blend_mode = alphamultiply
+					}
+					modify_texture = {
+						texture = "gfx/interface/component_masks/mask_fade_halfcircle.dds"
+						blend_mode = alphamultiply
+					}
+				}
+
+				blockoverride "scrollbox_replace_vbox"
+				{
+					vbox = {
+						#layoutpolicy_horizontal = expanding
+						margin = { 30 20 }
+						margin_right = 35
+						spacing = 0
+
+						text_single = {
+							default_format = "#low;italic"
+							text = "NO_SPELLS"
+							visible = "[IsDataModelEmpty(GetPlayer.MakeScope.GetList('spell_list'))]" # might not work, category never empty, use visible/not to create known/unknown spells IsShownTooltip could give how to learn, add brief description at start of tooltip
+							#alternatively allow selection and block execution wiith cast button, enable replaced with greyout
+						}
+
+						vbox = {
+							datamodel = "[GetPlayer.MakeScope.GetList('spell_list')]" #may be able to use variable list but not sure how to trigger specifiic effect
+							layoutpolicy_horizontal = expanding
+							spacing = 8
+
+							item = {
+								vbox = {
+									datacontext = "[GetScriptedGui( 'spell_list_item' )]" #put the localize section in custom loc spell_$ID$
+									layoutpolicy_horizontal = expanding
+									button_standard = {
+										layoutpolicy_horizontal = expanding
+										size = { 0 40 }
+
+										tooltip = "[ScriptedGui.IsShownTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End)]"
+										visible = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End)]"
+										onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End)]"
+
+										#onclick = "[PdxGuiTriggerAllAnimations( SelectLocalization( EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate(Scope.GetFlagName, '_province')), '(CFixedPoint)1' ), Select_CString( EqualTo_CFixedPoint( EmptyScope.ScriptValue(Concatenate(Scope.GetFlagName, '_hostile')), '(CFixedPoint)1' ), 'province_select_show_hostile', 'province_select_show' ), 'province_select_hide' ) )]"
+
+										down = "[EqualTo_string( GetPlayer.MakeScope.Var('spell_selected').GetFlagName, Scope.GetFlagName )]"
+
+										widget = {
+											name = "spell_valid"
+											size = { 580 40 }
+											visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End)]"
+											using = ButtonSpellList
+											blockoverride "tint_greyout" {}
+										}
+										widget = {
+											name = "spell_invalid"
+											size = { 580 40 }
+											visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End))]"
+											using = ButtonSpellList
+											blockoverride "spell_font" {
+												default_format = "#low"
+											}
+										}
+									}
+									button_standard = {
+										layoutpolicy_horizontal = expanding
+										size = { 0 40 }
+
+										tooltip = "[ScriptedGui.IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End)]"
+										enabled = no
+										visible = "[Not(ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(Scope.GetFlagName) ).End))]"
+
+										widget = {
+											name = "spell_unkown"
+											size = { 580 40 }
+											using = ButtonSpellList
+											blockoverride "spell_font" {
+												default_format = "#low"
+											}
+										}
+									}
+								}
+							}
+						}
+						expand = {
+							layoutpolicy_vertical = growing
+						}
+					}
+				}
+			}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			margin = { 0 10 }
+			margin_bottom = 15
+			spacing = 10
+
+			vbox = {
+				name = "effects"
+
+				container = {
+					scrollbox = {
+						name = "effects_scrollarea"
+						autoresizescrollarea = yes
+						maximumsize = { -1 360 }
+						#visible = "[InteractionEffectsDescription.HasAnyAcceptEffect]"
+
+						blockoverride "scrollbox_content"
+						{
+							set_parent_size_to_minimum = yes
+
+							block "minimumsize" {
+								minimumsize = { 640 0 }
+							}
+
+							vbox = {
+								name = "effects"
+								layoutpolicy_horizontal = expanding
+								spacing = 10
+
+								### Me
+								vbox = {
+									name = "me"
+									datacontext = "[GetPlayer.MakeScope.Var('spell_caster').Char]"
+									#visible = "[InteractionEffectsDescription.HasActorAcceptEffect]"
+									layoutpolicy_horizontal = expanding
+									margin_bottom = 5
+
+									background = {
+										using = Background_Area_With_Header
+									}
+
+									text_single = {
+										text = "EFFECTS_ON_ME"
+										layoutpolicy_horizontal = expanding
+										margin = { 15 4 }
+									}
+
+									hbox = {
+										layoutpolicy_horizontal = expanding
+										margin_top = 5
+										spacing = 5
+										margin_left = 6
+
+										portrait_head = {
+											blockoverride "opinion_box"
+											{}
+										}
+
+										text_multi = {
+											name = "effects_info"
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+											autoresize = yes
+											max_width = 475
+											margin = { 5 10 }
+											#text = "me effects"
+											text = spell_caster_effect
+										}
+
+										expand = {}
+									}
+								}
+
+								### Recipient
+								vbox = {
+									name = "recipient"
+									datacontext = "[GetPlayer.MakeScope.Var('spell_recipient').Char]"
+									#visible = "[InteractionEffectsDescription.HasRecipientAcceptEffect]"
+									layoutpolicy_horizontal = expanding
+									margin_bottom = 5
+
+									background = {
+										using = Background_Area_With_Header
+									}
+
+									text_single = {
+										text = "EFFECTS_ON_ME"
+										layoutpolicy_horizontal = expanding
+										margin = { 15 4 }
+									}
+
+									hbox = {
+										layoutpolicy_horizontal = expanding
+										margin_top = 5
+										spacing = 5
+										margin_left = 10
+										margin_right = 6
+
+										text_multi = {
+											name = "effects_info"
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+											autoresize = yes
+											max_width = 475
+											margin = { 5 10 }
+											#text = "them effect" #use custom loc here probably
+											text = spell_castee_effect
+										}
+
+										expand = {}
+
+										portrait_head = {
+											#datacontext = "[InteractionEffectsDescription.GetRecipient]"
+											blockoverride "opinion_box" {}
+											blockoverride "portrait_transformation"
+											{
+												portrait_scale = { -1 1 }
+												portrait_offset = { 1 0 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				### Send Button
+				button_primary = {
+					name = "send_offer_button"
+					size = { 400 42 }
+	
+					datacontext = "[GetScriptedGui( 'spell_cast_confirm' )]"
+					enabled = "[And(Not(EqualTo_string( GetPlayer.MakeScope.Var('spell_selected').GetFlagName, 'no_spell' )), ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(GetPlayer.MakeScope.Var('spell_selected').GetFlagName) ).End))]"
+					tooltip = "[Select_CString( EqualTo_string( GetPlayer.MakeScope.Var('spell_selected').GetFlagName, 'no_spell' ), '', ScriptedGui.IsShownTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(GetPlayer.MakeScope.Var('spell_selected').GetFlagName) ).End))]"
+					onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'spell', MakeScopeFlag(GetPlayer.MakeScope.Var('spell_selected').GetFlagName) ).End)]"
+	
+					onclick = "[GetScriptedGui('spellchart_script').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('spell_cleanup').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		
+					text = spell_confirm
+					using = Font_Size_Medium
+				}
+			}
+			expand = {}
+		}
+
+		
+		# hbox = {
+		# 	layoutpolicy_horizontal = expanding
+
+		# 	margin = { 5 0 }
+			
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_cantrips_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', 'cantrips' )]"
+		# 		down = "[Or(GetVariableSystem.HasValue( 'spell_tabs', 'cantrips' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 	}
+
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_lvl1_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', '1_level' )]"
+		# 		down = "[GetVariableSystem.HasValue( 'spell_tabs', '1_level' )]"
+		# 	}
+
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_lvl2_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', '2_level' )]"
+		# 		down = "[GetVariableSystem.HasValue( 'spell_tabs', '2_level' )]"
+		# 	}
+
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_lvl3_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', '3_level' )]"
+		# 		down = "[GetVariableSystem.HasValue( 'spell_tabs', '3_level' )]"
+		# 	}
+
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_lvl4_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', '4_level' )]"
+		# 		down = "[GetVariableSystem.HasValue( 'spell_tabs', '4_level' )]"
+		# 	}
+			
+		# 	button_tab = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		text = spellchart_lvl5_button
+		# 		default_format = "medium"
+
+		# 		size = { 90 40 }
+
+		# 		onclick = "[GetVariableSystem.Set( 'spell_tabs', '5_level' )]"
+		# 		down = "[GetVariableSystem.HasValue( 'spell_tabs', '5_level' )]"
+		# 	}
+		# }
+
+		# hbox = {
+		# 	margin = { 25 25 }
+		# 	layoutpolicy_horizontal = expanding
+		# 	layoutpolicy_vertical = expanding
+
+		# 	hbox = {
+		# 		layoutpolicy_horizontal = expanding
+		# 		layoutpolicy_vertical = expanding
+				
+		# 		expand = {}
+
+		# 		scrollbox = { # Cantrip Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', 'cantrips' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = spells_guidance_name
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = spells_guidance_desc
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+
+		# 						button_round = {
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+									
+		# 							onclick = "[GetScriptedGui('spells_guidance').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+		# 							## TI TODO: add a Valid check in the scripted GUI to make sure the character can cast the spell.
+		# 							#enabled = "[GetScriptedGui('spells_guidance').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Mending" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Repair an artifact or increase artifact durablity." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+
+		# 							onclick = "[GetScriptedGui('spells_mending').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Mage Hand" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase intrigue scheme success chance." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+
+		# 							onclick = "[GetScriptedGui('spells_magehand').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Prestidigitation" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Add general random small bonus." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+
+		# 							onclick = "[GetScriptedGui('spells_prestidigitation').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Vicious Mockery" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Decrease target character opinion and increase dread." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+
+		# 							onclick = "[GetScriptedGui('spells_viciousmockery').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}
+
+		# 		scrollbox = { # 1st Level Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', '1_level' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area_1"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Bless" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase a random skill point." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = spells_cast_loc_temp
+
+		# 							onclick = "[GetScriptedGui('spells_bless').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Charm Person" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase chance to sway, small chance for favor." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_charmperson').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Hex" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Curse a target's health." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_hex').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Purify Food and Drink" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase disease/plague resistance." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_purifyfad').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Find Familiar" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Summon a magical fluffy friend." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_findfamiliar').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}
+
+		# 		scrollbox = { # 2nd Level Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', '2_level' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area_2"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Find Steed" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase travel speed." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_findsteed').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Enhance Ability" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "More effectively increase skill points." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_enhanceability').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Gift of Gab" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Force a target to forget a secret." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_giftofgab').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Invisibility" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Eh, duhh. Makes ya invisible." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_invisibility').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Magic Weapon" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Prowess increase." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_magicweapon').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}
+
+		# 		scrollbox = { # 3rd Level Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', '3_level' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area_3"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Haste" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase prowess and travel speed." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_haste').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Motivational Speech" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase commander advantage." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_motivationalspeech').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Sending" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase diplo range." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_sending').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Vampiric Touch" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Lifesteal health from a target." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_vampirictouch').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Fireball" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase siege effectiveness." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_fireball').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}	
+				
+		# 		scrollbox = { # 4th Level Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', '4_level' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area_4"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Fabricate" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Create an artifact or building." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_fabricate').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Divination" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Interact with your god." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_divination').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Locate Creature" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Locate rare huntable animals." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_locatecreature').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Death Ward" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Health boost." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_deathward').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Create Water" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Increase naval speed." ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+
+		# 							onclick = "[GetScriptedGui('spells_createwater').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}
+
+		# 		scrollbox = { # 5th Level Slots
+		# 			visible = "[Or(GetVariableSystem.HasValue( 'spell_tabs', '5_level' ), Not(GetVariableSystem.Exists('spell_tabs')))]"
+		# 			name = "spell_scroll_area_5"
+		# 			layoutpolicy_vertical = expanding
+		# 			layoutpolicy_horizontal = expanding
+
+		# 			blockoverride "scrollbox_content" {
+
+		# 				hbox = {
+							
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Spell 1" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Spell 1 Description" ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Spell 2" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Spell 2 Description" ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Spell 3" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Spell 3 Description" ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+		# 						}
+		# 					}	
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Spell 4" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Spell 4 Description" ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+		# 						}
+		# 					}		
+		# 				}
+
+		# 				hbox = {
+		# 					margin = { 0 40 }
+		# 					layoutpolicy_horizontal = expanding
+
+		# 					background = {
+		# 						using = Background_Area_Border
+
+		# 						margin = { 0 -2 }
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_vertical = expanding
+		# 						layoutpolicy_horizontal = expanding
+
+		# 						background = {
+		# 							using = Background_Frame_Gold
+		# 							margin = { -20 20 }
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Big
+
+		# 							text = "Spell 5" ##TI TODO: Localization
+		# 						}
+
+		# 						text_single = {
+		# 							layoutpolicy_vertical = expanding
+		# 							using = Font_Type_Flavor
+		# 							using = Font_Size_Small
+
+		# 							text = "Spell 5 Description" ##TI TODO: Localization
+		# 						}
+		# 					}
+
+		# 					vbox = {
+		# 						layoutpolicy_horizontal = fixed
+		# 						margin_right = 30
+		# 						button_round = { 
+
+		# 							size = { 75 75 }
+
+		# 							layoutpolicy_horizontal = expanding 
+		# 							text = "Cast"
+		# 						}
+		# 					}	
+		# 				}
+		# 			}
+		# 		}
+		# 	}
+		# }
+	}
+}

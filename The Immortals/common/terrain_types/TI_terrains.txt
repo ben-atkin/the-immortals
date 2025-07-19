@@ -1,0 +1,48 @@
+﻿elvish_capital = {
+	color = hsv { 0 1 1 }
+	provision_cost = @provisions_cost_minimal
+	
+	province_modifier = {
+		supply_limit_mult = 0.5
+		building_slot_add = 3 ## AGOT does this. I like it.
+	}
+
+	county_capital_modifier = {
+		development_growth_factor = 0.2
+	}
+	
+	audio_parameter = 1.0
+}
+
+human_capital = {
+	color = hsv { 0 1 1 }
+	provision_cost = @provisions_cost_minimal
+	
+	province_modifier = {
+		supply_limit_mult = 0.5
+		building_slot_add = 3
+	}
+
+	county_capital_modifier = {
+		development_growth_factor = 0.2
+	}
+	
+	audio_parameter = 1.0
+}
+
+orcish_capital = {
+	color = hsv { 0 1 1 }
+	provision_cost = @provisions_cost_minimal
+	
+	province_modifier = {
+		supply_limit_mult = 0.5
+		building_slot_add = 3
+	}
+
+	county_capital_modifier = {
+		development_growth_factor = 0.2
+	}
+	
+	audio_parameter = 1.0
+}
+

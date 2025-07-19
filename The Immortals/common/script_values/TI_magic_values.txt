@@ -1,0 +1,338 @@
+## TI Addition: Added Arcana/Magic values.
+
+arcana_trait_full_elvish_value = 2
+arcana_trait_full_elvish_value_10th = { VALUE = arcana_trait_full_elvish_value.tenth }
+arcana_trait_human_value = 1
+arcana_trait_human_value_10th = { VALUE = arcana_trait_human_value.tenth }
+
+arcana_trait_arcanafatigue_value = -1
+arcana_trait_arcanafatigue_value_10th = { VALUE = arcana_trait_arcanafatigue_value.tenth }
+
+arcana_trait_intellect_bad_1_value = -1
+arcana_trait_intellect_bad_1_value_10th = { VALUE = arcana_trait_intellect_bad_1_value.tenth }
+arcana_trait_intellect_bad_2_value = -4
+arcana_trait_intellect_bad_2_value_10th = { VALUE = arcana_trait_intellect_bad_2_value.tenth }
+arcana_trait_intellect_bad_3_value = -8
+arcana_trait_intellect_bad_3_value_10th = { VALUE = arcana_trait_intellect_bad_3_value.tenth }
+arcana_trait_intellect_good_1_value = 1
+arcana_trait_intellect_good_1_value_10th = { VALUE = arcana_trait_intellect_good_1_value.tenth }
+arcana_trait_intellect_good_2_value = 3
+arcana_trait_intellect_good_2_value_10th = { VALUE = arcana_trait_intellect_good_2_value.tenth }
+arcana_trait_intellect_good_3_value = 5
+arcana_trait_intellect_good_3_value_10th = { VALUE = arcana_trait_intellect_good_3_value.tenth }
+
+arcana_trait_inbred_value = -3
+arcana_trait_inbred_value_10th = { VALUE = arcana_trait_inbred_value.tenth }
+
+
+arcana_trait_spellcaster_value = {
+	if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value <= 25
+			}
+		}
+		add = {
+			value = 1
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value <= 50
+			}
+		}
+		add = {
+			value = 2
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value <= 75
+			}
+		}
+		add = {
+			value = 3
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value < 100
+			}
+		}
+		add = {
+			value = 4
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = 100
+			}
+		}
+		add = {
+			value = 8
+		}
+	} 
+}
+
+arcana_trait_spellcaster_value_10th = {
+	value = arcana_trait_spellcaster_value
+	divide = 10
+}
+
+
+arcana_base = {
+	value = 1
+	if = {
+		limit = { exists = var:arcana_base }
+		add = var:arcana_base
+	}
+}
+
+arcana_base_10th = {
+	value = arcana_base
+	divide = 10
+}
+
+arcana = {
+	value = arcana_base
+
+	## The following values determine a characters 'arcana', which in turn determines a characters maximum magic, which is how characters effectively use the whole TI magic system.
+	## Unfortunately, modded tooltips seem to 'complicated'.
+	## ... which means > ALWAYS ADD THE DATA TO BOTH FILES >> gui/TI_magic_types.gui + common/script_values/TI_magic_values.txt
+
+	## Race Traits
+	if = {
+		limit = { has_trait = race_trait_full_elvish }
+		add = {
+			value = arcana_trait_full_elvish_value
+			#desc = arcana_trait_full_elvish_value
+		}
+	}
+	if = {
+		limit = { has_trait = race_trait_human }
+		add = {
+			value = arcana_trait_human_value
+			#desc = arcana_trait_human_value
+		}
+	}
+
+	## Genetic Traits
+
+	if = {
+		limit = { has_trait = intellect_bad_1 }
+		add = {
+			value = arcana_trait_intellect_bad_1_value
+			#desc = arcana_intellect_bad_1
+		}
+	}
+	else_if = {
+		limit = { has_trait = intellect_bad_2 }
+		add = {
+			value = arcana_trait_intellect_bad_2_value
+			#desc = arcana_intellect_bad_2
+		}
+	}
+	else_if = {
+		limit = { has_trait = intellect_bad_3 }
+		add = {
+			value = arcana_trait_intellect_bad_3_value
+			#desc = arcana_intellect_bad_3
+		}
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_1 }
+		add = {
+			value = arcana_trait_intellect_good_1_value
+			#desc = arcana_intellect_good_1
+		}
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_2 }
+		add = {
+			value = arcana_trait_intellect_good_2_value
+			#desc = arcana_intellect_good_2
+		}
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_3 }
+		add = {
+			value = arcana_trait_intellect_good_3_value
+			#desc = arcana_intellect_good_3
+		}
+	}
+	if = {
+		limit = { has_trait = inbred }
+		add = {
+			value = arcana_trait_inbred_value
+			#desc = arcana_inbred
+		}
+	}
+
+	## Leveled Traits
+	if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value < 25
+			}
+		}
+		add = {
+			value = 1
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value < 50
+			}
+		}
+		add = {
+			value = 2
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value < 75
+			}
+		}
+		add = {
+			value = 3
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value < 100
+			}
+		}
+		add = {
+			value = 4
+		}
+	} else_if = {
+		limit = {
+			has_trait = magic_trait_spellcaster
+			has_trait_xp = {
+				trait = magic_trait_spellcaster
+				value >= 100
+			}
+		}
+		add = {
+			value = 8
+		}
+	}
+
+	## Modifiers
+
+	if = {
+		limit = {
+			has_trait = arcana_fatigue_trait
+		}
+		subtract = {
+			value = 1
+		}
+	}
+}
+
+
+
+magic_max = {
+	value = arcana
+	multiply = 10
+}
+
+magic_flat = {
+	value = {
+		value = arcana
+		multiply = 0.1
+	}
+}
+
+magic_mult = {
+	value = 1
+}
+
+magic_regen = {
+	value = magic_flat
+	multiply = magic_mult
+}
+
+magic_monthly = {
+	value = magic_regen
+	add = magic_upkeep
+}
+
+magic_yearly = {
+	value = magic_monthly
+	multiply = 12
+}
+
+half_maximum_magic = {
+	value = magic_max
+	divide = 2
+}
+
+negate = {
+	value = this
+	multiply = -1
+}
+
+tenth = { ## not sure how to integrate with: Character.MakeScope.ScriptValue
+	value = this
+	divide = 10
+}
+
+
+## Spell Costs
+
+l0_cost = 5
+l1_cost = 15
+l2_cost = 25
+l3_cost = 40
+l4_cost = 75
+l5_cost = 100
+
+
+guidance_cost = l0_cost
+mending_cost = l0_cost
+magehand_cost = l0_cost
+prestidigitation_cost = l0_cost
+viciousmockery_cost = l0_cost
+
+bless_cost = l1_cost
+charmperson_cost = l1_cost
+hex_cost = l1_cost
+purifyfad_cost = l1_cost
+findfamiliar_cost = l1_cost
+
+findsteed_cost = l2_cost
+enhanceability_cost = l2_cost
+giftofgab_cost = l2_cost
+invisibility_cost = l2_cost
+magicweapon_cost = l2_cost
+
+haste_cost = l3_cost
+motivationalspeech_cost = l3_cost
+sending_cost = l3_cost
+vampirictouch_cost = l3_cost
+fireball_cost = l3_cost
+
+fabricate_cost = l4_cost
+divination_cost = l4_cost
+locatecreature_cost = l4_cost
+deathward_cost = l4_cost
+createwater_cost = l4_cost

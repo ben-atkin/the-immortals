@@ -2,7 +2,7 @@
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
 
-e_Onakaam_Empire = {
+e_Onokam_Empire = {
     color = { 255 87 51 }
     capital = c_county_tier3
 
@@ -13,717 +13,798 @@ e_Onakaam_Empire = {
         d_Elvish_Duchy_North = {
             color = { 240 240 10 }
             capital = c_county_tier3
+
+            c_county_tier3 = { # Capital
+                color = { 240 240 10 }
+
+                b_test9 = {
+                    province = 15
+                }
+                b_test10 = {
+                    province = 10
+                }
+                b_test11 = {
+                    province = 11
+                }
+                b_test12 = {
+                    province = 14
+                }
+                b_test13 = {
+                    province = 16
+                }
+            }
              
             c_county_tier1 = {
                 color = { 180 190 20 }
                  
                 b_test1 = {
-                    province = 3
+                    province = 2
                 }
                 b_test2 = {
-                    province = 2
+                    province = 3
                 }
                 b_test3 = {
                     province = 4
                 }
                 b_test4 = {
                     province = 5
-                }
-                b_test5 = {
-                    province = 6
-                }            
+                }         
             }
             c_county_tier2 = {
                 color = { 200 210 40 }
  
+                b_test5 = {
+                    province = 6
+                }
                 b_test6 = {
-                    province = 9
-                }
-                b_test7 = {
-                    province = 8
-                }
-                b_test8 = {
                     province = 7
                 }
-                b_test9 = {
-                    province = 10
+                b_test7 = {
+                    province = 12
                 }
-                b_test10 = {
-                    province = 11
-                }
-            }
-            c_county_tier3 = {
-                color = { 240 240 10 }
-
-                b_test11 = {
-                    province = 17
-                }
-                b_test12 = {
+                b_test8 = {
                     province = 13
                 }
-                b_test13 = {
-                    province = 14
-                }
-                b_test14 = {
-                    province = 15
-                }
-                b_test15 = {
-                    province = 16
-                }
             }
+            
             c_county_tier4 = {
                  color = { 210 210 40 }
 
-                b_test16 = {
-                    province = 19
+                b_test14 = {
+                    province = 8
                 }
+                b_test15 = {
+                    province = 9
+                }
+                b_test16 = {
+                    province = 25
+                }
+
+            }
+            c_county_tier5 = {
+                color = { 180 170 10 }
+
                 b_test17 = {
-                    province = 12
+                    province = 17
                 }
                 b_test18 = {
                     province = 18
                 }
                 b_test19 = {
-                    province = 20
-                }
-                b_test20 = {
-                    province = 21
-                }
-            }
-            c_county_tier5 = {
-                color = { 180 170 10 }
-
-                b_test21 = {
                     province = 24
                 }
-                b_test22 = {
-                    province = 23
-                }
-                b_test23 = {
-                    province = 22
-                }
-                b_test24 = {
-                    province = 25
-                }
-            }
-        }
-        d_Elvish_Duchy_South = {
-            color = { 230 220 90 }
-            capital = c_county_tier11
-            
-            c_county_tier11 = {
-                color = { 230 220 90 }
-
-                b_test34 = {
-                    province = 46
-                }
-                b_test35 = {
-                    province = 47
-                }
-                b_test36 = {
-                    province = 45
-                }
-                b_test37 = {
-                    province = 42
-                }
-            }
-            c_county_tier9 = {
-                color = { 200 190 20 }
-
-                b_test38 = {
-                    province = 31
-                }
-                b_test39 = {
-                    province = 30
-                }
-                b_test40 = {
-                    province = 39
-                }
-                b_test41 = {
+                b_test20 = {
                     province = 29
                 }
             }
-            c_county_tier10 = {
-                color = { 220 220 50 }
-
-                b_test42 = {
-                    province = 49
-                }
-                b_test43 = {
-                    province = 48
-                }
-                b_test44 = {
-                    province = 50
-                }
-                b_test45 = {
-                    province = 41
-                }
-            }
-            c_county_tier25 = {
-                color = { 190 210 80 }
-
-                b_test46 = {
-                    province = 38
-                }
-                b_test47 = {
-                    province = 32
-                }
-                b_test48 = {
-                    province = 37
-                }
-                b_test49 = {
-                    province = 40
-                }
-            }
         }
+
         d_Elvish_Duchy_East = {
             color = { 190 210 10 }
             capital = c_county_tier6
              
-                c_county_tier6 = {
+            c_county_tier6 = {
                 color = { 190 210 10 }
 
-                b_test25 = {
-                    province = 27
+                b_test21 = {
+                    province = 19
                 }
-                b_test26 = {
-                    province = 26
+                b_test22 = {
+                    province = 20
                 }
-                b_test27 = {
-                    province = 28
+                b_test23 = {
+                    province = 21
                 }
-                b_test28 = {
-                    province = 33
-                }
-                b_test29 = {
-                    province = 34
+                b_test24 = {
+                    province = 22
                 }
             }
             c_county_tier7 = {
                 color = { 190 180 10 }
 
+                b_test25 = {
+                    province = 23
+                }
+                b_test26 = {
+                    province = 31
+                }
+            }
+        }
+
+        d_Elvish_Duchy_West = {
+            color = { 200 210 20 } #change this
+            capital = c_county_tier8
+
+            c_county_tier8 = {
+                color = { 200 210 20 }
+                
+                b_test27 = {
+                    province = 26
+                }
+
+                b_test28 = {
+                    province = 27
+                }
+
+                b_test29 = {
+                    province = 36
+                }
+            }
+
+            c_county_tier9 = {
+                color = { 200 210 20 }
+                
                 b_test30 = {
+                    province = 28
+                }
+
+                b_test31 = {
+                    province = 30
+                }
+
+                b_test32 = {
                     province = 35
                 }
-                b_test31 = {
+            }
+        }
+        d_Elvish_Duchy_South = {
+            color = { 230 220 90 }
+            capital = c_county_tier10
+            
+            c_county_tier10 = {
+                color = { 230 220 90 }
+
+                b_test33 = {
                     province = 44
                 }
-                b_test32 = {
+                b_test34 = {
                     province = 43
                 }
-                b_test33 = {
-                    province = 36
+                b_test35 = {
+                    province = 45
+                }
+                b_test36 = {
+                    province = 46
+                }
+            }
+            c_county_tier11 = {
+                color = { 200 190 20 }
+
+                b_test37 = {
+                    province = 42
+                }
+                b_test38 = {
+                    province = 41
+                }
+                b_test39 = {
+                    province = 39
+                }
+                b_test40 = {
+                    province = 40
+                }
+            }
+            c_county_tier12 = {
+                color = { 220 220 50 }
+
+                b_test41 = {
+                    province = 37
+                }
+                b_test42 = {
+                    province = 38
+                }
+                b_test43 = {
+                    province = 50
+                }
+            }
+            c_county_tier13 = {
+                color = { 220 220 50 }
+
+                b_test44 = {
+                    province = 34
+                }
+                b_test45 = {
+                    province = 33
+                }
+                b_test46 = {
+                    province = 32
+                }
+            }
+            c_county_tier14 = {
+                color = { 190 210 80 }
+
+                b_test47 = {
+                    province = 51
+                }
+                b_test48 = {
+                    province = 49
+                }
+                b_test49 = {
+                    province = 48
+                }
+                b_test50 = {
+                    province = 47
                 }
             }
         }
     }
+        
     k_Orcish_Kingdom = {
         color = { 0 90 0 }
-        capital = c_county_tier12
-
-        d_Orcish_Duchy_South = {
-            color = { 0 90 0 }
-            capital = c_county_tier12
-             
-            c_county_tier12 = {
-                color = { 0 90 0 }
-                 
-                b_test50 = {
-                    province = 82
-                }
-                b_test51 = {
-                    province = 81
-                }
-                b_test52 = {
-                    province = 83
-                }
-                b_test54 = {
-                    province = 100
-                }
-                b_test55 = {
-                    province = 101
-                }
-                b_test56 = {
-                    province = 102
-                }           
-            }
-            c_county_tier13 = {
-                color = { 40 110 10 }
-                 
-                b_test57 = {
-                    province = 104
-                }
-                b_test59 = {
-                    province = 103
-                }
-                b_test60 = {
-                    province = 105
-                }           
-            }
-            c_county_tier14 = {
-                color = { 20 90 20 }
-                 
-                b_test61 = {
-                    province = 110
-                }
-                b_test62 = {
-                    province = 106
-                }
-                b_test63 = {
-                    province = 107
-                }
-                b_test64 = {
-                    province = 108
-                }           
-            }
-            c_county_tier15 = {
-                color = { 0 50 0 }
-                 
-                b_test65 = {
-                    province = 109
-                }
-                b_test66 = {
-                    province = 111
-                }
-                b_test67 = {
-                    province = 99
-                }
-                b_test68 = {
-                    province = 98
-                }           
-            }
-            c_county_tier26 = {
-                color = { 60 200 30 }
-
-                b_test53 = {
-                    province = 75
-                }
-                b_test115 = {
-                    province = 76
-                }
-                b_test58 = {
-                    province = 77
-                }
-            }
-        }
+        capital = c_county_tier18
 
         d_Orcish_Duchy_North = {
             color = { 43 54 43 }
-            capital = c_county_tier22
-             
-            c_county_tier22 = {
-                color = { 60 90 50 }
-                 
-                b_test98 = {
-                    province = 55
-                }
-                b_test99 = {
-                    province = 54
-                }
-                b_test100 = {
-                    province = 58
-                }
-                b_test101 = {
-                    province = 59
-                }           
-            } 
+            capital = c_county_tier18
+
             c_county_tier18 = {
-                color = { 120 150 90 }
+                color = { 80 150 90 }
                  
-                b_test78 = {
+                b_test61 = {
+                    province = 70
+                }
+                b_test62 = {
                     province = 64
                 }
-                b_test79 = {
-                    province = 65
-                }
-                b_test80 = {
-                    province = 66
+                b_test63 = {
+                    province = 71
+                }   
+                b_test64 = {
+                    province = 69
                 }           
             }
-            c_county_tier28 = {
+             
+            c_county_tier15 = {
+                color = { 60 90 50 }
+                 
+                b_test51 = {
+                    province = 60
+                }
+                b_test52 = {
+                    province = 61
+                }
+                b_test53 = {
+                    province = 62
+                }
+                b_test54 = {
+                    province = 63
+                }           
+            } 
+            c_county_tier16 = {
+                color = { 120 150 90 }
+                 
+                b_test55 = {
+                    province = 72
+                }
+                b_test56 = {
+                    province = 73
+                }
+                b_test57 = {
+                    province = 74
+                }           
+            }
+            c_county_tier17 = {
                 color =  { 43 54 43 }
 
-                b_test81 = {
-                    province = 67
+                b_test58 = {
+                    province = 75
                 }
-                b_test82 = {
-                    province = 60
-                } 
+                b_test59 = {
+                    province = 76
+                }
+                b_test60 = {
+                    province = 77
+                }
             }
+            
             c_county_tier19 = {
                 color = { 80 150 90 }
                  
-                b_test83 = {
-                    province = 63
+                b_test65 = {
+                    province = 78
                 }
-                b_test84 = {
-                    province = 61
+                b_test66 = {
+                    province = 79
+                }        
+            }
+            c_county_tier20 = {
+                color = { 80 150 90 }
+                 
+                b_test67 = {
+                    province = 80
                 }
-                b_test85 = {
-                    province = 62
-                }           
+                b_test68 = {
+                    province = 85
+                } 
+                b_test69 = {
+                    province = 86
+                }         
             }
         }
         d_Orcish_Duchy_West = {
             color = { 120 120 120 }
-            capital = c_county_tier21
+            capital = c_county_tier22
 
-            c_county_tier20 = {
-                color = { 80 150 50 }
-                 
-                b_test88 = {
-                    province = 71
-                }
-                b_test90 = {
-                    province = 91
-                }
-                b_test91 = {
-                    province = 85
-                }
-                b_test92 = {
-                    province = 86
-                }           
-            }
-            c_county_tier21 = {
+            c_county_tier22 = {
                 color = { 70 90 70 }
                  
-                b_test93 = {
-                    province = 89
-                }
-                b_test94 = {
-                    province = 88
-                }
-                b_test95 = {
-                    province = 87
-                }
                 b_test74 = {
-                    province = 90
-                }       
+                    province = 111
+                }
+                b_test75 = {
+                    province = 110
+                }
+                b_test76 = {
+                    province = 109
+                }
+                b_test77 = {
+                    province = 112
+                }
+                b_test78 = {
+                    province = 108
+                }
             }
-            c_county_tier29 = {
-                color = { 78 82 78 }
 
-                b_test96 = {
-                    province = 69
-                }
-                b_test97 = {
-                    province = 68
-                } 
-                b_test89 = {
-                    province = 70
-                }
-            }
-            c_county_tier16 = {
-                color = { 60 140 30 }
+            c_county_tier21 = {
+                color = { 80 150 50 }
                  
-                b_test69 = {
-                    province = 94
-                }
                 b_test70 = {
-                    province = 95
+                    province = 81
+                }
+                b_test71 = {
+                    province = 82
                 }
                 b_test72 = {
+                    province = 83
+                }
+                b_test73 = {
                     province = 84
                 }           
             }
-            c_county_tier17 = {
-                color = { 20 40 20 }
-                 
-                b_test73 = {
-                    province = 93
+            
+            c_county_tier23 = {
+                color = { 78 82 78 }
+
+                b_test79 = {
+                    province = 107
                 }
-                b_test75 = {
-                    province = 92
-                }
-                b_test76 = {
-                    province = 96
+                b_test80 = {
+                    province = 113
                 } 
-                b_test77 = {
-                    province = 97
-                }          
+                b_test81 = {
+                    province = 114
+                }
+            }
+            c_county_tier24 = {
+                color = { 60 140 30 }
+                 
+                b_test82 = {
+                    province = 87
+                }
+                b_test83 = {
+                    province = 88
+                }
+                b_test84 = {
+                    province = 106
+                }
+                b_test85 = {
+                    province = 105
+                }        
             }
         }
         d_Orcish_Duchy_East = {
             color = { 60 90 50 }
-            capital = c_county_tier24
-             
-            c_county_tier23 = {
-                color = { 50 80 40 }
-                 
-                b_test102 = {
-                    province = 78
-                }
-                b_test104 = {
-                    province = 79
-                }
-                b_test105 = {
-                    province = 80
-                }             
-            }
-            c_county_tier24 = {
+            capital = c_county_tier26
+
+            c_county_tier26 = {
                 color = { 70 120 60 }
                  
-                b_test106 = {
+                b_test90 = {
+                    province = 55
+                }
+                b_test91 = {
+                    province = 54
+                }
+                b_test92 = {
+                    province = 56
+                }         
+            }
+             
+            c_county_tier25 = {
+                color = { 50 80 40 }
+                 
+                b_test86 = {
                     province = 52
                 }
-                b_test107 = {
-                    province = 51
+                b_test87 = {
+                    province = 53
                 }
-                b_test108 = {
-                    province = 128
-                }       
-                b_test109 = {
-                    province = 129
-                }    
+                b_test89 = {
+                    province = 57
+                }             
             }
+            
             c_county_tier27 = {
                 color = { 60 150 60 }
 
-                 b_test110 = {
-                    province = 53
+                b_test93 = {
+                    province = 66
                 }
-                b_test111 = {
-                    province = 74
+                b_test94 = {
+                    province = 67
                 }   
-                b_test112 = {
-                    province = 56
+                b_test95 = {
+                    province = 68
                 }
             }
-            c_county_tier30 = {
+            c_county_tier28 = {
                 color = { 100 120 60 }
 
+                b_test96 = {
+                    province = 89
+                }
+                b_test97 = {
+                    province = 90
+                }
+                b_test98 = {
+                    province = 91
+                }
+                b_test99 = {
+                    province = 93
+                }
+            }
+            c_county_tier29 = {
+                color = { 100 120 60 }
+
+                b_test100 = {
+                    province = 59
+                }
+                b_test101 = {
+                    province = 58
+                }
+                b_test102 = {
+                    province = 65
+                }
+            }
+        }    
+        d_Orcish_Duchy_South = {
+            color = { 0 90 0 }
+            capital = c_county_tier30
+             
+            c_county_tier30 = {
+                color = { 0 90 0 }
+                 
                 b_test103 = {
-                    province = 73
+                    province = 119
+                }
+                b_test104 = {
+                    province = 118
+                }
+                b_test105 = {
+                    province = 115
+                }
+                b_test106 = {
+                    province = 120
+                }
+                b_test107 = {
+                    province = 121
+                }         
+            }
+            c_county_tier31 = {
+                color = { 40 110 10 }
+                 
+                b_test108 = {
+                    province = 102
+                }
+                b_test109 = {
+                    province = 99
+                }
+                b_test110 = {
+                    province = 98
+                }           
+            }
+            c_county_tier32 = {
+                color = { 20 90 20 }
+                 
+                b_test111 = {
+                    province = 116
+                }
+                b_test112 = {
+                    province = 103
                 }
                 b_test113 = {
-                    province = 72
+                    province = 104
                 }
                 b_test114 = {
-                    province = 57
+                    province = 94
+                }
+                b_test115 = {
+                    province = 117
+                }             
+            }
+            c_county_tier33 = {
+                color = { 0 50 0 }
+                 
+                b_test116 = {
+                    province = 92
+                }
+                b_test117 = {
+                    province = 95
+                }
+                b_test118 = {
+                    province = 96
+                }
+                b_test119 = {
+                    province = 97
+                }           
+            }
+
+            c_county_tier47 = {
+                color = { 0 50 0 }
+
+                b_test167  = {
+                    province = 100
+                }
+                b_test168 = {
+                    province = 101
                 }
             }
         }
+        d_Orcish_Duchy_Sole = {
+            color = { 0 90 0 }
+            capital = c_county_tier34
+
+            c_county_tier34 = {
+                color = { 60 200 30 }
+
+                b_test120 = {
+                    province = 122
+                }
+            }
+        } 
     }
+
     k_Jaka_Kingdom = {
         color = { 50 100 200 }
-        capital = c_county_tier31
+        capital = c_county_tier43
 
-        d_Jaka_Duchy_West = {
-            color = { 50 100 200 }
-            capital = c_county_tier31
+        d_Jaka_Duchy_East = {
+            color = { 50 70 180 }
+            capital = c_county_tier35
 
-            c_county_tier31 = {
-                color = { 50 100 200 }
+            c_county_tier35 = {
+                color = { 50 70 180 }
 
-                b_test116 = {
-                    province = 169
-                }
-                b_test117 = {
-                    province = 157
-                }
-                b_test118 = {
-                    province = 166
-                }
-                b_test119 = {
-                    province = 167
-                }
-                b_test120 = {
-                    province = 168
-                }
                 b_test121 = {
-                    province = 170
+                    province = 123
                 }
-            }
-            c_county_tier32 = {
-                color = { 30 80 180 }
-
                 b_test122 = {
-                    province = 173
+                    province = 131
                 }
                 b_test123 = {
-                    province = 171
+                    province = 130
                 }
                 b_test124 = {
-                    province = 172
+                    province = 124
                 }
-            }
-            c_county_tier33 = {
-                color = { 50 90 140 }
-
                 b_test125 = {
-                    province = 160
-                }
-                b_test126 = {
-                    province = 150
-                }
-                b_test127 = {
-                    province = 159
-                }
-                b_test128 = {
-                    province = 164
-                }
-                b_test129 = {
-                    province = 165
-                }
-            }
-            c_county_tier34 = {
-                color = { 60 110 140 }
-
-                b_test130 = {
-                    province = 161
-                }
-                b_test131 = {
-                    province = 149
-                }
-                b_test132 = {
-                    province = 162
-                }
-                b_test133 = {
-                    province = 163
-                }
-            }
-            c_county_tier35 = {
-                color = { 50 130 220 }
-
-                b_test134 = {
-                    province = 158
-                }
-                b_test135 = {
-                    province = 151
-                }
-                b_test136 = {
-                    province = 152
-                }
-                b_test137 = {
-                    province = 153
+                    province = 129
                 }
             }
             c_county_tier36 = {
-                color = { 70 130 180 }
-
-                b_test138 = {
-                    province = 154
-                }
-                b_test139 = {
-                    province = 155
-                }
-                b_test140 = {
-                    province = 156
-                }
-            }
-        }
-        d_Jaka_Duchy_East = {
-            color = { 50 70 180 }
-            capital = c_county_tier37
-
-            c_county_tier37 = {
-                color = { 50 70 180 }
-
-                b_test141 = {
-                    province = 140
-                }
-                b_test142 = {
-                    province = 139
-                }
-                b_test143 = {
-                    province = 145
-                }
-                b_test144 = {
-                    province = 146
-                }
-            }
-            c_county_tier38 = {
                 color = { 50 110 190 }
 
+                b_test126 = {
+                    province = 125
+                }
+                b_test127 = {
+                    province = 126
+                }
+                b_test128 = {
+                    province = 127
+                }
+                b_test129 = {
+                    province = 128
+                }
+            }
+            c_county_tier37 = {
+                color = { 50 70 140 }
+
+                b_test130 = {
+                    province = 132
+                }
+                b_test131 = {
+                    province = 133
+                }
+                b_test132 = {
+                    province = 141
+                }
+
+            }
+            c_county_tier38 = {
+                color = { 50 130 210 }
+
+                b_test133 = {
+                    province = 134
+                }
+                b_test134 = {
+                    province = 139
+                }
+                b_test135 = {
+                    province = 140
+                }
+
+            }
+        }
+        
+        d_Jaka_Duchy_West = {
+            color = { 50 100 200 }
+            capital = c_county_tier42
+
+            c_county_tier42 = {
+                color = { 60 110 140 }
+
+                b_test144 = {
+                    province = 147
+                }
                 b_test145 = {
                     province = 148
                 }
                 b_test146 = {
-                    province = 147
+                    province = 149
                 }
-                b_test147 = {
-                    province = 138
-                }
-            }
-            c_county_tier39 = {
-                color = { 50 70 140 }
 
-                b_test148 = {
-                    province = 130
+            }
+
+            c_county_tier39 = {
+                color = { 50 100 200 }
+
+                b_test136 = {
+                    province = 144
                 }
-                b_test149 = {
-                    province = 131
+                b_test137 = {
+                    province = 145
                 }
-                b_test150 = {
-                    province = 136
-                }
-                b_test151 = {
-                    province = 137
+                b_test138 = {
+                    province = 146
                 }
             }
             c_county_tier40 = {
-                color = { 50 130 210 }
+                color = { 30 80 180 }
 
-                b_test152 = {
-                    province = 134
+                b_test139 = {
+                    province = 155
                 }
-                b_test153 = {
-                    province = 135
+                b_test140 = {
+                    province = 154
                 }
-                b_test154 = {
-                    province = 132
-                }
-                b_test155 = {
-                    province = 133
+                b_test141 = {
+                    province = 150
                 }
             }
             c_county_tier41 = {
-                color = { 30 75 200 }
+                color = { 50 90 140 }
 
-                b_test156 = {
-                    province = 141
-                }
-                b_test157 = {
+                b_test142 = {
                     province = 142
                 }
-                b_test158 = {
+                b_test143 = {
                     province = 143
                 }
+            }
+            
+        }
+        
+        d_Jaka_Duchy_South = {
+            color = { 100 100 280 }
+            capital = c_county_tier43
+
+            c_county_tier43 = {
+                color = { 100 100 280 }
+
+                b_test147 = {
+                    province = 153
+                }
+                b_test148 = {
+                    province = 156
+                }
+                b_test149 = {
+                    province = 151
+                }
+                b_test150 = {
+                    province = 152
+                }
+                b_test151 = {
+                    province = 158
+                }
+                b_test152 = {
+                    province = 157
+                }
+            }
+            c_county_tier44 = {
+                color = { 50 110 220 }
+
+                b_test153 = {
+                    province = 138
+                }
+                b_test154 = {
+                    province = 137
+                }
+                b_test155 = {
+                    province = 136
+                }
+                b_test156 = {
+                    province = 135
+                }
+            }
+
+            c_county_tier45 = {
+                color = { 50 110 220 }
+
+                b_test157 = {
+                    province = 159
+                }
+                b_test158 = {
+                    province = 160
+                }
                 b_test159 = {
-                    province = 144
+                    province = 161
+                }
+                b_test160 = {
+                    province = 162
+                }
+                b_test161 = {
+                    province = 163
+                }
+                b_test162 = {
+                    province = 164
                 }
             }
         }
-        d_Jaka_Duchy_Island = {
-            color = { 100 100 280 }
-            capital = c_county_tier42
+    }
+    
+    k_Witch_Kingdom = {
+        color = { 202 31 123 }
+        capital = c_county_tier46
 
-            c_county_tier42 = {
-                color = { 100 100 280 }
-
-                b_test160 = {
-                    province = 178
-                }
-                b_test161 = {
-                    province = 176
-                }
-                b_test162 = {
-                    province = 177
-                }
+        d_Witch_Duchy = {
+           color = { 202 31 123 }
+           capital = c_county_tier46
+           
+           c_county_tier46 = {
+            color = { 202 31 123 }
                 b_test163 = {
-                    province = 179
+                    province = 165
                 }
-            }
-            c_county_tier43 = {
-                color = { 50 110 220 }
-
                 b_test164 = {
-                    province = 174
+                    province = 166
                 }
                 b_test165 = {
-                    province = 175
+                    province = 167
                 }
-            }
+                b_test166 = {
+                    province = 168
+                }
+           }
         }
     }
 }

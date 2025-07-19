@@ -1,0 +1,52 @@
+name_list_human = {
+
+	cadet_dynasty_names = {
+		"dynn_Smith"
+
+	}
+
+	dynasty_names = {
+		"dynn_Titan"
+
+	}
+
+	male_names = {
+		Landis Jaromir Laux Danilo D'arcy Herwin Viktor Tearlach Halbert Ingwar Litton Roch Brody Raymond Marston Niklas
+    	Euphemius Arnall Trevion Bogdan Deryk Benedikt Aribert Gunther Ferdinando Verrill Raimondo Fernando Bryson Rainger Marlow
+    	Trevor Cheval Domingo Elisha Reymundo Currier Wake Beni Gace Cleve Aubrey Melville Dorkas Wayland Gaylord Jose
+    	Romain Cale Somerled Urban Deshawn Gower Sydell Rainer Valentius Veryl Wassilie Hassan Warrane Jens Gervais Hurlbart
+    	Marlow Rycroft Alec Justinian Ransden Hektor Jimmy John Gordon Ned Jacoby Jourdan Courtland Ferdel Nayan Whitmore
+	}
+
+	female_names = {
+		Anna Claudette Vroni Kym Jeane Vivien Isabell Hunter Gleda Rosamunde Gia Klarissa Annelie Sonja Aurica Garland
+    	Fayanna Marion Alisa Azzura Jolanda Leola Allyson Aveline Rosella Kathryn Valentina Dickie Elisha Odetta Aurica Emerson
+    	Regan Savana Karlotta Devynn Elfi Anneliese Jeanetta Maegan Dagmara Hildretha Kaelyn Mafalda Maika Mary Clodia Adalyn
+    	Hilaire Zenzi Monserrat Avery Hannelore Linchen Rosine Rosa Estefani Jerica Eudokia Suleima Buffy Devyn Manhattan Jeanine
+    	Laetitia Rike Tara Roxane Lucilla Lies Marit Bryanna Samara Cherine Audrey Frieda Mairin Jeena Capucine Payton
+	}
+
+	dynasty_of_location_prefix = "dynnp_di"
+
+	patronym_prefix_male = "dynnpat_pre_di"
+	patronym_prefix_female = "dynnpat_pre_di"
+
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 30
+	mat_grf_name_chance = 10
+	father_name_chance = 25
+
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 20
+	mat_grm_name_chance = 40
+	mother_name_chance = 5
+
+	
+
+	mercenary_names = {
+		{ name = "mercenary_company_compagnia_della_stella" coat_of_arms = "mc_compagnia_della_stella" }
+		{ name = "mercenary_company_black_band" }
+		{ name = "mercenary_company_condottiere_band" }
+	}
+}

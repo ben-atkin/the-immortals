@@ -1,0 +1,169 @@
+### ELVISH
+
+
+race_trait_full_elvish = {
+  category = health
+
+  physical = yes
+
+  flag = full_elvish_race_flag
+
+  health = 0.2
+  life_expectancy = 700
+  years_of_fertility = 300
+  learning = 4
+  flag = add_arcana_2
+
+  army_pursuit_mult = 2
+  
+  stress_gain_mult = -0.1
+
+  different_culture_opinion = -10
+
+  development_growth_factor = 0.1
+
+  monthly_lifestyle_xp_gain_mult = -0.2
+
+  icon = { desc = race_trait_elvish.dds }
+}
+
+race_trait_half_elvish = {
+  category = health
+
+  flag = half_elvish_race_flag
+
+  physical = yes
+
+  health = 0.15
+  life_expectancy = 120
+  stewardship = 3
+
+  monthly_stewardship_lifestyle_xp_gain_mult = 0.25
+
+  icon = { desc = race_trait_elvish.dds }
+}
+
+race_trait_wood_elvish = {
+  category = health
+
+  flag = wood_elvish_race_flag
+
+  physical = yes
+
+  health = 0.5
+  life_expectancy = 700
+  diplomacy = 3
+
+  monthly_diplomacy_lifestyle_xp_gain_mult = 0.25
+
+  icon = { desc = race_trait_elvish.dds }
+}
+
+race_trait_dark_elvish = {
+  category = health
+
+  flag = dark_elvish_race_flag
+
+  physical = yes
+
+  health = 0.5
+  life_expectancy = 700
+  intrigue = 4
+
+  monthly_intrigue_lifestyle_xp_gain_mult = 0.30
+
+  icon = { desc = race_trait_elvish.dds }
+}
+
+
+### ORCISH
+
+race_trait_full_orcish = {
+  category = health
+
+  flag = full_orcish_race_flag
+
+  physical = yes
+
+  health = 0.1
+  martial = 2
+  prowess = 2
+
+  dread_baseline_add = 5
+
+  monthly_prestige = 0.1
+
+  stress_gain_mult = 0.15
+
+  monthly_martial_lifestyle_xp_gain_mult = 0.25
+
+  knight_effectiveness_mult = 0.2
+
+  levy_size = 0.10
+  development_growth_factor = -0.15
+
+  army_toughness_mult = 0.2
+
+  icon = { desc = race_trait_orcish.dds }
+}
+
+race_trait_half_orcish = { ## defo change this
+  category = health
+
+  flag = half_orcish_race_flag
+
+  physical = yes
+
+  health = 0.4
+  martial = 3
+  prowess = 5
+
+  dread_baseline_add = 2
+
+  monthly_prestige = 1
+
+  stress_gain_mult = 0.1
+
+  monthly_martial_lifestyle_xp_gain_mult = 0.20
+
+  knight_effectiveness_mult = 0.35
+
+  levy_size = 0.1
+  development_growth_factor = -0.1
+
+  army_toughness_mult = 0.2
+
+  icon = { desc = race_trait_orcish.dds }
+}
+
+
+
+### HUMAN
+
+race_trait_human = {
+  category = health
+
+  flag = full_human_race_flag
+
+  physical = yes
+
+  diplomacy = 1
+  martial = 1
+  stewardship = 1
+  intrigue = 1
+  learning = 1
+  flag = add_arcana_1
+
+  knight_limit = 2
+  knight_effectiveness_mult = 0.25
+
+  monthly_lifestyle_xp_gain_mult = 0.1
+
+  vassal_opinion = 10
+  vassal_limit = 5
+  vassal_tax_contribution_mult = 0.1
+  vassal_levy_contribution_mult = 0.1
+
+
+  icon = { desc = race_trait_human.dds }
+}

@@ -3,8 +3,10 @@ heritage_elvish = {
 	type = heritage
 	
 	parameters = {
-		species_elvish = yes
+		dislikes_marrying_outside_of_culture = yes
 	}
+
+	audio_parameter = european ## TI TODO: Add custom audio parameters I guess...
 }
 
 ## Orcish
@@ -12,8 +14,10 @@ heritage_orcish = {
 	type = heritage
 	
 	parameters = {
-		species_orcish = yes
+		dislikes_marrying_outside_of_culture = yes
 	}
+
+	audio_parameter = european ## TI TODO: Add custom audio parameters I guess...
 }
 
 ## Human
@@ -21,6 +25,8 @@ heritage_human = {
 	type = heritage
 
 	parameters = {
-		species_human = yes
+		dislikes_marrying_outside_of_culture = yes
 	}
+
+	audio_parameter = european ## TI TODO: Add custom audio parameters I guess...
 }

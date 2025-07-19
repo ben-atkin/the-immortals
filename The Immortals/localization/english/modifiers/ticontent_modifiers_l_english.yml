@@ -1,0 +1,79 @@
+﻿l_english:
+
+   ## Cantrips
+   TI_modifiers_guidance_diplo:0 "Guidance - Diplomacy"
+   TI_modifiers_guidance_martial:0 "Guidance - Martial"
+   TI_modifiers_guidance_steward:0 "Guidance - Stewardship"
+   TI_modifiers_guidance_intri:0 "Guidance - Intrigue"
+   TI_modifiers_guidance_learn:0 "Guidance - Learning"
+
+   TI_modifiers_mending:0 "Mending"
+
+   TI_modifiers_magehand:0 "Magehand"
+
+   TI_modifiers_prestidigitation_01:0 "Prestidigitation 1"
+   TI_modifiers_prestidigitation_02:0 "Prestidigitation 2"
+   TI_modifiers_prestidigitation_03:0 "Prestidigitation 3"
+   TI_modifiers_prestidigitation_04:0 "Prestidigitation 4"
+   TI_modifiers_prestidigitation_05:0 "Prestidigitation 5"
+   TI_modifiers_prestidigitation_06:0 "Prestidigitation 6"
+   TI_modifiers_prestidigitation_07:0 "Prestidigitation 7"
+   TI_modifiers_prestidigitation_08:0 "Prestidigitation 8"
+   TI_modifiers_prestidigitation_09:0 "Prestidigitation 9"
+   TI_modifiers_prestidigitation_10:0 "Prestidigitation 10"
+
+   TI_modifiers_viciousmockery:0 "Vicious Mockery"
+
+
+   ## Level 1 Spells
+   TI_modifiers_bless:0 "Bless"
+
+   TI_modifiers_charmperson:0 "Charm Person"
+
+   TI_modifiers_hex:0 "Hex"
+
+   TI_modifiers_purifyfad:0 "Purify Food & Drink"
+
+   TI_modifiers_findfamiliar:0 "Find Familiar"
+
+
+   ## Level 2 Spells
+   TI_modifiers_findsteed:0 "Find Steed"
+
+   TI_modifiers_enhanceability_diplo:0 "Enhance Ability - Diplomacy"
+   TI_modifiers_enhanceability_martial:0 "Enhance Ability - Martial"
+   TI_modifiers_enhanceability_steward:0 "Enhance Ability - Stewardship"
+   TI_modifiers_enhanceability_intri:0 "Enhance Ability - Intrigue"
+   TI_modifiers_enhanceability_learn:0 "Enhance Ability - Learning"
+
+   TI_modifiers_giftofgab:0 "Gift of Gab"
+
+   TI_modifiers_invisibility:0 "Invisibility"
+
+   TI_modifiers_magicweapon:0 "Magic Weapon"
+
+
+   ## Level 3 Spells
+   TI_modifiers_haste:0 "Haste"
+
+   TI_modifiers_motivationalspeech:0 "Motivational Speech"
+
+   TI_modifiers_sending:0 "Sending"
+
+   TI_modifiers_vampirictouch:0 "Vampiric Touch"
+   TI_modifiers_vampirictouch_victim:0 "Victim of Vampiric Touch"
+
+   TI_modifiers_fireball:0 "Fireball Motherf*cker"
+
+
+   ## Level 4 Spells
+   TI_modifiers_fabricate:0 "Fabricate"
+
+   TI_modifiers_divination:0 "Divination"
+
+   TI_modifiers_locatecreature:0 "Locate Creature"
+
+   TI_modifiers_deathward:0 "Death Ward"
+
+   TI_modifiers_createwater:0 "Create Water"
+

@@ -1,0 +1,793 @@
+add_arcana_skill = {
+    save_temporary_scope_value_as = {
+        name = tmp_skill_value
+        value = $VALUE$
+    }
+    custom_description = {
+        text = add_arcana_skill
+        value = scope:tmp_skill_value
+        if = {
+            #limit = { NOT = { exists = var:arcana_base } }
+            limit = { NOT = { has_variable = arcana_base } }
+            set_variable = { name = arcana_base value = scope:tmp_skill_value }
+            if = { #this is nested to stop the error log having an aneurism if the variable doesn't exist
+                limit = { scope:tmp_skill_value < 0 }
+                set_variable = { name = arcana_base value = 0 }
+            }
+        }
+        else = {
+            change_variable = { name = arcana_base add = scope:tmp_skill_value }
+            if = {
+                limit = { var:arcana_base < 0 }
+                set_variable = { name = arcana_base value = 0 }
+            }
+        }
+    }
+}
+
+add_magic = {
+    custom_description = {
+        text = add_magic
+        value = $VALUE$
+        if = {            
+            limit = { NOT = { has_variable = magic } }
+            if = {
+                limit = { NOT = { $VALUE$ = 0 } }
+                set_variable = { name = magic value = $VALUE$ }
+                if = {
+                    limit = { $VALUE$ > magic_max }
+                    set_variable = { name = magic value = magic_max }
+                }
+            }
+        }
+        else = {
+            change_variable = { name = magic add = $VALUE$ }
+            if = {
+                limit = { var:magic > magic_max }
+                set_variable = { name = magic value = magic_max }
+            }
+        }
+    }
+}
+
+add_quarterly_magic_effect = {
+    trigger_event = {
+        on_action = add_monthly_magic
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 1
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 2
+    }
+}
+
+add_monthly_magic_effect = {
+    add_magic = { VALUE = magic_monthly }
+}
+
+add_yearly_magic_effect = { 
+    trigger_event = {
+        on_action = add_monthly_magic
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 1
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 2
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 3
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 4
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 5
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 6
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 7
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 8
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 9
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 10
+    }
+    trigger_event = {
+        on_action = add_monthly_magic
+        months = 11
+    }
+}
+
+
+
+init_cantrips = {
+    clear_variable_list = spell_list
+    spell_cantrips_list = { EFFECT = add_to_spell_list }
+}
+
+init_lvl1 = {
+    clear_variable_list = spell_list
+    spell_lvl1_list = { EFFECT = add_to_spell_list }
+}
+
+init_lvl2 = {
+    clear_variable_list = spell_list
+    spell_lvl2_list = { EFFECT = add_to_spell_list }
+}
+
+init_lvl3 = {
+    clear_variable_list = spell_list
+    spell_lvl3_list = { EFFECT = add_to_spell_list }
+}
+
+init_lvl4 = {
+    clear_variable_list = spell_list
+    spell_lvl4_list = { EFFECT = add_to_spell_list }
+}
+
+init_lvl5 = {
+    clear_variable_list = spell_list
+    spell_lvl5_list = { EFFECT = add_to_spell_list }
+}
+
+add_to_spell_list = {
+    add_to_variable_list = { name = spell_list target = flag:$SPELL$ }
+}
+
+spell_cantrips_list = {
+    $EFFECT$ = { SPELL = guidance }
+    $EFFECT$ = { SPELL = mending }    
+    $EFFECT$ = { SPELL = magehand }
+    $EFFECT$ = { SPELL = prestidigitation }
+    $EFFECT$ = { SPELL = viciousmockery }
+}
+
+spell_lvl1_list = {
+    $EFFECT$ = { SPELL = bless }
+    $EFFECT$ = { SPELL = charmperson }    
+    $EFFECT$ = { SPELL = hex }
+    $EFFECT$ = { SPELL = purifyfad }
+    $EFFECT$ = { SPELL = findfamiliar }
+}
+
+spell_lvl2_list = {
+    $EFFECT$ = { SPELL = findsteed }
+    $EFFECT$ = { SPELL = enhanceability }    
+    $EFFECT$ = { SPELL = giftofgab }
+    $EFFECT$ = { SPELL = invisibility }
+    $EFFECT$ = { SPELL = magicweapon }
+}
+
+spell_lvl3_list = {
+    $EFFECT$ = { SPELL = haste }
+    $EFFECT$ = { SPELL = motivationalspeech }    
+    $EFFECT$ = { SPELL = sending }
+    $EFFECT$ = { SPELL = vampirictouch }
+    $EFFECT$ = { SPELL = fireball }
+}
+
+spell_lvl4_list = {
+    $EFFECT$ = { SPELL = fabricate }
+    $EFFECT$ = { SPELL = divination }    
+    $EFFECT$ = { SPELL = locatecreature }
+    $EFFECT$ = { SPELL = deathward }
+    $EFFECT$ = { SPELL = createwater }
+}
+
+spell_lvl5_list = {
+    $EFFECT$ = { SPELL = lvl5_1 }
+    $EFFECT$ = { SPELL = lvl5_2 }    
+    $EFFECT$ = { SPELL = lvl5_3 }
+    $EFFECT$ = { SPELL = lvl5_4 }
+    $EFFECT$ = { SPELL = lvl5_5 }
+}
+
+
+spell_get_size = {
+    clear_variable_list = spell_size
+    # if = {
+    #     limit = {
+    #         OR = {
+    #             scope:spell = flag:raise_dead
+    #             scope:spell = flag:summon_atronach
+    #             scope:spell = flag:daedric_army
+    #             scope:spell = flag:transmute
+    #             scope:spell = flag:leech_health
+    #             scope:spell = flag:fortify_buildings
+    #             scope:spell = flag:mass_frenzy
+    #             scope:spell = flag:calm
+    #             scope:spell = flag:resilience
+    #             scope:spell = flag:spread_vitality
+    #             scope:spell = flag:charm  
+    #             scope:spell = flag:destroy_walls
+    #             scope:spell = flag:display_of_might
+    #             scope:spell = flag:burden
+    #         }
+    #     }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl0 }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl1 }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl2 }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl3 }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl4 }
+        # add_to_variable_list = { name = spell_size target = flag:cost_lvl5 }
+        # set_variable = { name = spell_selected_size value = flag:cost_lvl0 }
+    # }
+
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl0 }
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl1 }
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl2 }
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl3 }
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl4 }
+    add_to_variable_list = { name = spell_size target = flag:cost_lvl5 }
+    set_variable = { name = spell_selected_size value = flag:cost_lvl0 }
+}
+
+
+level_spell_master_effect = {
+    switch = {
+        trigger = var:spell_level
+
+        flag:cantrip = {
+            switch = {
+                trigger = scope:spell
+                flag:guidance = { $EFFECT$ = { LEVEL = cantrip SPELL = guidance } }   
+                flag:mending = { $EFFECT$ = { LEVEL = cantrip SPELL = mending } }                
+                flag:magehand = { $EFFECT$ = { LEVEL = cantrip SPELL = magehand } }
+                flag:prestidigitation = { $EFFECT$ = { LEVEL = cantrip SPELL = prestidigitation } }        
+                flag:viciousmockery = { $EFFECT$ = { LEVEL = cantrip SPELL = viciousmockery } }
+            }
+        }
+
+        flag:lvl1 = {
+            switch = {
+                trigger = scope:spell
+                flag:bless = { $EFFECT$ = { LEVEL = lvl1 SPELL = bless } }                
+                flag:charmperson = { $EFFECT$ = { LEVEL = lvl1 SPELL = charmperson } }                
+                flag:hex = { $EFFECT$ = { LEVEL = lvl1 SPELL = hex } }
+                flag:purifyfad = { $EFFECT$ = { LEVEL = lvl1 SPELL = purifyfad } }
+                flag:findfamiliar = { $EFFECT$ = { LEVEL = lvl1 SPELL = findfamiliar } }
+            }
+        }
+
+        flag:lvl2 = {
+            switch = {
+                trigger = scope:spell
+                flag:findsteed = { $EFFECT$ = { LEVEL = lvl2 SPELL = findsteed } }
+                flag:enhanceability = { $EFFECT$ = { LEVEL = lvl2 SPELL = enhanceability } }
+                flag:giftofgab = { $EFFECT$ = { LEVEL = lvl2 SPELL = giftofgab } }
+                flag:invisibility = { $EFFECT$ = { LEVEL = lvl2 SPELL = invisibility } }
+                flag:magicweapon = { $EFFECT$ = { LEVEL = lvl2 SPELL = magicweapon } }             
+            }
+        }
+
+        flag:lvl3 = {
+            switch = {
+                trigger = scope:spell
+                flag:haste = { $EFFECT$ = { LEVEL = lvl3 SPELL = haste } }
+                flag:motivationalspeech = { $EFFECT$ = { LEVEL = lvl3 SPELL = motivationalspeech } }
+                flag:sending = { $EFFECT$ = { LEVEL = lvl3 SPELL = sending } }
+                flag:vampirictouch = { $EFFECT$ = { LEVEL = lvl3 SPELL = vampirictouch } }
+                flag:fireball = { $EFFECT$ = { LEVEL = lvl3 SPELL = fireball } }                
+            }
+        }
+
+        flag:lvl4 = {
+            switch = {
+                trigger = scope:spell
+                flag:fabricate = { $EFFECT$ = { LEVEL = lvl4 SPELL = fabricate } }
+                flag:divination = { $EFFECT$ = { LEVEL = lvl4 SPELL = divination } }  
+                flag:locatecreature = { $EFFECT$ = { LEVEL = lvl4 SPELL = locatecreature } }
+                flag:deathward = { $EFFECT$ = { LEVEL = lvl4 SPELL = deathward } }           
+                flag:createwater = { $EFFECT$ = { LEVEL = lvl4 SPELL = createwater } }
+            }
+        }
+
+        # flag:lvl5 = {
+        #     switch = {
+        #         trigger = scope:spell
+        #         flag:summon_skeleton = { $EFFECT$ = { LEVEL = lvl5 SPELL = summon_skeleton } }
+        #         flag:leech_health = { $EFFECT$ = { LEVEL = lvl5 SPELL = leech_health } }
+        #         flag:claim_corpse = { $EFFECT$ = { LEVEL = lvl5 SPELL = claim_corpse } }
+        #         flag:restless_dead = { $EFFECT$ = { LEVEL = lvl5 SPELL = restless_dead } }
+        #         flag:raise_dead = { $EFFECT$ = { LEVEL = lvl5 SPELL = raise_dead } }
+        #     }
+        # }
+    }
+}
+
+spell_caster_effect = {
+    level_spell_master_effect = { EFFECT = spell_caster }
+}
+spell_caster = {
+    save_temporary_scope_value_as = { name = unimportant value = flag:$LEVEL$ } # school not currently used, a use is needed
+    var:spell_caster = {
+        custom_label = spell_name_caster
+        add_magic = { VALUE = $SPELL$_cost.negate }
+
+        spell_$SPELL$_caster_effect = yes
+
+        if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = $SPELL$_cost
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+    }
+}
+
+spell_castee_effect = {
+    level_spell_master_effect = { EFFECT = spell_castee }
+}
+
+spell_castee = {
+    save_temporary_scope_value_as = { name = unimportant value = flag:$LEVEL$ } # school not currently used, a use is needed
+
+    custom_label = spell_name_castee
+    if = {
+        limit = { $SPELL$_province = 0 } #cast on the castee if not a province spell
+        var:spell_recipient = { spell_$SPELL$_castee_effect = yes }
+        # if = { #opinion malus for casting hostile spells
+        #     limit = { 
+        #         $SPELL$_hostile = 1
+        #         $SPELL$_secret = 0 #but if it's secret they won't know it was you
+        #         NOR = {
+        #             var:spell_recipient = ROOT # cant cast on self
+        #             var:spell_recipient = var:spell_caster # cant order cm to cast on self
+        #         }
+        #     }
+        #     var:spell_recipient = { add_opinion = { target = PREV modifier = cast_hostile_spell } }
+        # }
+    }
+    # if = {
+    #     limit = { #cast on the selected county for province spells. no special treatment for hostile currently
+    #         $SPELL$_province = 1
+    #         exists = var:spell_county #need to check against current location for hostile. may just use current location directly
+    #         # trigger_if = { #need to block if no valid counties. exists should work
+    #         #     limit = { variable_list_size = { name = spell_counties value > 0 } }
+    #         # }
+    #     }
+    #     var:spell_county = { spell_$SPELL$_province_effect = yes }
+    #     if = { #opinion malus for casting hostile spells
+    #         limit = { 
+    #             $SPELL$_hostile = 1
+    #             NOR = {
+    #                 var:spell_recipient = ROOT # cant cast on self
+    #                 var:spell_recipient = var:spell_caster # cant order cm to cast on self
+    #             }
+    #         }
+    #         var:spell_recipient = { add_opinion = { target = PREV modifier = cast_hostile_spell } }
+    #         # if the spell in question actually targets the *liege* of the province owner, apply this malus with them as well
+    #         if = {
+    #             limit = {
+    #                 OR = {
+    #                     scope:spell = flag:restless_dead
+    #                     scope:spell = flag:daedric_horde
+    #                 }
+    #                 var:spell_recipient = { is_independent_ruler = no }
+    #             }
+    #             var:spell_recipient.top_liege = { add_opinion = { target = PREV modifier = cast_hostile_spell } }
+    #         }
+    #     }
+    # }
+}
+
+
+spell_cleanup = {
+    remove_variable = spell_selected
+    remove_variable = spell_recipient
+    remove_variable = spell_caster
+    remove_variable = spell_level
+    clear_variable_list = spell_list
+    clear_variable_list = spell_size
+    remove_variable = spell_selected_size
+}
+
+## Cantrips
+
+spell_guidance_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        random_list = {
+            20 = {
+                add_character_modifier = {
+                    modifier = TI_modifiers_guidance_diplo
+                    years = 1
+                }
+            }
+            20 = {
+                add_character_modifier = {
+                    modifier = TI_modifiers_guidance_martial
+                    years = 1
+                }
+            }
+            20 = {
+                add_character_modifier = {
+                    modifier = TI_modifiers_guidance_steward
+                    years = 1
+                }
+            }
+            20 = {
+                add_character_modifier = {
+                    modifier = TI_modifiers_guidance_intri
+                    years = 1
+                }
+            }
+            20 = {
+                add_character_modifier = {
+                    modifier = TI_modifiers_guidance_learn
+                    years = 1
+                }
+            }
+        }
+    }
+}
+
+spell_mending_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_mending
+            years = 1
+        }
+    }
+}
+
+spell_magehand_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_magehand
+            years = 1
+        }
+    }
+}
+
+spell_prestidigitation_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        random_list = {
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_01
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_02
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_03
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_04
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_05
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_06
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_07
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_08
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_09
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_10
+					months = 6
+				}
+			}
+		}
+    }
+}
+
+spell_viciousmockery_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_viciousmockery
+            years = 1
+        }
+    }
+}
+
+
+## Level 1 Spells
+
+spell_bless_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_bless
+            years = 1
+        }
+    }
+}
+
+spell_charmperson_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_charmperson
+            years = 1
+        }
+    }
+}
+
+spell_hex_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_hex
+            years = 1
+        }
+    }
+}
+
+spell_purifyfad_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_purifyfad
+            years = 1
+        }
+    }
+}
+
+spell_findfamiliar_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_findfamiliar
+            years = 1
+        }
+    }
+}
+
+## Level 2 Spells
+
+spell_findsteed_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_findsteed
+            years = 1
+        }
+    }
+}
+
+spell_enhanceability_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        random_list = {
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_diplo
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_martial
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_steward
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_intri
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_learn
+					months = 6
+				}
+			}
+		}
+    }
+}
+
+spell_giftofgab_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_giftofgab
+            years = 1
+        }
+    }
+}
+
+spell_invisibility_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_invisibility
+            years = 1
+        }
+    }
+}
+
+spell_magicweapon_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_magicweapon
+            years = 1
+        }
+    }
+}
+
+## Level 3 Spells
+
+spell_haste_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_haste
+            years = 1
+        }
+    }
+}
+
+spell_motivationalspeech_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_motivationalspeech
+            years = 1
+        }
+    }
+}
+
+spell_sending_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_sending
+            years = 1
+        }
+    }
+}
+
+spell_vampirictouch_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_vampirictouch_victim
+            years = 1
+        }
+    }
+}
+
+spell_vampirictouch_caster_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_vampirictouch
+            years = 1
+        }
+    }
+}
+
+spell_fireball_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_fireball
+            months = 3
+        }
+    }
+}
+
+## Level 4 Spells
+
+spell_fabricate_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_fabricate
+            years = 1
+        }
+    }
+}
+
+spell_divination_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_divination
+            years = 1
+        }
+    }
+}
+
+spell_locatecreature_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_locatecreature
+            years = 1
+        }
+    }
+}
+
+spell_deathward_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_deathward
+            years = 1
+        }
+    }
+}
+
+spell_createwater_castee_effect = {
+    send_interface_toast = {
+        left_icon = ROOT
+        add_character_modifier = {
+            modifier = TI_modifiers_createwater
+            years = 1
+        }
+    }
+}

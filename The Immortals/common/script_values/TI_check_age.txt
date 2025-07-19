@@ -1,0 +1,47 @@
+﻿## TI - heavly inspired by EK.
+
+### Checks if a character is older than a certain age, but a different age depending on what lifespan trait they have. Used for determining if characters can become infirm or die of old age etc
+
+TI_life_expectancy = { #returns a number equivalent to age 60 in human lifespan
+	if = {
+		limit = { has_trait_with_flag = full_elvish_race_flag }
+		value = 520 # infertile at 390
+	}
+	else_if = {
+		limit = { has_trait_with_flag = wood_elvish_race_flag }
+		value = 220	# characters become infertile at 45 or equivalent - in this case 165 - which is always 75% of equivalent of 60
+	}
+	else_if = {
+		limit = { has_trait_with_flag = dark_elvish_race_flag }
+		value = 170	# infertile at 128
+	}
+	else_if = {
+		limit = { has_trait_with_flag = half_elvish_race_flag }
+		value = 120 # infertile at 90
+	}
+	else = {
+		value = 60
+	}
+}
+
+TI_human_age_equivalent_calc = {
+	value = age
+	divide = TI_life_expectancy
+	multiply = 60	
+}
+
+TI_human_age_equivalent = { # returns the scope's age in human lifespan
+	if = {
+		limit = { age > 18 }
+		if = {
+			limit = { TI_human_age_equivalent_calc > 18 }
+			value = TI_human_age_equivalent_calc
+		}
+		else = {
+			value = 18
+		}
+	}
+	else = {
+		value = age
+	}
+}

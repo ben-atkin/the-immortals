@@ -1,0 +1,166 @@
+has_arcana = {
+	custom_description = {
+		text = arcana_greater_or_equal
+		value = $VALUE$
+		arcana >= $VALUE$
+	}
+}
+
+has_arcana_less_than = {
+	custom_description = {
+		text = arcana_less_than
+		value = $VALUE$
+		arcana < $VALUE$
+	}
+}
+
+has_magic = {
+	custom_description = {
+		text = magic_greater_or_equal
+		value = $VALUE$
+		trigger_if = {
+			limit = { has_variable = magic }
+			var:magic >= $VALUE$
+		}
+		trigger_else = { always = no }
+	}
+}
+
+level_spell_master_trigger = {
+    switch = {
+        trigger = var:spell_level
+
+        flag:cantrip = {
+            switch = {
+                trigger = scope:spell
+                flag:guidance = { $TRIGGER$ = { LEVEL = cantrip SPELL = guidance } }   
+                flag:mending = { $TRIGGER$ = { LEVEL = cantrip SPELL = mending } }                
+                flag:magehand = { $TRIGGER$ = { LEVEL = cantrip SPELL = magehand } }
+                flag:prestidigitation = { $TRIGGER$ = { LEVEL = cantrip SPELL = prestidigitation } }        
+                flag:viciousmockery = { $TRIGGER$ = { LEVEL = cantrip SPELL = viciousmockery } }
+            }
+        }
+
+        flag:lvl1 = {
+            switch = {
+                trigger = scope:spell
+                flag:bless = { $TRIGGER$ = { LEVEL = lvl1 SPELL = bless } }                
+                flag:charmperson = { $TRIGGER$ = { LEVEL = lvl1 SPELL = charmperson } }                
+                flag:hex = { $TRIGGER$ = { LEVEL = lvl1 SPELL = hex } }
+                flag:purifyfad = { $TRIGGER$ = { LEVEL = lvl1 SPELL = purifyfad } }
+                flag:findfamiliar = { $TRIGGER$ = { LEVEL = lvl1 SPELL = findfamiliar } }
+            }
+        }
+
+        flag:lvl2 = {
+            switch = {
+                trigger = scope:spell
+                flag:findsteed = { $TRIGGER$ = { LEVEL = lvl2 SPELL = findsteed } }
+                flag:enhanceability = { $TRIGGER$ = { LEVEL = lvl2 SPELL = enhanceability } }
+                flag:giftofgab = { $TRIGGER$ = { LEVEL = lvl2 SPELL = giftofgab } }
+                flag:invisibility = { $TRIGGER$ = { LEVEL = lvl2 SPELL = invisibility } }
+                flag:magicweapon = { $TRIGGER$ = { LEVEL = lvl2 SPELL = magicweapon } }             
+            }
+        }
+
+        flag:lvl3 = {
+            switch = {
+                trigger = scope:spell
+                flag:haste = { $TRIGGER$ = { LEVEL = lvl3 SPELL = haste } }
+                flag:motivationalspeech = { $TRIGGER$ = { LEVEL = lvl3 SPELL = motivationalspeech } }
+                flag:sending = { $TRIGGER$ = { LEVEL = lvl3 SPELL = sending } }
+                flag:vampirictouch = { $TRIGGER$ = { LEVEL = lvl3 SPELL = vampirictouch } }
+                flag:fireball = { $TRIGGER$ = { LEVEL = lvl3 SPELL = fireball } }                
+            }
+        }
+
+        flag:lvl4 = {
+            switch = {
+                trigger = scope:spell
+                flag:fabricate = { $TRIGGER$ = { LEVEL = lvl4 SPELL = fabricate } }
+                flag:divination = { $TRIGGER$ = { LEVEL = lvl4 SPELL = divination } }  
+                flag:locatecreature = { $TRIGGER$ = { LEVEL = lvl4 SPELL = locatecreature } }
+                flag:deathward = { $TRIGGER$ = { LEVEL = lvl4 SPELL = deathward } }           
+                flag:createwater = { $TRIGGER$ = { LEVEL = lvl4 SPELL = createwater } }
+            }
+        }
+
+        # flag:lvl5 = {
+        #     switch = {
+        #         trigger = scope:spell
+        #         flag:summon_skeleton = { $TRIGGER$ = { LEVEL = lvl5 SPELL = summon_skeleton } }
+        #         flag:leech_health = { $TRIGGER$ = { LEVEL = lvl5 SPELL = leech_health } }
+        #         flag:claim_corpse = { $TRIGGER$ = { LEVEL = lvl5 SPELL = claim_corpse } }
+        #         flag:restless_dead = { $TRIGGER$ = { LEVEL = lvl5 SPELL = restless_dead } }
+        #         flag:raise_dead = { $TRIGGER$ = { LEVEL = lvl5 SPELL = raise_dead } }
+        #     }
+        # }
+    }
+}
+
+spell_selectable_trigger = {
+	level_spell_master_trigger = { TRIGGER = spell_selectable }
+}
+spell_selectable = {
+	save_temporary_scope_value_as = { name = unimportant value = flag:$LEVEL$ } # school not currently used, a use is needed
+	var:spell_caster = {
+		trigger_if = {
+			limit = { 
+                NOT = { 
+                    exists = root.var:spell_selected_size 
+                    has_variable_list = spell_size
+                } 
+            }
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl0
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl1
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl2
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl3
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl4
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else_if = {
+			limit = {
+				root.var:spell_selected_size = flag:cost_lvl5
+			}
+			has_magic = { VALUE = $SPELL$_cost }
+		}
+		trigger_else = {
+			has_magic = { VALUE = 0 }
+			### Fallback, should not happen, see which spells are "free" and fix it - He9
+			### Comment this block when debugging
+		}
+	}
+}
+
+spell_castable_trigger = {
+	level_spell_master_trigger = { TRIGGER = spell_castable }
+}
+spell_castable = {
+	spell_selectable = { LEVEL = $LEVEL$ SPELL = $SPELL$ }
+	trigger_if = { always = yes } #should default to this but the error log complains
+}

@@ -1,0 +1,54 @@
+﻿name_list_elvish = {
+
+	cadet_dynasty_names = {
+		"dynn_Cadet-S"
+		"dynn_Cadet-A"
+
+	}
+
+	dynasty_names = {
+		"dynn_Sharp"
+		"dynn_Atkin"
+
+	}
+
+	male_names = {
+		Eldarion Thranduil Legolus Elrohir Finrod Glorfindel Erestor Gildor Haldir
+		Celeborn Thalion Aegnor Belegorn Maedhros Fingon Oropher Amras Amrod Caranthir Curufin
+		Ecthelion Gil-galad Ingwe Olwe Thingol Turgon Voronwe Angrod Beren Cirdan Daeron Eol
+		Feanor Gwindor Hurin Idril Lorindol Mablung Nargothrond Nimrodel Orodreth Rumil Saeros
+		Tathar Turin 
+	}
+
+	female_names = {
+		Arwen Galadriel Luthien Idril Elwing Celebrian Aredhel Earwen Finduilas Melian
+		Nellas Miriel Ancalime Amarie Andreth Arien Eilinel Elanor Elenwe Earendil Este Feawen
+		Gilraen Hareth Idis Ithilwen Laerwen Lindir Lissiel Lothiriel Miriel Morwen Nienor Niniel
+		Nivrim Noldorin Norui Nwalme Olwen Rian Silmarien Tari Tathariel Thuringwethil Undomiel
+		Vana Varda Yavanna
+	}
+
+	dynasty_of_location_prefix = "dynnp_di"
+
+	patronym_prefix_male = "dynnpat_pre_di"
+	patronym_prefix_female = "dynnpat_pre_di"
+
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 30
+	mat_grf_name_chance = 10
+	father_name_chance = 25
+
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 20
+	mat_grm_name_chance = 40
+	mother_name_chance = 5
+
+	
+
+	mercenary_names = {
+		{ name = "mercenary_company_compagnia_della_stella" coat_of_arms = "mc_compagnia_della_stella" }
+		{ name = "mercenary_company_black_band" }
+		{ name = "mercenary_company_condottiere_band" }
+	}
+}

@@ -1,0 +1,54 @@
+name_list_orcish = {
+
+	cadet_dynasty_names = {
+		"dynn_Bloodhunters"
+
+	}
+
+	dynasty_names = {
+		"dynn_ChiefWardens"
+
+	}
+
+	male_names = {
+		Grommash Thrall Garrosh Durotan Orgrim Kargath Nerzhul Guldan Blackhand Kilrogg Hellscream
+    	Nazgrel Malkorok Varok Saurfang Broxigar Rokhan Rehgar Nazgrim Zaela Gromkar Kargath Rend 
+    	Maim Draka Jorin Kargath Rend Maim Draka Jorin Snagagor Durrunt Aesbad Ughash Skarbog Yasdum
+    	Bashuk Conrunt Shargam Glugkorot Glugralug Yambul Horbog Gormarot Ghamonk Conall Virjeon Horith
+    	Kraugug Shuvruk Bormagog Urtyfug Wortsnaga Zoggor Brubgrod Zhuvrog Durzborz Grotlagut Shuzug 
+    	Dhuggog Crade Dulanzul Uragak Ugdumph Vilenok Ogolmorz Nashol Opahu Nazsnik Gukzes
+	}
+
+	female_names = {
+		Idril Adstang Dulug Thanra Sharog Halanaestra Rogmesh Lumna Torbad Urmbad Lagakh Gilbad Aelbog
+    	Reyzbad Urty Waadhel Vaegon Aaza Eichelberbog Rathiain Rathnog Bagrak Umog Nazarg Ovak Bula
+    	Phaerl Bumph Nuobad Karita Elwing Atub Morn Tehlnez Mursha Waa Bugsel Ghob Daebael Nazfug
+    	Arwen Urty Sudniz Glorfinbad Portnog Shuftharz Emen Gluronk Zeale Waafang Nazgrub Volen Alais
+    	Takanaga Gharol Daena Skarsnaga Baelnog Namgul Lambug Elwing Naruz Burzob Umar Thernaga Nognag
+    	Tehlgrub Purtguz Bulak Shagar Mogdurz Atub Purtham Grumstuf Aaza Thanra Logshan Hacathra Akash 
+	}
+
+	dynasty_of_location_prefix = "dynnp_di"
+
+	patronym_prefix_male = "dynnpat_pre_di"
+	patronym_prefix_female = "dynnpat_pre_di"
+
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 30
+	mat_grf_name_chance = 10
+	father_name_chance = 25
+
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 20
+	mat_grm_name_chance = 40
+	mother_name_chance = 5
+
+	
+
+	mercenary_names = {
+		{ name = "mercenary_company_compagnia_della_stella" coat_of_arms = "mc_compagnia_della_stella" }
+		{ name = "mercenary_company_black_band" }
+		{ name = "mercenary_company_condottiere_band" }
+	}
+}

@@ -1,300 +1,214 @@
+123 = {
+	culture = full_human
+	religion = human_faith
+}
+
+124 = {
+	culture = full_human
+	religion = human_faith
+}
+
+125 = {
+	culture = full_human
+	religion = human_faith
+}
+
+126 = {
+	culture = full_human
+	religion = human_faith
+}
+
+127 = {
+	culture = full_human
+	religion = human_faith
+}
+
+128 = {
+	culture = full_human
+	religion = human_faith
+}
+
+129 = {
+	culture = full_human
+	religion = human_faith
+}
+
 130 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 131 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 132 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 133 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 134 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 135 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 136 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 137 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 138 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 139 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 140 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 141 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 142 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 143 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 144 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 145 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 146 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 147 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 148 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 149 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 150 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 151 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 152 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 153 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
 
-  holding = castle_holding
-  }
+	holding = castle
+
+	duchy_capital_building = TI_buildings_hollowtor_duchy_capital
+}
+
 154 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 155 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 156 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 157 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 158 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 159 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 160 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 161 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 162 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 163 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
 164 = {
-  faith = human_faith
-  culture = full_human
+	culture = full_human
+	religion = human_faith
+}
 
-  holding = castle_holding
-  }
-165 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-166 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-167 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-168 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-169 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-170 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-171 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-172 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-173 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-174 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-175 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-176 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-177 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-178 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }
-179 = {
-  faith = human_faith
-  culture = full_human
-
-  holding = castle_holding
-  }

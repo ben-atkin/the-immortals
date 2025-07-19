@@ -1,0 +1,33 @@
+﻿l_english:
+
+   knight_TI_human: "Human K-night"
+   knight_TI_elvish: "Elvish Knight"
+   knight_TI_orcish: "Orcish Knight"
+
+   knight_TI_human_plural: "Human K-night"
+   knight_TI_elvish_plural: "Elvish Knight"
+   knight_TI_orcish_plural: "Orcish Knight"
+
+   knight_TI_human_no_tooltip: "Human K-night"
+   knight_TI_elvish_no_tooltip: "Elvish Knight"
+   knight_TI_orcish_no_tooltip: "Orcish Knight"
+   
+   knight_TI_human_no_tooltip_plural: "Human K-night"
+   knight_TI_elvish_no_tooltip_plural: "Elvish Knight"
+   knight_TI_orcish_no_tooltip_plural: "Orcish Knight"
+
+   knight_TI_human_no_tooltip_lowercase: "Human K-night"
+   knight_TI_elvish_no_tooltip_lowercase: "Elvish Knight"
+   knight_TI_orcish_no_tooltip_lowercase: "Orcish Knight"
+
+   knight_TI_human_no_tooltip_lowercase_plural: "Human K-night"
+   knight_TI_elvish_no_tooltip_lowercase_plural: "Elvish Knight"
+   knight_TI_orcish_no_tooltip_lowercase_plural: "Orcish Knight"
+
+   knight_TI_human_no_tooltip_lowercase_plural_possessive: "Human K-night"
+   knight_TI_elvish_no_tooltip_lowercase_plural_possessive: "Elvish Knight"
+   knight_TI_orcish_no_tooltip_lowercase_plural_possessive: "Orcish Knight"
+
+   knight_TI_human_no_tooltip_lowercase_adjective: "Human K-night"
+   knight_TI_elvish_no_tooltip_lowercase_adjective: "Elvish Knight"
+   knight_TI_orcish_no_tooltip_lowercase_adjective: "Orcish Knight"

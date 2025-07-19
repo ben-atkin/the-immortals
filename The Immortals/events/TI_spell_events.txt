@@ -1,0 +1,1978 @@
+## TI Addition: events for casting spells.
+
+# option c is always quit out of the event. eg. name = TI_spells.0**0.c
+
+
+namespace = TI_spells
+
+### Cantrips
+
+TI_spells.0010 = { ## Casting Guidance -- 
+	type = character_event
+
+	title = TI_spells.0010_title
+
+	desc = TI_spells.0010_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	#cooldown = { months = 9 } ## probably want to add some sort of character flag here so we can update the casting UI to show we're on cooldown. and so if we choose the quit option we can cast again without cooldown.
+
+	immediate = { ## TI NOTE: There is probably a better way to do this. But this works for now.
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0010.a
+
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+
+		random_list = {
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_guidance_diplo
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_guidance_martial
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_guidance_steward
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_guidance_intri
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_guidance_learn
+					months = 6
+				}
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l0_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0010.b
+
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+		scope:spell_target = {
+			random_list = {
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_guidance_diplo
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_guidance_martial
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_guidance_steward
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_guidance_intri
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_guidance_learn
+						months = 6
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l0_cost.negate }
+	}
+
+    option = { ## Quit
+        name = TI_spells.0010.c
+        # I dont believe we actually need any effects here. Maybe some flavor though.
+    }
+}
+
+TI_spells.0020 = { ## Casting Mending... dk yet.
+	type = character_event
+
+	title = TI_spells.0020_title
+
+	desc = TI_spells.0020_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	#cooldown = { months = 9 } ## probably want to add some sort of character flag here so we can update the casting UI to show we're on cooldown. and so if we choose the quit option we can cast again without cooldown.
+
+	option = {
+		name = TI_spells.0020.a
+
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_mending
+			months = 6
+		}
+
+		add_trait = arcana_fatigue_trait
+
+		# if = {
+		# 	limit = { has_trait = magic_trait_spellcaster }
+		# 	add_trait_xp = {
+		# 		trait = magic_trait_spellcaster
+		# 		value = {
+		# 			value = 5
+		# 		}
+		# 	}
+		# } else = { ## this means they dont have the trait. for now, we'll give em it for free!
+		# 	add_trait = magic_trait_spellcaster
+		# }
+
+		add_magic = { VALUE = l0_cost.negate }
+	}
+
+	option = {
+		name = TI_spells.0020.c
+	}
+}
+
+TI_spells.0030 = { ## Casting Mage Hand
+	type = character_event
+
+	title = TI_spells.0030_title
+
+	desc = TI_spells.0030_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+		name = TI_spells.0030.a
+
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_magehand
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l0_cost.negate }
+	}
+
+	option = {
+		name = TI_spells.0030.c
+
+	}
+}
+
+TI_spells.0040 = { ## Casting Prestidigitation
+	type = character_event
+
+	title = TI_spells.0040_title
+
+	desc = TI_spells.0040_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+		name = TI_spells.0040.a
+
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+		random_list = {
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_01
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_02
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_03
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_04
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_05
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_06
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_07
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_08
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_09
+					months = 6
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_prestidigitation_10
+					months = 6
+				}
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l0_cost.negate }
+	}
+
+	option = {
+		name = TI_spells.0040.c
+
+	}
+}
+
+TI_spells.0050 = { ## Casting Vicious Mockery ## TI TODO: Remake Vicious Mockery with spell_target system.
+	type = character_event
+
+	title = TI_spells.0050_title
+
+	desc = TI_spells.0050_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+		name = TI_spells.0050.a
+		
+		trigger = {
+			spell_castable_l0 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_viciousmockery
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l0_cost.negate }
+	}
+
+	option = {
+		name = TI_spells.0050.c
+
+	}
+}
+
+### Level 1 Spells
+
+TI_spells.0110 = { ## Casting Bless
+	type = character_event
+
+	title = TI_spells.0110_title
+
+	desc = TI_spells.0110_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0110.a
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_bless
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0110.b
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+		scope:spell_target = { ## TI TODO: instead of a random choice, we need to make scope:spell_target be a character the player can actually select.
+			add_character_modifier = {
+				modifier = TI_modifiers_bless
+				months = 4
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0110.c
+    }
+}
+
+TI_spells.0120 = { ## Casting Charm Person - ## TI TODO: Remake
+	type = character_event
+
+	title = TI_spells.0120_title
+
+	desc = TI_spells.0120_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	#cooldown = { months = 9 } ## probably want to add some sort of character flag here so we can update the casting UI to show we're on cooldown. and so if we choose the quit option we can cast again without cooldown.
+
+	option = {
+        name = TI_spells.0120.a
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_charmperson
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+    }
+
+
+    option = { ## Quit
+        name = TI_spells.0120.c
+    }
+}
+
+TI_spells.0130 = { ## Casting Hex - ## TI TODO: Remake
+	type = character_event
+
+	title = TI_spells.0130_title
+
+	desc = TI_spells.0130_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	#cooldown = { months = 9 } ## probably want to add some sort of character flag here so we can update the casting UI to show we're on cooldown. and so if we choose the quit option we can cast again without cooldown.
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0130.a
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+		scope:spell_target = {
+			add_character_modifier = {
+				modifier = TI_modifiers_hex
+				months = 6
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0130.c
+    }
+}
+
+TI_spells.0140 = { ## Casting Purify Food and Drink
+	type = character_event
+
+	title = TI_spells.0140_title
+
+	desc = TI_spells.0140_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	#cooldown = { months = 9 } ## probably want to add some sort of character flag here so we can update the casting UI to show we're on cooldown. and so if we choose the quit option we can cast again without cooldown.
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0140.a
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_purifyfad
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0140.b
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+		scope:spell_target = { ## TI TODO: instead of a random choice, we need to make scope:spell_target be a character the player can actually select.
+			add_character_modifier = {
+				modifier = TI_modifiers_purifyfad
+				months = 6
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0140.c
+    }
+}
+
+TI_spells.0150 = { ## Casting Find Familiar
+	type = character_event
+
+	title = TI_spells.0150_title
+
+	desc = TI_spells.0150_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0150.a
+
+		trigger = {
+			spell_castable_l1 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_findfamiliar
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l1_cost.negate }
+    }
+		
+
+    option = { ## Quit
+        name = TI_spells.0150.c
+    }
+}
+
+### Level 2 Spells
+
+TI_spells.0210 = { ## Casting Find Steed
+	type = character_event
+
+	title = TI_spells.0210_title
+
+	desc = TI_spells.0210_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0210.a
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_findsteed
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0210.c
+    }
+}
+
+TI_spells.0220 = { ## Casting Enhance Ability
+	type = character_event
+
+	title = TI_spells.0220_title
+
+	desc = TI_spells.0220_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0220.a
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+
+		random_list = {
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_diplo
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_martial
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_steward
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_intri
+					months = 6
+				}
+			}
+			20 = {
+				add_character_modifier = {
+					modifier = TI_modifiers_enhanceability_learn
+					months = 6
+				}
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0220.b
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+		scope:spell_target = { ## TI TODO: instead of a random choice, we need to make scope:spell_target be a character the player can actually select.
+			random_list = {
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_enhanceability_diplo
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_enhanceability_martial
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_enhanceability_steward
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_enhanceability_intri
+						months = 6
+					}
+				}
+				20 = {
+					add_character_modifier = {
+						modifier = TI_modifiers_enhanceability_learn
+						months = 6
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+	}
+
+    option = { ## Quit
+        name = TI_spells.0220.c
+    }
+}
+
+TI_spells.0230 = { ## Casting Gift of Gab
+	type = character_event
+
+	title = TI_spells.0230_title
+
+	desc = TI_spells.0230_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0230.a
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+		scope:spell_target = {
+			add_character_modifier = {
+				modifier = TI_modifiers_giftofgab
+				months = 6
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0230.c
+    }
+}
+
+TI_spells.0240 = { ## Casting Invisibility
+	type = character_event
+
+	title = TI_spells.0240_title
+
+	desc = TI_spells.0240_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0240.a
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_invisibility
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+    }
+		
+    option = { ## Quit
+        name = TI_spells.0240.c
+    }
+}
+
+TI_spells.0250 = { ## Casting Magic Weapon
+	type = character_event
+
+	title = TI_spells.0250_title
+
+	desc = TI_spells.0250_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0250.a
+
+		trigger = {
+			spell_castable_l2 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_magicweapon
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l2_cost.negate }
+    }
+		
+    option = { ## Quit
+        name = TI_spells.0250.c
+    }
+}
+
+### Level 3 Spells
+
+TI_spells.0310 = { ## Casting Haste
+	type = character_event
+
+	title = TI_spells.0310_title
+
+	desc = TI_spells.0310_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0310.a
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_haste
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0310.b
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+		scope:spell_target = { ## TI TODO: instead of a random choice, we need to make scope:spell_target be a character the player can actually select.
+			add_character_modifier = {
+				modifier = TI_modifiers_haste
+				months = 4
+			}
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+	}
+		
+    option = { ## Quit
+        name = TI_spells.0310.c
+    }
+}
+
+TI_spells.0320 = { ## Casting Motivational Speech
+	type = character_event
+
+	title = TI_spells.0320_title
+
+	desc = TI_spells.0320_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0320.a
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_motivationalspeech
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0320.c
+    }
+}
+
+TI_spells.0330 = { ## Casting Sending
+	type = character_event
+
+	title = TI_spells.0330_title
+
+	desc = TI_spells.0330_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0330.a
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_sending
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0330.c
+    }
+}
+
+TI_spells.0340 = { ## Casting Vampiric Touch
+	type = character_event
+
+	title = TI_spells.0340_title
+
+	desc = TI_spells.0340_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0340.a
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_vampirictouch
+			months = 6
+		}
+
+		scope:spell_target = {
+			add_character_modifier = {
+				modifier = TI_modifiers_vampirictouch_victim
+				months = 6
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+    }	
+
+    option = { ## Quit
+        name = TI_spells.0340.c
+    }
+}
+
+TI_spells.0350 = { ## Casting Fireball - wizard motherf*cker
+	type = character_event
+
+	title = TI_spells.0350_title
+
+	desc = TI_spells.0350_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0350.a
+
+		trigger = {
+			spell_castable_l3 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_fireball
+			months = 2
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l3_cost.negate }
+    }
+		
+    option = { ## Quit
+        name = TI_spells.0350.c
+    }
+}
+
+### Level 4 Spells
+
+TI_spells.0410 = { ## Casting Fabricate
+	type = character_event
+
+	title = TI_spells.0410_title
+
+	desc = TI_spells.0410_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0410.a
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_fabricate
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+    }
+		
+    option = { ## Quit
+        name = TI_spells.0410.c
+    }
+}
+
+TI_spells.0420 = { ## Casting Divination
+	type = character_event
+
+	title = TI_spells.0420_title
+
+	desc = TI_spells.0420_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0420.a
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+		add_character_modifier = { ## we'll want to cast different events based on the characters patron/religion. But I believe we'll need a custom modifier to set a character flag. It may be simplier but its ck3 modding after-all.
+			modifier = TI_modifiers_divination
+			months = 4
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0420.c
+    }
+}
+
+TI_spells.0430 = { ## Casting Locate Creature
+	type = character_event
+
+	title = TI_spells.0430_title
+
+	desc = TI_spells.0430_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0430.a
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+		add_character_modifier = { ## may need to change functionality here.
+			modifier = TI_modifiers_locatecreature
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0430.c
+    }
+}
+
+TI_spells.0440 = { ## Casting Death Ward
+	type = character_event
+
+	title = TI_spells.0440_title
+
+	desc = TI_spells.0440_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0440.a
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+
+		add_character_modifier = {
+			modifier = TI_modifiers_deathward
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0440.b
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+		scope:spell_target = { ## TI TODO: instead of a random choice, we need to make scope:spell_target be a character the player can actually select.
+			add_character_modifier = {
+				modifier = TI_modifiers_deathward
+				months = 6
+			}
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+	}
+		
+    option = { ## Quit
+        name = TI_spells.0440.c
+    }
+}
+
+TI_spells.0450 = { ## Casting Create Water - I'll die on the hill that this shouldn't be a level 4 spell brooooo
+	type = character_event
+
+	title = TI_spells.0450_title
+
+	desc = TI_spells.0450_desc
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	option = {
+        name = TI_spells.0450.a
+
+		trigger = {
+			spell_castable_l4 = yes
+		}
+
+		add_character_modifier = {
+			modifier = TI_modifiers_createwater
+			months = 6
+		}
+
+		if = {
+			limit = { has_trait = magic_trait_spellcaster }
+			add_trait_xp = {
+				trait = magic_trait_spellcaster
+				value = {
+					value = 5
+				}
+			}
+		} else = { ## this means they dont have the trait. for now, we'll give em it for free!
+			add_trait = magic_trait_spellcaster
+		}
+
+		add_magic = { VALUE = l4_cost.negate }
+    }
+
+    option = { ## Quit
+        name = TI_spells.0450.c
+    }
+}
+
+### Level 5 Spells
+
+TI_spells.0510 = { ## Casting WIP
+	type = character_event
+
+	title = "Cast Unnamed Spell Event - WIP"
+
+	desc = "You are casting Unnamed Spell"
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0510.a
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0510.b
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0510.c
+    }
+}
+
+TI_spells.0520 = { ## Casting WIP
+	type = character_event
+
+	title = "Cast Unnamed Spell Event - WIP"
+
+	desc = "You are casting Unnamed Spell"
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0520.a
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0520.b
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0520.c
+    }
+}
+
+TI_spells.0530 = { ## Casting WIP
+	type = character_event
+
+	title = "Cast Unnamed Spell Event - WIP"
+
+	desc = "You are casting Unnamed Spell"
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0530.a
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0530.b
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0530.c
+    }
+}
+
+TI_spells.0540 = { ## Casting WIP
+	type = character_event
+
+	title = "Cast Unnamed Spell Event - WIP"
+
+	desc = "You are casting Unnamed Spell"
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0540.a
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0540.b
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0540.c
+    }
+}
+
+TI_spells.0550 = { ## Casting WIP
+	type = character_event
+
+	title = "Cast Unnamed Spell Event - WIP"
+
+	desc = "You are casting Unnamed Spell"
+
+	right_portrait = { ## TI TODO: make these look more appropriate.
+		character = ROOT
+		animation = thinking
+	}
+	left_portrait = {
+		character = scope:spell_target
+		animation = wailing
+	}
+
+	override_background = study ## TI TODO: Add custom magic background, sound, icons environments and all!
+
+	immediate = { 
+		if = { 
+			limit = { exists = var:spell_recipient }
+			var:spell_recipient = {
+				save_scope_as = spell_target
+			}
+		} else = {
+		 	ROOT = {
+				save_scope_as = spell_target
+			}
+		}
+	}
+
+	option = {
+        name = TI_spells.0550.a
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+    }
+
+    option = {
+        name = TI_spells.0550.b
+
+		trigger = {
+			spell_castable_l5 = yes
+		}
+
+		add_magic = { VALUE = l5_cost.negate }
+	}
+		
+
+    option = { ## Quit
+        name = TI_spells.0550.c
+    }
+}

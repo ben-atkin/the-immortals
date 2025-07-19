@@ -15,7 +15,7 @@
     sexuality = homosexual
 
     790.1.1 = {
-		birth = yes
+		  birth = yes
 	  }
 
     #portrait_override = {	# redundant - we've removed beards through portrait modifiers.
@@ -23,4 +23,18 @@
 		#	  racial_features=elvish_no_beard
 		#  }
     #}
+}
+
+7777001 = {
+  name = "Yackob Brutefist"
+  dna = 7777001_yackob_dna
+
+  religion = orcish_faith
+  culture = full_orcish
+
+  
+
+  439.7.1 = {
+		  birth = yes
+	}
 }

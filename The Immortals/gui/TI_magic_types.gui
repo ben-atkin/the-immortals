@@ -1,0 +1,553 @@
+## TI TODO: Still lots of refining. UI-wise.
+
+
+types Magic
+{
+	type arcana_breakdown_widget = widget {
+		datacontext = "[GuiScope.SetRoot(Character.MakeScope).GetScriptValueBreakdown('arcana')]" #"[Character.MakeScope.ScriptV]"
+		alwaystransparent = no
+		using = GeneralTooltipSetup
+		widget = {
+			name = "background"
+			using = DefaultTooltipBackground
+			size = { 100% 100% }
+			alwaystransparent = no
+		}
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			set_parent_size_to_minimum = yes
+			margin = { 20 10 }
+			margin_bottom = 20
+			spacing = 3
+
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				text = "arcana_title"
+				align = left
+			}
+
+			## Unfortunately, modded tooltips seem to 'complicated'.
+			## ... which means > ALWAYS ADD THE DATA TO BOTH FILES >> gui/TI_magic_types.gui + common/script_values/TI_magic_values.txt
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				alwaystransparent = no
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					#datamodel = "[ValueBreakdown.GetSubValues]"
+					#alwaystransparent = no
+
+					text_single = {
+						name = "base"
+						text = arcana_stats_base
+						margin_bottom = -1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				## NEGATIVES
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					visible = "[Character.HasTrait( GetTrait('arcana_fatigue_trait') )]"
+
+					text_single = {
+						name = "arcanafatigue_arcana_bonus"
+						text = arcana_stats_arcanafatigue
+						margin_bottom = -1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_1') )]"
+
+					text_single = {
+						name = "intellect_bad_1_arcana_bonus"
+						text = arcana_stats_intellect_bad_1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_2') )]"
+
+					text_single = {
+						name = "intellect_bad_2_arcana_bonus"
+						text = arcana_stats_intellect_bad_2
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_3') )]"
+
+					text_single = {
+						name = "intellect_bad_3_arcana_bonus"
+						text = arcana_stats_intellect_bad_3
+						layoutpolicy_horizontal = expanding
+					}
+				}	
+
+				## POSITIVES
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					visible = "[Character.HasTrait( GetTrait('race_trait_full_elvish') )]"
+
+					text_single = {
+						name = "elvish_race_bonus"
+						text = arcana_stats_elvish
+						margin_bottom = -1
+						layoutpolicy_horizontal = expanding
+					}
+
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					visible = "[Character.HasTrait( GetTrait('race_trait_human') )]"
+
+					text_single = {
+						name = "human_race_bonus"
+						text = arcana_stats_human
+						margin_bottom = -1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					visible = "[Character.HasTrait( GetTrait('magic_trait_spellcaster') )]"
+
+					text_single = {
+						name = "spellcaster_arcana_bonus"
+						text = arcana_stats_spellcaster
+						margin_bottom = -1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_1') )]"
+
+					text_single = {
+						name = "intellect_good_1_arcana_bonus"
+						text = arcana_stats_intellect_good_1
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_2') )]"
+
+					text_single = {
+						name = "intellect_good_2_arcana_bonus"
+						text = arcana_stats_intellect_good_2
+						layoutpolicy_horizontal = expanding
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_3') )]"
+
+					text_single = {
+						name = "intellect_good_3_arcana_bonus"
+						text = arcana_stats_intellect_good_3
+						layoutpolicy_horizontal = expanding
+					}
+				}	
+			}
+		}
+	}
+
+	type magic_breakdown_widget = widget {
+		alwaystransparent = no
+
+		using = DefaultTooltipBackground
+
+		vbox = {
+			name = "tooltip_container"
+			set_parent_size_to_minimum = yes
+			filter_mouse = all
+			margin = { 14 8 }
+			#margin_bottom = 12
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin_bottom = 14
+				spacing = 5
+
+				block "header" {}
+
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					text = "MAGIC_CURRENT"
+					default_format = "#high;bold"
+					using = Font_Size_Medium
+					fonttintcolor = "[TooltipInfo.GetTintColor]"
+
+					background = {
+						using = Background_Area
+						margin = { 10 10 }
+						margin_bottom = 5
+					}
+				}
+
+				hbox = {
+					name = "total_label_gain"
+					layoutpolicy_horizontal = expanding
+
+					using = tooltip_es
+					tooltipwidget = {
+						magic_gain_breakdown_widget = {}
+					}
+					tooltip_visible = "[NotEqualTo_CFixedPoint(Character.MakeScope.ScriptValue('magic_regen'), '(CFixedPoint)0')]"
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = "MAGIC_GAIN"
+						default_format = "#high"
+					}
+
+					text_single = {
+						visible = "[NotEqualTo_CFixedPoint(Character.MakeScope.ScriptValue('magic_regen'), '(CFixedPoint)0')]"
+						text = "[Character.MakeScope.ScriptValue('magic_regen')|L+=2]"
+						default_format = "#high"
+					}
+
+					text_single = {
+						visible = "[EqualTo_CFixedPoint(Character.MakeScope.ScriptValue('magic_regen'), '(CFixedPoint)0')]"
+						text = "[Character.MakeScope.ScriptValue('magic_regen')|+=2]"
+						default_format = "#high"
+					}
+				}
+			}
+		}
+	}
+
+	type magic_gain_breakdown_widget = widget {
+		#datacontext = "[GuiScope.SetRoot(Character.MakeScope).GetScriptValueBreakdown('magic_regen')]"
+		size = { 50 50 }
+		alwaystransparent = no
+		using = GeneralTooltipSetup
+		widget = {
+			name = "background"
+			using = DefaultTooltipBackground
+			size = { 100% 100% }
+			alwaystransparent = no
+		}
+		vbox = {
+			set_parent_size_to_minimum = yes
+			margin = { 5 5 }
+
+			## Unfortunately, modded tooltips seem to 'complicated'.
+			## ... which means > ALWAYS ADD THE DATA TO BOTH FILES >> gui/TI_magic_types.gui + common/script_values/TI_magic_values.txt
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				alwaystransparent = no
+
+				margin = { 5 5 }
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					margin = { 5 1 }
+					margin_bottom = 5
+
+					using = tooltip_es
+
+					text_single = {
+						name = "gained_label"
+						text = "MAGIC_TOTAL"
+						layoutpolicy_horizontal = expanding
+						default_format = "#high"
+						margin_right = 10
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('magic_regen')|+=2]"
+					}
+
+					background = {
+						using = Background_Area
+						margin = { 10 10 }
+						margin_bottom = 5
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					#visible = ""
+
+					text_single = {
+						name = "base"
+						layoutpolicy_horizontal = expanding
+						text = arcana_bstats_base
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_base_10th')|+=2]"
+					}
+				}
+				
+				## NEGATIVES
+
+				## example for a modifier that removes arcana instead of adds it. - I prefer the negatives be at the top and the positives be at the bottom, hence why this hbox is here.
+				hbox = {
+					visible = "[Character.HasTrait( GetTrait('arcana_fatigue_trait') )]"
+
+					text_single = {
+						name = "lost_label"
+						text = arcana_bstats_arcanafatigue
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "lost_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_arcanafatigue_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_1') )]"
+
+					text_single = {
+						name = "lost_label"
+						text = arcana_bstats_intellect_bad_1
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "lost_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_bad_1_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_2') )]"
+
+					text_single = {
+						name = "lost_label"
+						text = arcana_bstats_intellect_bad_2
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "lost_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_bad_2_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					visible = "[Character.HasTrait( GetTrait('intellect_bad_3') )]"
+
+					text_single = {
+						name = "lost_label"
+						text = arcana_bstats_intellect_bad_3
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "lost_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_bad_3_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					visible = "[Character.HasTrait( GetTrait('inbred') )]"
+
+					text_single = {
+						name = "lost_label"
+						text = arcana_bstats_inbred
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "lost_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_inbred_value_10th')|+=2]"
+					}
+				}
+
+
+
+				### POSITIVES
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('race_trait_full_elvish') )]"
+
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_elvish
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_full_elvish_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('human_full_elvish') )]"
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_human
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_human_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('magic_trait_spellcaster') )]"
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_spellcaster
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_spellcaster_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_1') )]"
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_intellect_good_1
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_good_1_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_2') )]"
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_intellect_good_2
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_good_2_value_10th')|+=2]"
+					}
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					visible = "[Character.HasTrait( GetTrait('intellect_good_3') )]"
+
+					text_single = {
+						name = "gained_label"
+						text = arcana_bstats_intellect_good_3
+						layoutpolicy_horizontal = expanding
+					}
+
+					text_single = {
+						name = "gained_value"
+						text = "[Character.MakeScope.ScriptValue('arcana_trait_intellect_good_3_value_10th')|+=2]"
+					}
+				}
+			}
+		}
+	}
+
+	type TI_hud_magic_bar = container {
+		alwaystransparent = no
+		visible = "[And(GetPlayer.IsValid, Not(GetVariableSystem.Exists('hide_bottom_left_HUD')))]"
+		widget = {
+			datacontext = "[GetScriptedGui('can_see_magic_bar')]"
+			visible = "[ScriptedGui.IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+			name = "magic_widget"
+			size = { 50 150 }
+
+			using = tooltip_ne
+			tooltipwidget = {
+				magic_breakdown_widget = {
+					datacontext = "[GetPlayer]"
+				}
+			}
+			vbox = {
+				size = { 18 90 }
+				maximumsize = { 18 90 }
+				position = { 17 15 }
+
+				background = {
+					texture = "gfx/interface/colors/white.dds"
+					color = { 0.1 0.1 0.1 0.8 }
+				}
+
+				#pushes the progress part to bottom
+				widget = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled( FixedPointToFloat(GetPlayer.MakeScope.Var('magic').GetValue), FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('magic_max')), '(int32)66' )]"
+				}
+				#gets the progress bar part
+				widget = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled( FixedPointToFloat(GetPlayer.MakeScope.Var('magic').GetValue), FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('magic_max')), '(int32)66' )]"
+
+					progressbar = {
+						#visible = "[GreaterThanOrEqualTo_int32(GetPlayer.GetStressLevel, '(int32)3')]"
+						size = { 100% 100% }
+						progresstexture = "gfx/interface/colors/blue.dds"
+						noprogresstexture = "gfx/interface/colors/light_blue.dds"
+						spriteType = Corneredtiled
+						spriteborder = { 6 6 }
+
+						using = Animation_ShowHide_Standard
+					}
+				}
+			}
+
+			icon = {
+				size = { 100% 100% }
+				texture = "gfx/interface/ardor_v_bg.dds" ## VERY TEMP
+
+				icon = {
+					parentanchor = vcenter
+					position = { 11 42 }
+					size = { 30 30 }
+					texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+				}
+			}
+		}
+	}
+}

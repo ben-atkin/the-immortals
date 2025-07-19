@@ -1,0 +1,46 @@
+﻿l_english:
+ 
+   trait_race_trait_human:1 "Human Race Trait"
+   trait_race_trait_human_desc:1 "Adaptable and ambitious, humans are driven by the pursuit of power, knowledge, and legacy. Their kingdoms are diverse, marked by innovation and conflict, where noble houses rise and fall with the tides of fortune. Masters of endurance, they thrive in adversity, forging empires with steel and resolve. Though mortal and fleeting, their courage and tenacity shape the fate of the realm. (AI GENERATED)"
+
+   trait_race_trait_full_orcish:1 "Orc Race Trait"
+   trait_race_trait_full_orcish_desc:1 "Hulking, tusked warriors clad in crude yet imposing armor, driven by an iron code of strength and honor. Their clans, ruled by chieftains proven in battle, thrive on conquest and strife. Forging weapons as brutal as their might, they revere their gods through bloodshed and victory. United under one banner, they are an unrelenting force feared across every kingdom. (AI GENERATED)"
+
+   trait_race_trait_half_orcish:1 "Half Orc Race Trait"
+   trait_race_trait_half_orcish_desc:1 "Born of two worlds yet fully accepted by neither, half-orcs embody resilience and raw power. Their sturdy frames and tusked features speak of orcish blood, while their sharp minds reflect human heritage. Often driven by a desire to prove themselves, they excel as warriors and leaders. Though outcasts to some, they carve their place through sheer determination and an unyielding will. (AI GENERATED)"
+
+   trait_race_trait_full_elvish:1 "Elf Race Trait"
+   trait_race_trait_full_elvish_desc:1 "Graceful and eternal beings, renowned for their unmatched beauty and wisdom. Clad in ornate robes or finely wrought armor, they are masters of magic and archery. Elven realms are elegant and timeless, ruled by noble houses with ancient traditions. Guided by foresight and a deep connection to nature, elves stand as protectors of their lands, wielding power as ageless as the stars. (AI GENERATED)"
+
+   trait_race_trait_half_elvish:1 "Half Elf Race Trait"
+   trait_race_trait_half_elvish_desc:1 "Bridging two worlds, half-elves blend human ambition with elven grace. Gifted with natural charisma and adaptability, they thrive in both courts and wilderness. Their lifespans grant them wisdom, while their dual heritage often sparks a yearning for belonging. Straddling the line between two cultures, they walk their path with resilience, carving their destiny through wit and skill. (AI GENERATED)"
+
+   trait_race_trait_wood_elvish:1 "Wood Elf Race Trait"
+   trait_race_trait_wood_elvish_desc:1 "Guardians of the forests, wood-elves are swift, agile, and deeply attuned to nature. Masters of archery and stealth, they traverse their woodland realms with unmatched grace. Their lives are guided by harmony with the wild, valuing freedom and balance above all. While elusive and wary of outsiders, their bond with the natural world makes them formidable allies and deadly foes. (AI GENERATED)"
+
+   trait_race_trait_dark_elvish:1 "Dark Elf Race Trait"
+   trait_race_trait_dark_elvish_desc:1 "Shadowed and secretive, dark-elves are masters of cunning and sorcery. Dwelling in subterranean cities or twilight-shrouded lands, they value ambition and power above all. Skilled in intrigue and combat, their society thrives on ruthless competition. Though often distrusted, their intelligence and mastery of dark magic make them formidable allies—or dangerous foes. (AI GENERATED)"
+
+   trait_track_magic_trait_spellcaster:0 "Arcana Experience"
+   trait_track_magic_trait_spellcaster_desc:0 "Casting spells is fun."
+
+   magic_trait_spellcaster_1:1 "Spellcaster"
+   magic_trait_spellcaster_1_desc_cha:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is learning to channel minor magical energy; casting is erratic and mentally taxing."
+
+   magic_trait_spellcaster_2:1 "Novice Spellcaster"
+   magic_trait_spellcaster_2_desc_cha:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is learning to channel minor magical energy; casting is erratic and mentally taxing."
+
+   magic_trait_spellcaster_3:1 "Adept Spellcaster"
+   magic_trait_spellcaster_3_desc_cha:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] sustains modest arcane power; maintains focus through structured spellwork."
+
+   magic_trait_spellcaster_4:1 "Skilled Spellcaster"
+   magic_trait_spellcaster_4_desc_cha:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] holds an impressive well of arcanic knowledge; casts complex spells with increasing efficiency."
+
+   magic_trait_spellcaster_5:1 "Master Spellcaster"
+   magic_trait_spellcaster_5_desc_cha:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] harnesses immense arcane reserves with flawless precision; casting is second nature, shaped instinctively to purpose and need."
+
+   trait_magic_trait_arcana_fatigue:1 "Arcana Fatigue"
+   magic_trait_arcana_fatigue_desc:1 "This character is weak and useless in terms of arcanic power. Silly them!"
+   magic_trait_arcana_fatigue_cha_desc:1 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is weak and useless in terms of arcanic power. Silly them!"
+
+   

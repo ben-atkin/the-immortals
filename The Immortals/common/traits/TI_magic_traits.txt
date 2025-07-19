@@ -1,0 +1,155 @@
+magic_trait_spellcaster = {
+    category = health
+    icon = TI_magic.dds
+
+    prowess = 1
+    # arcana = 1
+    flag = add_arcana_1
+
+    ruler_designer_cost = 50
+
+    track = {
+        25 = {
+            prowess = 2
+            # arcana = 2
+            flag = add_arcana_2
+        }
+        50 = {
+            prowess = 4
+            # arcana = 3
+            flag = add_arcana_3
+        }
+        75 = {
+            prowess = 8
+            # arcana = 4
+            flag = add_arcana_4
+        }
+        100 = {
+            prowess = 20
+            # arcana = 8
+            flag = add_arcana_8
+        }
+    }
+
+    name = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 100
+                    }
+                }
+                desc = magic_trait_spellcaster_5
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 75
+                    }
+                }
+                desc = magic_trait_spellcaster_4
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 50
+                    }
+                }
+                desc = magic_trait_spellcaster_3
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 25
+                    }
+                }
+                desc = magic_trait_spellcaster_2
+            }
+            desc = magic_trait_spellcaster_1
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 100
+                    }
+                }
+                desc = magic_trait_spellcaster_5_desc_cha
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 75
+                    }
+                }
+                desc = magic_trait_spellcaster_4_desc_cha
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 50
+                    }
+                }
+                desc = magic_trait_spellcaster_3_desc_cha
+            }
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = magic_trait_spellcaster
+                        value >= 25
+                    }
+                }
+                desc = magic_trait_spellcaster_2_desc_cha
+            }
+            desc = magic_trait_spellcaster_1_desc_cha
+        }
+    }
+}
+
+
+magic_trait_arcana_fatigue = { ## full-on testing.
+    category = health
+    icon = TI_magic.dds
+
+    # genetic = yes
+    # inherit_chance = 0.1
+
+    # birth = 0.5
+    # random_creation = 0.5
+
+    prowess = -1
+    # arcana = -1
+    flag = subtract_arcana_1
+
+    desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = magic_trait_arcana_fatigue_desc
+			}
+			desc = magic_trait_arcana_fatigue_cha_desc
+		}
+	}
+
+    good = no
+}

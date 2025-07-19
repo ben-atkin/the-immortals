@@ -1,0 +1,93 @@
+﻿### EK EDIT: Remove events too specific to vanilla
+
+# Called every Jan 1st
+# Root does not exist
+TI_yearly_global_pulse = {
+	# on_actions = {
+	# 	initalize_spell_lists #just incase new ones are added for an existing save. on_gamestart would be better but I don't think it fires on save load
+	# }
+	
+	# on_actions = {
+	# 	delay = { months = 1 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 2 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 3 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 4 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 5 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 6 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 7 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 8 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 9 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 10 }
+	# 	TI_monthly_global_pulse
+	# 	delay = { months = 11 }
+	# 	TI_monthly_global_pulse
+	# }
+}
+
+# Called every 1st day of any month
+# Root does not exist
+TI_monthly_global_pulse = {
+	# effect = {
+	# 	### EK EDIT: Update each faith Fervor Equilibrium
+	# 	# Note: We do not use on_faith_monthly for performance reason (only once a year instead of once every month) and because we need a certain order
+	# 	every_religion_global = {
+	# 		every_faith = { 
+	# 			faith_update_fervor_equilibrium = yes
+	# 		}
+	# 	}
+
+	# 	#Wandering Mindless Maintenance
+	# 	every_living_character = {
+	# 		limit = {
+	# 			is_undead = yes
+	# 			is_mindless_character = yes
+	# 			is_pool_character = yes
+	# 		}
+	# 		death = {
+	# 			death_reason = death_crumbled_dust
+	# 		}
+	# 	}
+
+	# 	#Wandering Dremora Maintenance
+	# 	every_living_character = {
+	# 		limit = {
+	# 			culture = {
+	# 				has_cultural_pillar = heritage_dremora
+	# 			}
+	# 			is_pool_character = yes
+	# 		}
+	# 		death = {
+	# 			death_reason = death_returned_oblivion
+	# 		}
+	# 	}
+	# } 
+	# on_actions = {
+	# 	add_monthly_magic
+	# }
+}
+
+# Called from code once a quarter for "playable" (count+) characters.
+# Root is the character
+# scope:quarter is which quarter it's for, from 1 to 4. Note that scope:quarter = 1 isn't necessarily in Q1 by calendar time
+TI_quarterly_playable_pulse = {
+	on_actions = {
+		add_quarterly_magic
+	}
+}
+
+# Called from code once a year for all characters, at a random point that year (individually for each character)
+# Root is the character
+TI_random_yearly_everyone_pulse = {
+	on_actions = {
+		add_yearly_magic
+	}
+}

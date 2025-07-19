@@ -1,0 +1,283 @@
+﻿TI_buildings_jarzendii_duchy_capital_01 = {
+
+	levy = normal_building_levy_tier_6
+	max_garrison = normal_building_levy_tier_6
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working.
+	}
+
+	type_icon = "icon_capital_bureau.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_feast_effect_desc } #change this once confirmed working.
+
+	can_construct = { ## TI NOTE: Not sure if we want to have the ability to actually build the duchy buildings instead of just starting them at level 1 from game start.
+		always = no
+	}
+
+	is_enabled = { 
+		scope:holder = { culture = { has_cultural_pillar = heritage_elvish } }
+	}
+
+	character_modifier = {
+		monthly_prestige = 0.5
+		monthly_piety = 0.1
+		clergy_opinion = 5
+		general_opinion = 5
+		monthly_county_control_growth_factor = 0.05
+	}
+
+	county_modifier = {
+		tax_mult = 0.05
+		development_growth = 0.05
+	}
+
+	province_modifier = {
+		monthly_income = normal_building_tax_tier_3
+	}
+
+	next_building = TI_buildings_jarzendii_duchy_capital_02
+
+	type = duchy_capital
+}
+
+TI_buildings_jarzendii_duchy_capital_02 = {
+
+	levy = good_building_levy_tier_6
+	max_garrison = good_building_levy_tier_6
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working.
+	}
+
+	type_icon = "icon_capital_bureau.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_feast_effect_desc } #change this once confirmed working.
+
+	can_construct = {
+		scope:holder = { culture = { has_cultural_pillar = heritage_elvish } }
+	}
+
+	is_enabled = { 
+		scope:holder = { culture = { has_cultural_pillar = heritage_elvish } }
+	}
+
+	construction_time = slow_construction_time
+
+	cost_gold = expensive_building_tier_3_cost
+
+	character_modifier = {
+		monthly_prestige = 1
+		monthly_piety = 0.2
+		clergy_opinion = 10
+		general_opinion = 10
+		monthly_county_control_growth_factor = 0.10
+	}
+
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = good_building_tax_tier_3
+	}
+
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for duchy buildings
+			factor = 0
+			free_building_slots > 0
+		}
+		modifier = { # Less likely when the AI should build regular buildings first
+			factor = 0.1
+			scope:holder = { ai_should_focus_on_building_in_their_capital = yes }
+		}
+	}
+
+	next_building = TI_buildings_jarzendii_duchy_capital_03
+
+	type = duchy_capital
+}
+
+TI_buildings_jarzendii_duchy_capital_03 = {
+
+	levy = excellent_building_levy_tier_6
+	max_garrison = excellent_building_levy_tier_6
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working.
+	}
+
+	type_icon = "icon_capital_bureau.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_feast_effect_desc } #change this once confirmed working.
+
+	can_construct = {
+		scope:holder = { culture = { has_cultural_pillar = heritage_elvish } }
+	}
+
+	is_enabled = { 
+		scope:holder = { culture = { has_cultural_pillar = heritage_elvish } }
+	}
+
+	construction_time = slow_construction_time
+
+	cost_gold = expensive_building_tier_4_cost
+
+	character_modifier = {
+		monthly_prestige = 1
+		monthly_piety = 0.2
+		clergy_opinion = 10
+		general_opinion = 10
+		monthly_county_control_growth_factor = 0.10
+	}
+
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_3
+	}
+
+	#next_building = TI_buildings_jarzendii_duchy_capital_04
+
+	type = duchy_capital
+}
+
+
+
+TI_buildings_ultameer_duchy_capital = {
+
+	levy = 400
+	max_garrison = 600
+	garrison_reinforcement_factor = 1
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working.
+	}
+
+	type_icon = "icon_structure_jaisalmer_fort.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_funeral_effect_desc } #change this once confirmed working.
+
+	can_construct = {
+		always = no
+	}
+
+	is_enabled = { 
+		scope:holder = { culture = { has_cultural_pillar = heritage_orcish } }
+	}
+
+	character_modifier = {
+		monthly_prestige = 0.7
+		monthly_piety = 0.05
+		general_opinion = 5
+		monthly_county_control_growth_factor = 0.1
+	}
+
+	county_modifier = {
+		tax_mult = 0.05
+		development_growth_factor = 0.15 ## want this slightly higher to mitigate the terrain - moreno mountains.
+		development_growth = 0.01
+	}
+
+	province_modifier = {
+		monthly_income = 0.3
+	}
+
+	type = duchy_capital
+}
+
+TI_buildings_hollowtor_duchy_capital = {
+
+	levy = 350
+	max_garrison = 500
+	garrison_reinforcement_factor = 0.5
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working. - dont think this is working yet.
+	}
+
+	type_icon = "icon_structure_konark_temple.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_funeral_effect_desc } #change this once confirmed working.
+
+	can_construct = {
+		always = no
+	}
+
+	is_enabled = { 
+		scope:holder = { culture = { has_cultural_pillar = heritage_human } }
+	}
+
+	character_modifier = {
+		monthly_prestige = 0.5
+		monthly_piety = 0.1
+		general_opinion = 5
+		monthly_county_control_growth_factor = 0.1
+	}
+
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = 1
+	}
+
+	type = duchy_capital
+}
+
+TI_buildings_witch_lair = { ## meh, kind of a throw away at the moment.
+
+	levy = 500
+	max_garrison = 500
+	garrison_reinforcement_factor = 1
+
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh" #change this once confirmed working.
+	}
+
+	type_icon = "icon_structure_cologne_cathedral.dds" #change this once confirmed working.
+
+	#effect_desc = { desc = building_funeral_effect_desc } #change this once confirmed working.
+
+	can_construct = {
+		always = no
+	}
+
+	is_enabled = { 
+		always = yes ## change this later
+	}
+
+	character_modifier = {
+		monthly_prestige = 0.2
+		monthly_piety = 0.5
+		clergy_opinion = -20
+		monthly_county_control_growth_factor = 0.1
+		intrigue_per_stress_level = 3
+		life_expectancy = 5
+	}
+
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth = 0.2
+	}
+
+	province_modifier = {
+		monthly_income = 2
+	}
+
+	type = duchy_capital
+}

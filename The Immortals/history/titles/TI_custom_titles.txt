@@ -1,0 +1,28 @@
+e_Onokam_Empire = {
+	1.1.1 = { change_development_level = 0 }
+}
+
+k_Elvish_Kingdom = {
+	10.1.1 = { change_development_level = 4 }
+}
+
+k_Orcish_Kingdom = {
+	10.1.1 = { change_development_level = 2 }
+}
+
+k_Jaka_Kingdom = {
+	10.1.1 = { change_development_level = 3 }
+}
+
+k_Witch_Kingdom = {
+	10.1.1 = { change_development_level = 2 }
+}
+
+c_county_tier3 = { 
+	100.1.1 = { change_development_level = 8 }
+}
+
+c_county_tier32 = {
+	458.1.1 = { holder = 7777001 }
+}
+

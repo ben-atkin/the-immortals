@@ -1,0 +1,22 @@
+﻿rf_elvish = {
+	piety_icon_group = "pagan"
+	graphical_faith = "pagan_gfx"
+	hostility_doctrine = pagan_hostility_doctrine
+	doctrine_background_icon = core_tenet_natural_primitivism.dds #change this later. Probably AI ;3
+}
+
+rf_orcish = {
+	is_pagan = yes
+	piety_icon_group = "pagan"
+	graphical_faith = "pagan_gfx"
+	hostility_doctrine = pagan_hostility_doctrine
+	doctrine_background_icon = core_tenet_natural_primitivism.dds #change this later. Probably AI ;3
+}
+
+rf_human = {
+	piety_icon_group = "pagan"
+	graphical_faith = "pagan_gfx"
+	hostility_doctrine = pagan_hostility_doctrine
+	doctrine_background_icon = core_tenet_natural_primitivism.dds #change this later. Probably AI ;3
+}
+

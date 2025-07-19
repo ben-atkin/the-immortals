@@ -1,0 +1,7 @@
+﻿l_english:
+   TI_VERSION_BUILD:0 "\nThe Immortals Build: #color_red;bold $TI_BUILD$#!\nThe Immortals Version: #color_red;bold $TI_VERSION$#!"
+   TI_BUILD:0 "Pre-Alpha Build"
+   TI_VERSION:0 "Pre Alpha 0.1"
+   TI_REQUIRED_VERSION:0 "Chamfron (1.16.2.3)"
+
+   

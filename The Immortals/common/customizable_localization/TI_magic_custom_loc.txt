@@ -1,0 +1,37 @@
+ArcanaLevel = {
+	type = character
+
+	text = {
+		localization_key = SKILL_TERRIBLE
+		trigger = { root.arcana < { value = terrible_skill_level add = 2 } }
+	}
+
+	text = {
+		localization_key = SKILL_POOR
+		trigger = {
+			root.arcana >= { value = terrible_skill_level add = 2 }
+			root.arcana < { value = poor_skill_level add = 2 }
+		}
+	}
+
+	text = {
+		localization_key = SKILL_AVERAGE
+		trigger = {
+			root.arcana >= { value = poor_skill_level add = 2 }
+			root.arcana < { value = average_skill_level add = 2 }
+		}
+	}
+
+	text = {
+		localization_key = SKILL_GOOD
+		trigger = {
+			root.arcana >= { value = average_skill_level add = 2 }
+			root.arcana < { value = good_skill_level add = 2 }
+		}
+	}
+
+	text = {
+		localization_key = SKILL_EXCELLENT
+		trigger = { root.arcana >= { value = good_skill_level add = 2 } }
+	}
+}

@@ -1,0 +1,38 @@
+﻿l_english:
+ 
+   e_Onokam_Empire:0 "Onokām"
+
+   k_Elvish_Kingdom:0 "Anzeni"
+   d_Elvish_Duchy_North:0 "North Anzeni"
+   d_Elvish_Duchy_South:0 "South Anzeni"
+   d_Elvish_Duchy_East:0 "East Anzeni"
+
+   c_county_tier3:1 "Jarzendii"
+   b_test9:1 "Jarzendii Castle" #Anzeni Capital
+   b_test10:1 "West Jarzendii"
+   b_test11:1 "North Jarzendii"
+   b_test12:1 "East Jarzendii"
+   b_test13:1 "South Jarzendii"
+   
+   k_Orcish_Kingdom:0 "Moreno"
+   d_Orcish_Duchy_South:0 "South Moreno"
+   d_Orcish_Duchy_North:0 "North Moreno"
+   d_Orcish_Duchy_West:0 "West Moreno"
+   d_Orcish_Duchy_East:0 "East Moreno"
+
+   c_county_tier18:1 "Ulta Meer"
+   b_test61:1 "Ulta Meer" #Moreno Capital
+   
+   k_Jaka_Kingdom:0 "Jaka"
+   d_Jaka_Duchy_West:0 "West Jaka"
+   d_Jaka_Duchy_East:0 "East Jaka"
+   d_Jaka_Duchy_Island:0 "Jaka Islands"
+
+   c_county_tier43:1 "Hollow Tor"
+   b_test147:1 "Hollow Tor" #Jaka Capital
+
+   k_Witch_Kingdom:0 "The Witch Coven"
+   d_Witch_Duchy:0 "The Witch Duchy"
+
+   c_county_tier46:1 "The Witch County"
+   b_test163:1 "The Witch Capital"

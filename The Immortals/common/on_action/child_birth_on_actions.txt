@@ -136,6 +136,8 @@ on_birth_mother = {
 			}
 		}
 		scope:child = {
+			#EK ADDITION: fixing babies not getting arcana after gamestart
+			add_arcana_skill = { VALUE = "{ 0 10 }" }
 			if = {
 				limit = { has_trait = twin }
 				random_sibling = {

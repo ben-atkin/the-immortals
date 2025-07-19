@@ -1,0 +1,27 @@
+select_spell_target_interaction = {
+    common_interaction = yes
+    desc = select_spell_target_interaction_desc
+    category = interaction_category_magic
+    icon = TI_magic_icon
+    use_diplomatic_range = yes
+	ignores_pending_interaction_block = yes
+
+    redirect = {
+		scope:actor = {save_scope_as = secondary_actor}
+	}
+
+    # populate_actor_list = {
+	# 	scope:actor = {
+	# 		add_to_list = characters
+	# 	}
+	# }
+
+    on_accept = {
+        scope:actor = {
+            set_variable = { name = spell_caster value = scope:actor }
+            set_variable = { name = spell_recipient value = scope:recipient }
+        }
+    }
+
+    auto_accept = yes
+}

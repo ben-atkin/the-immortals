@@ -1,0 +1,23 @@
+165 = {
+	culture = full_human
+	religion = human_faith
+
+	holding = castle
+
+	duchy_capital_building = TI_buildings_witch_lair
+}
+
+166 = {
+	culture = full_human
+	religion = human_faith
+}
+
+167 = {
+	culture = full_human
+	religion = human_faith
+}
+
+168 = {
+	culture = full_human
+	religion = human_faith
+}

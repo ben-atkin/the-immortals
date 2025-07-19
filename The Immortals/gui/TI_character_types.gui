@@ -1,0 +1,39 @@
+types CharWindow
+{
+	type TI_magic_type = icon
+	{
+		visible = "[And( Not( Character.IsDeadAndValid ), Character.MakeScope.Var('magic').IsSet )]"
+		size = { 23 23 }
+		texture = "gfx/interface/icons/icon_magicka.dds"
+		tooltipwidget = {
+			magic_breakdown_widget = {
+				datacontext = "[CharacterWindow.GetCharacter]"
+			}
+		}
+	}
+	type TI_arcana_type = vbox
+	{
+		tooltipwidget = {
+			arcana_breakdown_widget = { #yay script value breakdown
+				datacontext = "[CharacterWindow.GetCharacter]"
+			}
+		}
+		using = tooltip_ne
+
+		spacing = -3
+
+		using = Animation_Character_Window_Refresh
+
+		icon = {
+			name = "magic_icon"
+			size = { 32 32 }
+			texture = "gfx/interface/TI_magic_icon_test.dds"
+		}
+
+		text_single = {
+			name = "arcana_value"
+			text = "[CharacterWindow.GetCharacter.MakeScope.ScriptValue('arcana')|0]"
+			align = nobaseline
+		}
+	}
+}

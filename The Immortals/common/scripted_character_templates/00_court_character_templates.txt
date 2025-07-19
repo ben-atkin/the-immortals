@@ -132,6 +132,7 @@ fake_artifact_peddler_character = {
 	random_traits = yes
 
 	after_creation = {
+		## TI EDITS
 		race_heritage_effect = yes
 	}
 }
@@ -170,12 +171,10 @@ trepanner_character = {
 			LEVEL_1 = yes
 			LEVEL_3 = yes
 		}
-	}
-
-	after_creation = {
 		## TI EDITS
 		race_heritage_effect = yes
 	}
+
 }
 
 random_learned_eunuch_character = {

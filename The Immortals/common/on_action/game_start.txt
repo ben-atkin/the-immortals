@@ -6,9 +6,9 @@ on_game_start = {
 
 	events = {
 		TI_race.0002 # Directs starting characters to race inheritance.
-		fp1_scandinavian_adventurers.0004	# FP1 - Organise Norse adventurers.
-		fp1_scandinavian_adventurers.0011	# FP1 - Corral famous Norse adventurers that haven't done much yet.
-		fp1_scandinavian_adventurers.0021	# FP1 - Mark game-start prioritised adventurers.
+		#fp1_scandinavian_adventurers.0004	# FP1 - Organise Norse adventurers.
+		#fp1_scandinavian_adventurers.0011	# FP1 - Corral famous Norse adventurers that haven't done much yet.
+		#fp1_scandinavian_adventurers.0021	# FP1 - Mark game-start prioritised adventurers.
 		#Guaranteed historical artifacts fixed spawning
 		#debug_portraits.1 					# Debug portraits for animation testing
 		#easteregg_event.0001				# Charna and Jakub duel.
@@ -536,6 +536,11 @@ on_game_start = {
 
 # Like on_game_start, except it is called once the host (or player, in single player) exits the lobby. Good for anything where you need to know who the players are, or what the game rules are
 on_game_start_after_lobby = {
+
+	## TI EDIT
+	on_actions = {
+		on_start_magic_elc
+	}
 
 	effect = {
 		# Make sure that Realm Priests are landed theocrats where it makes sense

@@ -1,0 +1,9 @@
+texticon = {
+	icon = TI_magic_icon
+	iconsize = {
+		texture = "gfx/interface/TI_magic_icon_test.dds"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}

@@ -1,0 +1,333 @@
+## TI Addition: custom spell modifiers.
+
+### Cantrips
+
+## Guidance
+
+TI_modifiers_guidance_diplo = {
+	icon = cat_positive
+
+	diplomacy = 1
+}
+
+TI_modifiers_guidance_martial = {
+	icon = cat_positive
+
+	martial = 1
+}
+
+TI_modifiers_guidance_steward = {
+	icon = cat_positive
+
+	stewardship = 1
+}
+
+TI_modifiers_guidance_intri = {
+	icon = cat_positive
+
+	intrigue = 1
+}
+
+TI_modifiers_guidance_learn = {
+	icon = cat_positive
+
+	learning = 1
+}
+
+## Mending
+
+TI_modifiers_mending = {
+	icon = cat_positive
+
+	artifact_decay_reduction_mult = -0.25
+
+}
+
+## Mage Hand
+
+TI_modifiers_magehand = {
+	icon = cat_positive
+
+	scheme_success_chance = 5
+	
+}
+
+## Prestidigitation
+
+TI_modifiers_prestidigitation_01 = {
+	icon = cat_positive
+
+	fertility = 0.1
+}
+
+TI_modifiers_prestidigitation_02 = {
+	icon = cat_positive
+
+	health = 0.05
+}
+
+TI_modifiers_prestidigitation_03 = {
+	icon = cat_positive
+
+	monthly_prestige = 0.25
+}
+
+TI_modifiers_prestidigitation_04 = {
+	icon = cat_positive
+
+	monthly_dynasty_prestige = 0.25
+}
+
+TI_modifiers_prestidigitation_05 = {
+	icon = cat_positive
+
+	dread_baseline_add = 3
+}
+
+TI_modifiers_prestidigitation_06 = {
+	icon = cat_positive
+
+	short_reign_duration_mult = -0.1
+}
+
+TI_modifiers_prestidigitation_07 = {
+	icon = cat_positive
+
+	monthly_lifestyle_xp_gain_mult = 0.05
+}
+
+TI_modifiers_prestidigitation_08 = {
+	icon = cat_positive
+
+	general_opinion = 10
+}
+
+TI_modifiers_prestidigitation_09 = {
+	icon = cat_positive
+
+	attraction_opinion = 20
+}
+
+TI_modifiers_prestidigitation_10 = {
+	icon = cat_positive
+
+	courtier_opinion = 20
+}
+
+
+## Vicious Mockery
+
+TI_modifiers_viciousmockery = {
+	icon = cat_positive
+
+	dread_baseline_add = 10
+}
+
+### Level 1 Spells
+
+## Bless
+
+TI_modifiers_bless = {
+	icon = cat_positive
+
+	diplomacy = 1
+	martial = 1
+	stewardship = 1
+	intrigue = 1
+	learning = 1
+}
+
+## Charm Person
+
+TI_modifiers_charmperson = {
+	icon = cat_positive
+
+	owned_scheme_secrecy_add = 10
+}
+
+## Hex
+
+TI_modifiers_hex = {
+	icon = cat_negative
+
+	health = -0.1
+}
+
+## Purify Food and Drink
+
+TI_modifiers_purifyfad = {
+	icon = cat_positive
+
+	negate_health_penalty_add = 0.25
+}
+
+## Find Familiar
+
+TI_modifiers_findfamiliar = {
+	icon = cat_positive
+
+	character_travel_speed = 10
+	character_travel_safety = 5
+}
+
+### Level 2 Spells
+
+## Find Steed
+
+TI_modifiers_findsteed = {
+	icon = cat_positive
+
+	character_travel_speed = 20
+}
+
+## Enhance Ability
+
+TI_modifiers_enhanceability_diplo = {
+	icon = cat_positive
+
+	diplomacy = 5
+}
+
+TI_modifiers_enhanceability_martial = {
+	icon = cat_positive
+
+	martial = 5
+}
+
+TI_modifiers_enhanceability_steward = {
+	icon = cat_positive
+
+	stewardship = 5
+}
+
+TI_modifiers_enhanceability_intri = {
+	icon = cat_positive
+
+	intrigue = 5
+}
+
+TI_modifiers_enhanceability_learn = {
+	icon = cat_positive
+
+	learning = 5
+}
+
+## Gift of Gab
+
+TI_modifiers_giftofgab = {
+	icon = cat_positive
+
+	owned_scheme_secrecy_add = 20
+}
+
+## Invisibility
+
+TI_modifiers_invisibility = {
+	icon = cat_positive
+
+	scheme_secrecy = 25
+}
+
+## Magic Weapon
+
+TI_modifiers_magicweapon = {
+	icon = cat_positive
+
+	prowess = 10
+
+}
+
+### Level 3 Spells
+
+## Haste
+
+TI_modifiers_haste = {
+	icon = cat_positive
+
+	prowess = 4
+	character_travel_speed = 1.5
+}
+
+## Motivational Speech
+
+TI_modifiers_motivationalspeech = {
+	icon = cat_positive
+
+	advantage = 6
+}
+
+## Sending
+
+TI_modifiers_sending = {
+	icon = cat_positive
+
+	diplomatic_range_mult = 0.5
+}
+
+## Vampiric Touch
+
+TI_modifiers_vampirictouch = {
+	icon = cat_positive
+
+	health = 0.2
+}
+
+TI_modifiers_vampirictouch_victim = {
+	icon = cat_negative
+
+	health = -0.2
+}
+
+## Fireball
+
+TI_modifiers_fireball = {
+	icon = cat_positive
+
+	siege_phase_time = -0.5
+	army_siege_value_mult = 0.5
+}
+
+### Level 4 Spells
+
+## Fabricate
+
+TI_modifiers_fabricate = {
+	icon = cat_positive
+
+	title_creation_cost_mult = -0.5 ## very WIP, but I like it.
+	build_speed = -1
+
+}
+
+## Divination
+
+TI_modifiers_divination = {
+	icon = cat_positive
+
+	same_faith_opinion = 25
+}
+
+## Locate Creature
+
+TI_modifiers_locatecreature = {
+	icon = cat_positive
+
+	prowess = 8 ## very temp.
+}
+
+## Death Ward
+
+TI_modifiers_deathward = {
+	icon = cat_positive
+
+	health = 0.5
+
+}
+
+## Create Water
+
+TI_modifiers_createwater = {
+	icon = cat_positive
+
+	naval_movement_speed_mult = 2
+}

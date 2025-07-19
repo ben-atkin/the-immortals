@@ -617,6 +617,9 @@ tournament_unusual_stranger = {
 	gender_female_chance = root_soldier_female_chance
 	after_creation = {
 		add_gold = 1
+
+		## TI EDITS
+		race_heritage_effect = yes
 	}
 }
 

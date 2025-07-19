@@ -1,0 +1,28 @@
+TI_feature = {
+	alias = { TI_feature_i }
+	texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+}
+
+magic = {
+	alias = { magic_i }
+	texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+	parent = TI_feature
+}
+
+spells = {
+	alias = { spells_i }
+	texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+	parent = magic
+}
+
+spell = {
+	alias = { spell_i }
+	texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+	parent = spells
+}
+
+spellchart = {
+	alias = { spellchart_i }
+	texture = "gfx/interface/TI_magic_icon_test.dds" ## VERY TEMP
+	parent = spells
+}

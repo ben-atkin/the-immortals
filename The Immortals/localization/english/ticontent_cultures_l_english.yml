@@ -1,0 +1,23 @@
+﻿l_english:
+
+  full_human:1 "Human"
+  full_human_prefix:0 "Human"
+  full_human_collective_noun:1 "Humans"
+
+  heritage_human_name:1 "Ape"
+  language_common_name:0 "Common"
+  
+  full_elvish:1 "Elvish"
+  half_elvish:1 "Half Elvish"
+  wood_elvish:1 "Wood Elf"
+  dark_elvish:1 "Dark Elf"
+
+  heritage_elvish_name:1 "Celestial"
+  language_elvish_name:0 "Elvish"
+
+  full_orcish:1 "Orcish"
+  moreno_orcish:1 "Moreno Orc"
+  half_orcish:1 "Half Orc"
+
+  heritage_orcish_name:1 "Orge"
+  language_orcish_name:0 "Orcish"

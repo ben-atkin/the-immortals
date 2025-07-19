@@ -17,17 +17,18 @@ seasons = "seasons.txt"
 #############
 
 #Onakaam Seas
-sea_zones = LIST { 1 }
-sea_zones = RANGE { 112 121 }
-sea_zones = RANGE { 180 201 }
+sea_zones = RANGE { 175 206 }
 
 ###############
 # MAJOR RIVERS
 ###############
+sea_zones = RANGE { 209 212 }
 
 ########
 # LAKES
 ########
+
+lakes = LIST { 207 }
 
 #####################
 # IMPASSABLE TERRAIN
@@ -35,7 +36,7 @@ sea_zones = RANGE { 180 201 }
 # Can be colored by whoever owns the most of the province's neighbours.
 # Blocks unit movement.
 
-impassable_mountains = range { 122 127 }
+impassable_mountains = range { 169 174 }
 
 ############
 # WASTELAND
@@ -43,8 +44,12 @@ impassable_mountains = range { 122 127 }
 # These are actually supposed to be Wasteland:
 # Cannot be colored. Blocks unit movement, used for things like Sahara desert. 
 
+impassable_mountains = LIST { 208 }
+
 # IMPASSABLE SEA ZONES
 # These sea provinces cannot be crossed/sailed
+
+impassable_seas = LIST { 1 }
 
 # UNUSED PROVINCES
 # These provinces cause issues because they are passable land, but not part of any title.

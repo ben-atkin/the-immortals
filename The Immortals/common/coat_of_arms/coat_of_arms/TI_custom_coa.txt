@@ -1,0 +1,65 @@
+c_county_tier3 = {
+	pattern = "pattern_solid.dds"
+	color1 = "orange"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		color1= "white"
+		texture= "ce_circle.dds"
+		instance={
+			depth=3.010000
+		}
+	}
+	colored_emblem = {
+		color1 = "black"
+		texture = "ce_tamgha_koktayklan.dds"
+		instance = { position={ 0.34 0.41 } scale={ 0.28 0.28 } }
+		instance = { position={ 0.67 0.41 } scale={ 0.27 0.27 } depth = 1.010000 }
+		instance = { position={ 0.50 0.57 } scale={ 0.44 0.44 } depth = 2.010000 }
+	}
+}
+
+c_county_tier18 = {
+	pattern = "pattern__solid_designer.dds"
+	color1 = black
+	color2 = yellow
+	color3 = black
+	colored_emblem = {
+		color1 = grey
+		texture = "ce_star_08.dds"
+		instance = {
+			position = { 0.500000 0.460000 }
+			scale = { 0.880000 0.880000 }
+			depth = 1.010000
+		}
+	}
+	colored_emblem = {
+		color1 = black
+		texture = "ce_circle_mask.dds"
+		instance = {
+			position = { 0.500000 0.470000 }
+			scale = { 0.160000 0.160000 }
+		}
+	}
+}
+
+
+c_county_tier43 = {
+	pattern = "pattern_solid.dds"
+	color1 = blue
+	color2 = yellow
+	color3 = red
+	colored_emblem = {
+		color1 = white
+		texture = "ce_ordinary_pile_01.dds"
+		instance = {
+			position = { 0.500000 0.330000 }
+			scale = { 0.700000 -0.700000 }
+		}
+	}
+}
+
+
+
+

@@ -255,7 +255,7 @@ pool_repopulate_diplomacy = {
 			LEVEL_1 = yes
 			LEVEL_3 = no
 		}
-	## TI EDITS
+		## TI EDITS
 		race_heritage_effect = yes
 
 	}

@@ -1,0 +1,11 @@
+﻿l_english:
+
+   SPELLCHART_WIDGET_TITLE: "[spellchart|E]"
+   SPELLCHART_BUTTON: "#T Open [spellchart|E]"
+
+   spellchart_cantrips_button:0 "Cantrips"
+   spellchart_lvl1_button:0 "1st Level"
+   spellchart_lvl2_button:0 "2nd Level"
+   spellchart_lvl3_button:0 "3rd Level"
+   spellchart_lvl4_button:0 "4th Level"
+   spellchart_lvl5_button:0 "5th Level"

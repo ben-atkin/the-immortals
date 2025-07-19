@@ -1,0 +1,5 @@
+magic_greater_or_equal = {
+	global = MAGIC_TRIGGER_GLOBAL
+	first = MAGIC_TRIGGER_FIRST
+	third = MAGIC_TRIGGER_THIRD
+}

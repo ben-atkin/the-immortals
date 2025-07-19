@@ -160,7 +160,7 @@ game_rule.1001 = { #by Mathilda Bjarnehed
 				exists = player_heir
 				player_heir = {
 					is_female = yes
-					#ek_human_age_equivalent >= 40
+					#TI_human_age_equivalent >= 40
 				}
 				#Nothing else should need to be checked, they shouldn't be celibate or something like that
 			}

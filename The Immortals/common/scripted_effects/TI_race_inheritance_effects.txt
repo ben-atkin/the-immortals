@@ -1,0 +1,102 @@
+race_heritage_effect = { # set traits based on culture, or any parent culture. This is a much simplier version of the previous method, however its error rate is basically zilch.
+	if = { #human - at the top so it takes priority, lesser of the three evils in this situation.
+	limit = { 
+		OR = {
+			has_culture = culture:full_human
+			culture = { 
+				any_parent_culture_or_above = { this = culture:full_human } # error displayed via CWTOOLs - I've confirmed this trigger (any_parent_culture_or_above) is straight from the ck3 modding wiki documentation. Someone's wrong here, lets hope its not us.
+			}
+		}
+	}
+		add_character_flag = full_human_race_flag # this flag is redudant, doesn't hurt to keep around though.
+		add_trait = race_trait_human
+	}
+
+	else_if = { #elvish
+		limit = { 
+			OR = {
+				has_culture = culture:full_elvish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:full_elvish }
+				}
+			}
+		}
+		add_character_flag = full_elvish_race_flag	
+		add_trait = race_trait_full_elvish
+
+	} else_if = {
+		limit = { 
+			OR = {
+				has_culture = culture:half_elvish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:half_elvish }
+				}
+			}
+		}
+		add_character_flag = half_elvish_race_flag
+		add_trait = race_trait_half_elvish
+
+	} else_if = {
+		limit = { 
+			OR = {
+				has_culture = culture:wood_elvish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:wood_elvish }
+				}
+			}
+		}
+		add_character_flag = wood_elvish_race_flag
+		add_trait = race_trait_wood_elvish
+		
+	} else_if = {
+		limit = { 
+			OR = {
+				has_culture = culture:dark_elvish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:dark_elvish }
+				}
+			}
+		}
+		add_character_flag = dark_elvish_race_flag
+		add_trait = race_trait_dark_elvish
+		
+	} 
+	else_if = { ##orcish
+		limit = { 
+			OR = {
+				has_culture = culture:full_orcish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:full_orcish }
+				}
+			}
+		}
+		add_character_flag = full_orcish_race_flag
+		add_trait = race_trait_full_orcish
+		
+	} else_if = {
+		limit = { 
+			OR = {
+				has_culture = culture:moreno_orcish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:moreno_orcish }
+				}
+			}
+		}
+		add_character_flag = moreno_orcish_race_flag
+		add_trait = race_trait_full_orcish
+		
+	} else_if = {
+		limit = { 
+			OR = {
+				has_culture = culture:half_orcish
+				culture = { 
+					any_parent_culture_or_above = { this = culture:half_orcish }
+				}
+			}
+		}
+		add_character_flag = half_orcish_race_flag
+		add_trait = race_trait_half_orcish
+	} 
+	add_character_flag = char_setup_complete # this flag is redudant, but it doesn't hurt keeping it around just in-case we want to try to flesh out the system again.
+}
+	

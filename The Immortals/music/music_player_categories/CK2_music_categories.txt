@@ -1,0 +1,33 @@
+﻿## CK2 Soundtrack Category - Implemented by the Immortals Mod Team.
+
+category = {
+	id = "ck2_soundtrack"
+	name = "ck2_soundtrack_list"
+	tracks = {
+		"akingisdead_ck2"
+		"asimplesongforcommoners_ck2"
+		"coeurdelion_ck2"
+		"crusaderkings2_maintitle_ck2"
+		"crusaders_ck2"
+		"guyderosesquandary_ck2"
+		"hornsofhattinandaftermath_ck2"
+		"intaberna_ck2"
+		"journeytoabsolution_ck2"
+		"kingdomofjerusalem_ck2"
+		"krakdeschevaliers_ck2"
+		"marchtoholyland_ck2"
+		"orderofthetemple_ck2"
+		"pathtoglory_ck2"
+		"pilgrimage_ck2"
+		"royalmarriage_ck2"
+		"saladinbesiegejerusalem_ck2"
+		"sanctus_ck2"
+		"siegeofkerak_ck2"
+		"tedonimum_ck2"
+		"thefirstcrusade_ck2"
+		"thefranks_ck2"
+		"theholysepulchre_ck2"
+		"thelastcrusade_finale_ck2"
+		"turexgloriae_ck2"
+	}
+}

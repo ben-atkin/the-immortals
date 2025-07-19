@@ -1,0 +1,351 @@
+spellchart_script = {
+    scope = character
+    effect = {
+        if = {
+            limit = {
+                has_variable = spellchart_open
+            }
+            remove_variable = spellchart_open
+        }
+        else = {
+            set_variable = spellchart_open
+        }
+    }
+}
+
+can_see_magic_bar = {
+	scope = character
+	
+	is_valid = { always = yes }
+}
+
+spell_switch_caster = {
+	scope = character
+
+	effect = {
+		set_variable = { name = spell_caster value = ROOT }
+	}
+}
+
+spell_switch_castee = {
+    scope = character
+
+	effect = {
+		set_variable = { name = spell_recipient value = ROOT }
+	}
+}
+
+spell_list_item = {
+	scope = character
+	saved_scopes = { spell }
+
+	#is_valid = { always = yes }
+	is_shown = { spell_selectable_trigger = yes }
+	effect = {
+		set_variable = { name = spell_selected value = scope:spell }
+		#spell_reset_recipient = yes
+		#spell_get_skill_attribute = yes
+		#spell_get_size = yes
+	}
+}
+
+spell_cast_confirm = { #need 2nd for caster/castee effects. or use bool scope to switch which to execute. emulate by feeding player or not and checking exists
+	scope = character
+	saved_scopes = { castee spell }
+
+	#is_valid = { selected_spell_castable_trigger = yes } # save scope and use same effect?
+	is_shown = {
+		trigger_if = {
+			limit = { exists = var:spell_selected }
+			#save_scope_value_as = { name = spell value = var:spell_selected }
+			#var:spell_province = { save_temporary_scope_as = spell }
+			spell_castable_trigger = yes
+		}
+		trigger_else = { always = no }
+		# var:spell_province = { save_temporary_scope_as = spell }
+		# spell_castable_trigger = yes
+	}
+	#effect = { selected_spell_effect = yes }
+	effect = {
+		#save_scope_value_as = { name = spell value = var:spell_selected }
+		#var:spell_province = { save_temporary_scope_as = spell }
+		show_as_tooltip = {
+			if = { #effects for tooltip generation
+				limit = { exists = scope:castee }
+				spell_castee_effect = yes
+			}
+			else = {
+				spell_caster_effect = yes
+			}
+		}
+		hidden_effect = { #actual effects for execution
+			spell_castee_effect = yes
+			spell_caster_effect = yes
+		}
+	}
+}
+
+
+spellchart_tab_cantrips = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:cantrip } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:cantrip }
+        init_cantrips = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+spellchart_tab_lvl1 = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:lvl1 } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:lvl1 }
+        init_lvl1 = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+spellchart_tab_lvl2 = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:lvl2 } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:lvl2 }
+        init_lvl2 = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+spellchart_tab_lvl3 = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:lvl3 } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:lvl3 }
+        init_lvl3 = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+spellchart_tab_lvl4 = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:lvl4 } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:lvl4 }
+        init_lvl4 = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+spellchart_tab_lvl5 = {
+    scope = character
+    
+    is_valid = { NOT = { var:spell_level = flag:lvl5 } }
+
+    effect = {
+        set_variable = { name = spell_level value =  flag:lvl5 }
+        init_lvl5 = yes
+        set_variable = { name = spell_selected value =  flag:no_spell }
+        #spell_reset_recipient = yes - maybe later
+    }
+}
+
+
+## Cantrips
+
+spells_guidance = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0010
+    }
+}
+
+spells_mending = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0020
+    }
+}
+
+spells_magehand = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0030
+    }
+}
+
+spells_prestidigitation = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0040
+    }
+}
+
+spells_viciousmockery = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0050
+    }
+}
+
+## Level 1 Spells
+
+spells_bless = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0110
+    }
+}
+
+spells_charmperson = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0120
+    }
+}
+
+spells_hex = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0130
+    }
+}
+
+spells_purifyfad = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0140
+    }
+}
+
+spells_findfamiliar = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0150
+    }
+}
+
+## Level 2 Spells
+
+spells_findsteed = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0210
+    }
+}
+
+spells_enhanceability = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0220
+    }
+}
+
+spells_giftofgab = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0230
+    }
+}
+
+spells_invisibility = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0240
+    }
+}
+
+spells_magicweapon = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0250
+    }
+}
+
+## Level 3 Spells
+
+spells_haste = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0310
+    }
+}
+
+spells_motivationalspeech = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0320
+    }
+}
+
+spells_sending = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0330
+    }
+}
+
+spells_vampirictouch = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0340
+    }
+}
+
+spells_fireball = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0350
+    }
+}
+
+## Level 4 Spells
+
+spells_fabricate = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0410
+    }
+}
+
+spells_divination = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0420
+    }
+}
+
+spells_locatecreature = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0430
+    }
+}
+
+spells_deathward = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0440
+    }
+}
+
+spells_createwater = {
+    scope = character
+    effect = {
+        trigger_event = TI_spells.0450
+    }
+}

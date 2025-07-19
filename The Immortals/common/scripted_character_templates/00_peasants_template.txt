@@ -225,6 +225,8 @@ hunter_template = {
 			LEVEL_1 = no
 			LEVEL_3 = yes
 		}
+		## TI EDITS
+		race_heritage_effect = yes
 	}
 }
 

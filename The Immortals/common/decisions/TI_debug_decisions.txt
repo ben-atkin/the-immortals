@@ -1,0 +1,9 @@
+TI_debug_decisions_add_magic_10 = {
+    title = "Add Magic - TI DEBUG"
+
+    decision_group_type = debug
+
+    effect = {
+        add_magic = { VALUE = 10 }
+    }
+}

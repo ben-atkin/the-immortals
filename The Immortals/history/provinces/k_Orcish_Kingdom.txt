@@ -1,378 +1,361 @@
-51 = {
-    faith = orcish_faith
-    culture = half_orcish
-
-    holding = castle_holding
-    }
 52 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 53 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 54 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 55 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 56 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 57 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 58 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 59 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 60 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 61 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 62 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 63 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 64 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 65 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 66 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 67 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 68 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 69 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 70 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
 
-    holding = castle_holding
-    }
+	holding = castle
+
+	duchy_capital_building = TI_buildings_ultameer_duchy_capital
+}
+
 71 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 72 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 73 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 74 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 75 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 76 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 77 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 78 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 79 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 80 = {
-    faith = orcish_faith
-    culture = half_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 81 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 82 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 83 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 84 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 85 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 86 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 87 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 88 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 89 = {
-    faith = orcish_faith
-    culture = full_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 90 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 91 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 92 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 93 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 94 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 95 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 96 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 97 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 98 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 99 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 100 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 101 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 102 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 103 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 104 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 105 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 106 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 107 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 108 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 109 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 110 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
 111 = {
-    faith = orcish_faith
-    culture = moreno_orcish
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
-128 = {
-    faith = orcish_faith
-    culture = half_orcish
+112 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
-129 = {
-    faith = orcish_faith
-    culture = half_orcish
+113 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
 
-    holding = castle_holding
-    }
+114 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+115 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+116 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+117 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+118 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+119 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+120 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+121 = {
+	culture = full_orcish
+	religion = orcish_faith
+}
+
+122 = {
+	culture = moreno_orcish
+	religion = orcish_faith
+}
+
+
+
