@@ -1,1 +1,1 @@
-gui/window_magic.gui = window_magic
+gui/custom_windows/TI_spellchart_window.gui = window_magic
