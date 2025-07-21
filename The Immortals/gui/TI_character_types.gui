@@ -4,7 +4,7 @@ types CharWindow
 	{
 		visible = "[And( Not( Character.IsDeadAndValid ), Character.MakeScope.Var('magic').IsSet )]"
 		size = { 23 23 }
-		texture = "gfx/interface/icons/icon_magicka.dds"
+		texture = "gfx/interface/icons/icon_magic.dds"
 		tooltipwidget = {
 			magic_breakdown_widget = {
 				datacontext = "[CharacterWindow.GetCharacter]"
