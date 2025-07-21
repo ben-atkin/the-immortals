@@ -64,10 +64,6 @@ elvish = {
 		1 = { name = vanilla_skin_saturation						range = { 0.5 0.5 } }
 	}
 
-	hairstyles = {
-		1 = { name = fp1_hairstyles_straight      			range = { 0.0 0.8 } }
-	}
-
 	### EYES/FACE
 
 	gene_eyebrows_fullness = {
@@ -310,10 +306,6 @@ wood_elvish = { #not used yet. - and needs to be configured.
 
 	skin_color_saturation = { 
 		1 = { name = vanilla_skin_saturation						range = { 0.5 0.5 } }
-	}
-
-	hairstyles = {
-		1 = { name = fp1_hairstyles_straight      			range = { 0.0 0.8 } }
 	}
 
 	### EYES/FACE

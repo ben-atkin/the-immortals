@@ -490,10 +490,6 @@ orcish = {
     1 = { name = no_baldness     										range = { 0.0 1.0 } } 
   }
 
-  hairstyles={ 
-    1 = { name = sub_saharan_hairstyles_afro     		range = { 0.0 1.0 } } 
-  }
-
 	### BODY
 
 	gene_age={ # change this later. Create a Orcish old gene.
